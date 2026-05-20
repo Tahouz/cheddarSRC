@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cheddar>
+ <core_units>
+  <core_unit id="id_1">
+   <object_type>CORE_OBJECT_TYPE</object_type>
+   <name>core</name>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>RATE_MONOTONIC_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+   <speed>0.00000</speed>
+  </core_unit>
+ </core_units>
+ <processors>
+  <mono_core_processor id="id_2">
+   <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+   <name>Processor</name>
+   <processor_type>MONOCORE_TYPE</processor_type>
+   <migration_type>NO_MIGRATION_TYPE</migration_type>
+   <core ref="id_1">
+   </core>
+  </mono_core_processor>
+ </processors>
+ <address_spaces>
+  <address_space id="id_3">
+   <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+   <name>addr1</name>
+   <cpu_name>Processor</cpu_name>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <data_memory_size>0</data_memory_size>
+   <heap_memory_size>0</heap_memory_size>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>NO_SCHEDULING_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>250</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+   <mils_confidentiality_level>TOP_SECRET</mils_confidentiality_level>
+   <mils_integrity_level>HIGH</mils_integrity_level>
+   <mils_component>SLS</mils_component>
+   <mils_partition>DEVICE</mils_partition>
+   <mils_compliant>TRUE</mils_compliant>
+  </address_space>
+  <address_space id="id_4">
+   <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+   <name>addr2</name>
+   <cpu_name>Processor</cpu_name>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <data_memory_size>0</data_memory_size>
+   <heap_memory_size>0</heap_memory_size>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>NO_SCHEDULING_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>250</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+   <mils_confidentiality_level>TOP_SECRET</mils_confidentiality_level>
+   <mils_integrity_level>HIGH</mils_integrity_level>
+   <mils_component>SLS</mils_component>
+   <mils_partition>DEVICE</mils_partition>
+   <mils_compliant>TRUE</mils_compliant>
+  </address_space>
+ </address_spaces>
+ <tasks>
+  <periodic_task id="id_5">
+   <object_type>TASK_OBJECT_TYPE</object_type>
+   <name>1</name>
+   <task_type>PERIODIC_TYPE</task_type>
+   <cpu_name>Processor</cpu_name>
+   <address_space_name>addr1</address_space_name>
+   <capacity>20</capacity>
+   <deadline>500</deadline>
+   <start_time>0</start_time>
+   <priority>13</priority>
+   <blocking_time>0</blocking_time>
+   <policy>SCHED_FIFO</policy>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <criticality>3</criticality>
+   <context_switch_overhead>0</context_switch_overhead>
+   <mils_confidentiality_level>SECRET</mils_confidentiality_level>
+   <mils_integrity_level>HIGH</mils_integrity_level>
+   <mils_component>SLS</mils_component>
+   <mils_task>APPLICATION</mils_task>
+   <mils_compliant>TRUE</mils_compliant>
+   <period>500</period>
+   <jitter>0</jitter>
+   <every>0</every>
+  </periodic_task>
+  <periodic_task id="id_6">
+   <object_type>TASK_OBJECT_TYPE</object_type>
+   <name>2</name>
+   <task_type>PERIODIC_TYPE</task_type>
+   <cpu_name>Processor</cpu_name>
+   <address_space_name>addr1</address_space_name>
+   <capacity>10</capacity>
+   <deadline>1000</deadline>
+   <start_time>0</start_time>
+   <priority>3</priority>
+   <blocking_time>0</blocking_time>
+   <policy>SCHED_FIFO</policy>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <criticality>0</criticality>
+   <context_switch_overhead>0</context_switch_overhead>
+   <mils_confidentiality_level>TOP_SECRET</mils_confidentiality_level>
+   <mils_integrity_level>HIGH</mils_integrity_level>
+   <mils_component>SLS</mils_component>
+   <mils_task>APPLICATION</mils_task>
+   <mils_compliant>TRUE</mils_compliant>
+   <period>1000</period>
+   <jitter>0</jitter>
+   <every>0</every>
+  </periodic_task>
+  <periodic_task id="id_9">
+   <object_type>TASK_OBJECT_TYPE</object_type>
+   <name>5</name>
+   <task_type>PERIODIC_TYPE</task_type>
+   <cpu_name>Processor</cpu_name>
+   <address_space_name>addr1</address_space_name>
+   <capacity>50</capacity>
+   <deadline>1000</deadline>
+   <start_time>0</start_time>
+   <priority>9</priority>
+   <blocking_time>0</blocking_time>
+   <policy>SCHED_FIFO</policy>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <criticality>0</criticality>
+   <context_switch_overhead>0</context_switch_overhead>
+   <mils_confidentiality_level>SECRET</mils_confidentiality_level>
+   <mils_integrity_level>HIGH</mils_integrity_level>
+   <mils_component>SLS</mils_component>
+   <mils_task>APPLICATION</mils_task>
+   <mils_compliant>TRUE</mils_compliant>
+   <period>1000</period>
+   <jitter>0</jitter>
+   <every>0</every>
+  </periodic_task>
+  <periodic_task id="id_8">
+   <object_type>TASK_OBJECT_TYPE</object_type>
+   <name>4</name>
+   <task_type>PERIODIC_TYPE</task_type>
+   <cpu_name>Processor</cpu_name>
+   <address_space_name>addr2</address_space_name>
+   <capacity>30</capacity>
+   <deadline>2000</deadline>
+   <start_time>0</start_time>
+   <priority>7</priority>
+   <blocking_time>0</blocking_time>
+   <policy>SCHED_FIFO</policy>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <criticality>0</criticality>
+   <context_switch_overhead>0</context_switch_overhead>
+   <mils_confidentiality_level>TOP_SECRET</mils_confidentiality_level>
+   <mils_integrity_level>HIGH</mils_integrity_level>
+   <mils_component>SLS</mils_component>
+   <mils_task>APPLICATION</mils_task>
+   <mils_compliant>TRUE</mils_compliant>
+   <period>2000</period>
+   <jitter>0</jitter>
+   <every>0</every>
+  </periodic_task>
+  <periodic_task id="id_7">
+   <object_type>TASK_OBJECT_TYPE</object_type>
+   <name>3</name>
+   <task_type>PERIODIC_TYPE</task_type>
+   <cpu_name>Processor</cpu_name>
+   <address_space_name>addr2</address_space_name>
+   <capacity>23</capacity>
+   <deadline>2000</deadline>
+   <start_time>0</start_time>
+   <priority>5</priority>
+   <blocking_time>0</blocking_time>
+   <policy>SCHED_FIFO</policy>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <criticality>0</criticality>
+   <context_switch_overhead>0</context_switch_overhead>
+   <mils_confidentiality_level>TOP_SECRET</mils_confidentiality_level>
+   <mils_integrity_level>HIGH</mils_integrity_level>
+   <mils_component>SLS</mils_component>
+   <mils_task>APPLICATION</mils_task>
+   <mils_compliant>TRUE</mils_compliant>
+   <period>2000</period>
+   <jitter>0</jitter>
+   <every>0</every>
+  </periodic_task>
+  <periodic_task id="id_11">
+   <object_type>TASK_OBJECT_TYPE</object_type>
+   <name>6</name>
+   <task_type>PERIODIC_TYPE</task_type>
+   <cpu_name>Processor</cpu_name>
+   <address_space_name>addr1</address_space_name>
+   <capacity>50</capacity>
+   <deadline>1000</deadline>
+   <start_time>0</start_time>
+   <priority>11</priority>
+   <blocking_time>0</blocking_time>
+   <policy>SCHED_FIFO</policy>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <criticality>0</criticality>
+   <context_switch_overhead>0</context_switch_overhead>
+   <mils_confidentiality_level>SECRET</mils_confidentiality_level>
+   <mils_integrity_level>HIGH</mils_integrity_level>
+   <mils_component>SLS</mils_component>
+   <mils_task>APPLICATION</mils_task>
+   <mils_compliant>TRUE</mils_compliant>
+   <period>1000</period>
+   <jitter>0</jitter>
+   <every>0</every>
+  </periodic_task>
+  <periodic_task id="id_12">
+   <object_type>TASK_OBJECT_TYPE</object_type>
+   <name>7</name>
+   <task_type>PERIODIC_TYPE</task_type>
+   <cpu_name>Processor</cpu_name>
+   <address_space_name>addr1</address_space_name>
+   <capacity>10</capacity>
+   <deadline>500</deadline>
+   <start_time>0</start_time>
+   <priority>15</priority>
+   <blocking_time>0</blocking_time>
+   <policy>SCHED_FIFO</policy>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <criticality>3</criticality>
+   <context_switch_overhead>0</context_switch_overhead>
+   <mils_confidentiality_level>TOP_SECRET</mils_confidentiality_level>
+   <mils_integrity_level>HIGH</mils_integrity_level>
+   <mils_component>SLS</mils_component>
+   <mils_task>APPLICATION</mils_task>
+   <mils_compliant>TRUE</mils_compliant>
+   <period>500</period>
+   <jitter>0</jitter>
+   <every>0</every>
+  </periodic_task>
+  <periodic_task id="id_13">
+   <object_type>TASK_OBJECT_TYPE</object_type>
+   <name>8</name>
+   <task_type>PERIODIC_TYPE</task_type>
+   <cpu_name>Processor</cpu_name>
+   <address_space_name>addr1</address_space_name>
+   <capacity>10</capacity>
+   <deadline>500</deadline>
+   <start_time>0</start_time>
+   <priority>15</priority>
+   <blocking_time>0</blocking_time>
+   <policy>SCHED_FIFO</policy>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <criticality>3</criticality>
+   <context_switch_overhead>0</context_switch_overhead>
+   <mils_confidentiality_level>TOP_SECRET</mils_confidentiality_level>
+   <mils_integrity_level>HIGH</mils_integrity_level>
+   <mils_component>SLS</mils_component>
+   <mils_task>APPLICATION</mils_task>
+   <mils_compliant>TRUE</mils_compliant>
+   <period>500</period>
+   <jitter>0</jitter>
+   <every>0</every>
+  </periodic_task>
+ </tasks>
+ <dependencies>
+  <dependency>
+   <type_of_dependency>PRECEDENCE_DEPENDENCY</type_of_dependency>
+   <precedence_sink ref="id_6">
+   </precedence_sink>
+   <precedence_source ref="id_5">
+   </precedence_source>
+  </dependency>
+  <dependency>
+   <type_of_dependency>PRECEDENCE_DEPENDENCY</type_of_dependency>
+   <precedence_sink ref="id_7">
+   </precedence_sink>
+   <precedence_source ref="id_6">
+   </precedence_source>
+  </dependency>
+  <dependency>
+   <type_of_dependency>PRECEDENCE_DEPENDENCY</type_of_dependency>
+   <precedence_sink ref="id_8">
+   </precedence_sink>
+   <precedence_source ref="id_6">
+   </precedence_source>
+  </dependency>
+  <dependency>
+   <type_of_dependency>PRECEDENCE_DEPENDENCY</type_of_dependency>
+   <precedence_sink ref="id_9">
+   </precedence_sink>
+   <precedence_source ref="id_7">
+   </precedence_source>
+  </dependency>
+  <dependency>
+   <type_of_dependency>PRECEDENCE_DEPENDENCY</type_of_dependency>
+   <precedence_sink ref="id_12">
+   </precedence_sink>
+   <precedence_source ref="id_9">
+   </precedence_source>
+  </dependency>
+  <dependency>
+   <type_of_dependency>PRECEDENCE_DEPENDENCY</type_of_dependency>
+   <precedence_sink ref="id_5">
+   </precedence_sink>
+   <precedence_source ref="id_12">
+   </precedence_source>
+  </dependency>
+  <dependency>
+   <type_of_dependency>PRECEDENCE_DEPENDENCY</type_of_dependency>
+   <precedence_sink ref="id_11">
+   </precedence_sink>
+   <precedence_source ref="id_8">
+   </precedence_source>
+  </dependency>
+  <dependency>
+   <type_of_dependency>PRECEDENCE_DEPENDENCY</type_of_dependency>
+   <precedence_sink ref="id_13">
+   </precedence_sink>
+   <precedence_source ref="id_11">
+   </precedence_source>
+  </dependency>
+  <dependency>
+   <type_of_dependency>PRECEDENCE_DEPENDENCY</type_of_dependency>
+   <precedence_sink ref="id_5">
+   </precedence_sink>
+   <precedence_source ref="id_13">
+   </precedence_source>
+  </dependency>
+ </dependencies>
+</cheddar>
+

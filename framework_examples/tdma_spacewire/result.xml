@@ -1,0 +1,409 @@
+Argument 1/File name : ../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3
+xml_generic_parsers.adb:172:Xml parser warning (../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:2:9: No DTD defined for this document, at ../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:2:9)
+xml_generic_parsers.adb:172:Xml parser warning (../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:4:14: [VC] No attribute allowed for element core_unit, at ../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:4:14)
+xml_generic_parsers-architecture.adb:1698:Add core unit c1 id_1
+xml_generic_parsers.adb:172:Xml parser warning (../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:26:24: [VC] No attribute allowed for element mono_core_processor, at ../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:26:24)
+xml_generic_parsers.adb:172:Xml parser warning (../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:31:10: [VC] No attribute allowed for element core, at ../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:31:10)
+xml_generic_parsers-architecture.adb:1740:Add monocore processor processor1 id_2
+xml_generic_parsers.adb:172:Xml parser warning (../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:34:24: [VC] No attribute allowed for element mono_core_processor, at ../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:34:24)
+xml_generic_parsers.adb:172:Xml parser warning (../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:39:10: [VC] No attribute allowed for element core, at ../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:39:10)
+xml_generic_parsers-architecture.adb:1740:Add monocore processor processor2 id_4
+xml_generic_parsers.adb:172:Xml parser warning (../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:44:18: [VC] No attribute allowed for element address_space, at ../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:44:18)
+xml_generic_parsers-architecture.adb:1347:Add address space addr1 id_3
+xml_generic_parsers.adb:172:Xml parser warning (../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:70:18: [VC] No attribute allowed for element address_space, at ../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:70:18)
+xml_generic_parsers-architecture.adb:1347:Add address space addr2 id_5
+xml_generic_parsers.adb:172:Xml parser warning (../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:98:18: [VC] No attribute allowed for element periodic_task, at ../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:98:18)
+xml_generic_parsers-architecture.adb:1247:Add task Task1_sender id_7
+xml_generic_parsers.adb:172:Xml parser warning (../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:132:18: [VC] No attribute allowed for element periodic_task, at ../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:132:18)
+xml_generic_parsers-architecture.adb:1247:Add task Task1_receiver id_8
+xml_generic_parsers.adb:172:Xml parser warning (../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:168:21: [VC] No attribute allowed for element periodic_message, at ../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:168:21)
+xml_generic_parsers-architecture.adb:1115:Add message m1 id_6
+xml_generic_parsers.adb:172:Xml parser warning (../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:186:39: [VC] No attribute allowed for element tdma_communication_dependent_task, at ../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:186:39)
+xml_generic_parsers.adb:172:Xml parser warning (../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:189:42: [VC] No attribute allowed for element tdma_communication_dependency_object, at ../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:189:42)
+xml_generic_parsers-architecture.adb:1381:Add a dependency TDMA_COMMUNICATION_DEPENDENCY
+xml_generic_parsers.adb:172:Xml parser warning (../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:194:39: [VC] No attribute allowed for element tdma_communication_dependent_task, at ../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:194:39)
+xml_generic_parsers.adb:172:Xml parser warning (../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:197:42: [VC] No attribute allowed for element tdma_communication_dependency_object, at ../regression_tests/network/spacewire/tdma/test_schedule_with_tdma_table.xmlv3:197:42)
+xml_generic_parsers-architecture.adb:1381:Add a dependency TDMA_COMMUNICATION_DEPENDENCY
+Feasibility_Interval :  30
+call_scheduling_framework.adb:109:Call Compute_Simulation_Time_Line
+multiprocessor_services.adb:884:Call Build_Multiprocessor_Scheduling
+multiprocessor_services.adb:171:initialize_Multiprocessor_Scheduling : initialize internal simulator variables 
+multiprocessor_services.adb:199:Initial TDMA trame/duration are  1  1
+multiprocessor_services.adb:209:initialize_Multiprocessor_Scheduling : check scheduler compliancy of tasks
+multiprocessor_services.adb:348:initialize_Multiprocessor_Scheduling : initialization of processor and core units variables
+multiprocessor_services.adb:380:initialize_Multiprocessor_Scheduling : initialization of processor processor1
+multiprocessor_services.adb:380:initialize_Multiprocessor_Scheduling : initialization of processor processor2
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  0 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+scheduler.adb:561:Call Update_Task_Simulation_Data_And_Produce_Events_when_task_is_run 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  0 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  2  1
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  1 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  1 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  3  10
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  2 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  2 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+scheduler.adb:561:Call Update_Task_Simulation_Data_And_Produce_Events_when_task_is_run 
+multiprocessor_services.adb:1118:TDMA trame/duration are  3  9
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  3 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  3 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  3  8
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  4 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  4 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  3  7
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  5 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  5 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  3  6
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  6 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  6 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  3  5
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  7 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  7 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  3  4
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  8 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  8 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  3  3
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  9 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  9 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  3  2
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  10 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+scheduler.adb:561:Call Update_Task_Simulation_Data_And_Produce_Events_when_task_is_run 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  10 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  3  1
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  11 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  11 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  4  2
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  12 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  12 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  4  1
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  13 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  13 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+scheduler.adb:561:Call Update_Task_Simulation_Data_And_Produce_Events_when_task_is_run 
+multiprocessor_services.adb:1118:TDMA trame/duration are  5  14
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  14 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  14 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  5  13
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  15 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  15 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  5  12
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  16 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  16 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  5  11
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  17 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  17 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  5  10
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  18 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  18 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  5  9
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  19 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  19 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  5  8
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  20 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+scheduler.adb:561:Call Update_Task_Simulation_Data_And_Produce_Events_when_task_is_run 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  20 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  5  7
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  21 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  21 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  5  6
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  22 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  22 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  5  5
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  23 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  23 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  5  4
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  24 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  24 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  5  3
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  25 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  25 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  5  2
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  26 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  26 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  5  1
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  27 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  27 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  6  2
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  28 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  28 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:1118:TDMA trame/duration are  6  1
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  29 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  0
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+multiprocessor_services.adb:929:Build_Multiprocessor_Scheduling : compute scheduling of time  29 for core  0
+multiprocessor_services.adb:726:Call Do_Election 
+scheduler-dynamic_priority-edf.adb:100:Call Do_Election: EDF
+scheduler-dynamic_priority-edf.adb:206:Call Do_Election: EDF : Elected :  1
+scheduler.adb:500:Call Update_Task_Simulation_Data_And_Produce_Events 
+scheduler.adb:561:Call Update_Task_Simulation_Data_And_Produce_Events_when_task_is_run 
+multiprocessor_services.adb:1118:TDMA trame/duration are  1  1
+call_scheduling_framework.adb:514:Call Compute_Simulation_Response_Time
+call_scheduling_framework.adb:514:Call Compute_Simulation_Response_Time
+<event_table>
+  <time_unit>0<time_unit_event><type_of_event>TASK_ACTIVATION</type_of_event><activation_task ref="id_7" /></time_unit_event>  </time_unit>
+  <time_unit>1<time_unit_event><type_of_event>SEND_MESSAGE</type_of_event><send_task ref="id_7" /><send_message ref="id_6<send_status>MESSAGE_IS_WAITING_FOR_ARBITRATION</send_status>" /></time_unit_event>  </time_unit>
+  <time_unit>0<time_unit_event><type_of_event>START_OF_TASK_CAPACITY</type_of_event><start_task ref="id_7" /></time_unit_event>  </time_unit>
+  <time_unit>0<time_unit_event><type_of_event>RUNNING_TASK</type_of_event><running_core>c1</running_core><running_task ref="id_7" /><current_priority>0</current_priority><crpd>0</crpd></time_unit_event>  </time_unit>
+  <time_unit>1<time_unit_event><type_of_event>END_OF_TASK_CAPACITY</type_of_event><end_task ref="id_7" /></time_unit_event>  </time_unit>
+  <time_unit>10<time_unit_event><type_of_event>TASK_ACTIVATION</type_of_event><activation_task ref="id_7" /></time_unit_event>  </time_unit>
+  <time_unit>1<time_unit_event><type_of_event>SEND_MESSAGE</type_of_event><send_task ref="id_7" /><send_message ref="id_6<send_status>MESSAGE_IS_SENT</send_status>" /></time_unit_event>  </time_unit>
+  <time_unit>11<time_unit_event><type_of_event>SEND_MESSAGE</type_of_event><send_task ref="id_7" /><send_message ref="id_6<send_status>MESSAGE_IS_WAITING_FOR_ARBITRATION</send_status>" /></time_unit_event>  </time_unit>
+  <time_unit>10<time_unit_event><type_of_event>START_OF_TASK_CAPACITY</type_of_event><start_task ref="id_7" /></time_unit_event>  </time_unit>
+  <time_unit>10<time_unit_event><type_of_event>RUNNING_TASK</type_of_event><running_core>c1</running_core><running_task ref="id_7" /><current_priority>0</current_priority><crpd>0</crpd></time_unit_event>  </time_unit>
+  <time_unit>11<time_unit_event><type_of_event>END_OF_TASK_CAPACITY</type_of_event><end_task ref="id_7" /></time_unit_event>  </time_unit>
+  <time_unit>20<time_unit_event><type_of_event>TASK_ACTIVATION</type_of_event><activation_task ref="id_7" /></time_unit_event>  </time_unit>
+  <time_unit>12<time_unit_event><type_of_event>SEND_MESSAGE</type_of_event><send_task ref="id_7" /><send_message ref="id_6<send_status>MESSAGE_IS_SENT</send_status>" /></time_unit_event>  </time_unit>
+  <time_unit>21<time_unit_event><type_of_event>SEND_MESSAGE</type_of_event><send_task ref="id_7" /><send_message ref="id_6<send_status>MESSAGE_IS_WAITING_FOR_ARBITRATION</send_status>" /></time_unit_event>  </time_unit>
+  <time_unit>20<time_unit_event><type_of_event>START_OF_TASK_CAPACITY</type_of_event><start_task ref="id_7" /></time_unit_event>  </time_unit>
+  <time_unit>20<time_unit_event><type_of_event>RUNNING_TASK</type_of_event><running_core>c1</running_core><running_task ref="id_7" /><current_priority>0</current_priority><crpd>0</crpd></time_unit_event>  </time_unit>
+  <time_unit>21<time_unit_event><type_of_event>END_OF_TASK_CAPACITY</type_of_event><end_task ref="id_7" /></time_unit_event>  </time_unit>
+  <time_unit>30<time_unit_event><type_of_event>TASK_ACTIVATION</type_of_event><activation_task ref="id_7" /></time_unit_event>  </time_unit>
+  <time_unit>28<time_unit_event><type_of_event>SEND_MESSAGE</type_of_event><send_task ref="id_7" /><send_message ref="id_6<send_status>MESSAGE_IS_SENT</send_status>" /></time_unit_event>  </time_unit>
+  <time_unit>0<time_unit_event><type_of_event>TASK_ACTIVATION</type_of_event><activation_task ref="id_8" /></time_unit_event>  </time_unit>
+  <time_unit>2<time_unit_event><type_of_event>START_OF_TASK_CAPACITY</type_of_event><start_task ref="id_8" /></time_unit_event>  </time_unit>
+  <time_unit>2<time_unit_event><type_of_event>RUNNING_TASK</type_of_event><running_core>c1</running_core><running_task ref="id_8" /><current_priority>0</current_priority><crpd>0</crpd></time_unit_event>  </time_unit>
+  <time_unit>3<time_unit_event><type_of_event>END_OF_TASK_CAPACITY</type_of_event><end_task ref="id_8" /></time_unit_event>  </time_unit>
+  <time_unit>10<time_unit_event><type_of_event>TASK_ACTIVATION</type_of_event><activation_task ref="id_8" /></time_unit_event>  </time_unit>
+  <time_unit>13<time_unit_event><type_of_event>START_OF_TASK_CAPACITY</type_of_event><start_task ref="id_8" /></time_unit_event>  </time_unit>
+  <time_unit>13<time_unit_event><type_of_event>RUNNING_TASK</type_of_event><running_core>c1</running_core><running_task ref="id_8" /><current_priority>0</current_priority><crpd>0</crpd></time_unit_event>  </time_unit>
+  <time_unit>14<time_unit_event><type_of_event>END_OF_TASK_CAPACITY</type_of_event><end_task ref="id_8" /></time_unit_event>  </time_unit>
+  <time_unit>20<time_unit_event><type_of_event>TASK_ACTIVATION</type_of_event><activation_task ref="id_8" /></time_unit_event>  </time_unit>
+  <time_unit>29<time_unit_event><type_of_event>START_OF_TASK_CAPACITY</type_of_event><start_task ref="id_8" /></time_unit_event>  </time_unit>
+  <time_unit>29<time_unit_event><type_of_event>RUNNING_TASK</type_of_event><running_core>c1</running_core><running_task ref="id_8" /><current_priority>0</current_priority><crpd>0</crpd></time_unit_event>  </time_unit>
+  <time_unit>30<time_unit_event><type_of_event>END_OF_TASK_CAPACITY</type_of_event><end_task ref="id_8" /></time_unit_event>  </time_unit>
+  <time_unit>30<time_unit_event><type_of_event>TASK_ACTIVATION</type_of_event><activation_task ref="id_8" /></time_unit_event>  </time_unit>
+</event_table>
+
+

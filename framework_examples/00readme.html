@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+
+<meta content="MSHTML 6.00.2800.1106" name="GENERATOR">
+</head>
+<body text="#101066" vlink="#2020cc" link="#000fff" bgcolor="#ffffff">
+
+
+
+
+<br>
+<br>
+There is currently no document on the Cheddar's framework but this directory provides somes examples of 
+programs that you can use in order to directly call the framework without the machine-man interface.
+To call the framework, you must use the framework interface. 
+The framework interface is implemented in the <tt>call_framework.ads</tt> package. The 
+<tt>call_framework.ads</tt> package implements the facade design pattern : it means that all the 
+services provided by the framework is available from this package.
+You may others analysis features of Cheddar, but if they are not in the facade, it means 
+that they are not robust enough to be used.
+
+
+<br>
+<br>
+The following programs use the <tt>call_framework.ads</tt> interface :
+
+<br>
+<br>
+
+<ul>
+
+
+<li> <tt>build_schedule_from_xml.adb </tt> : this program computes a scheduling from an XML 
+Cheddar architecture model and saves the result into a second file. 
+This is an example which shows how to use cheddar through the command line.
+The XML file name of the system to analyze must be given with the "-i" switch.
+The XML file name of the scheduling  to save must be given with the "-o" switch.
+This program also takes one argument : the period on which the scheduling
+must be computed. The resulting scheduling is in fact the event table
+produced by the scheduling engine.
+<br>
+
+
+
+<li> <tt>comprehensive_call.adb</tt> : this
+program is an example of a call to the framework. This call includes the analysis of a scheduling.
+The result is formatted as a simple ASCII text.
+<br>
+
+
+
+<li> <tt>xml_basics.adb</tt> : this program shows you how to call Cheddar and to save
+the analysis results computed by feasibility test in an file.
+<br>
+
+
+
+<li> <tt>schedule_hardcoded_model.adb</tt> : this program shows you how to use the Cheddar 
+framework API to design an architecture model. Some examples of architecture models are
+given in the package <tt>architecture_models.adb</tt>.
+The <tt>schedule_hardcoded_model.adb</tt> package called a sub-program of 
+<tt>architecture_models.adb</tt> to build a architecture model
+and then, compute scheduling sequences for the builded
+architecture model.
+<br>
+
+
+
+<li> <tt>parse_and_display_schedule.adb</tt> : this program shows how to read and parse an
+XML file containing a schedule computed by Cheddar. This schedule is in fact, the event table
+produced by the scheduling engine. The "-s" switch must be used to provide the anayzed
+system (eg. its XML file name). 
+The "-e" switch must be used to provide the event table (eg. its XML file name). 
+<br>
+
+
+
+<li> <tt>read_sys.adb</tt> : this program shows how to load a XML Cheddar architecture 
+model into the framework and 
+how to print it on the screen.
+<br>
+
+
+
+<li> <tt>write_sys.adb</tt> :  this program gives an example
+ on how to save an architecture  model in a XML Cheddar  file.
+<br>
+
+
+
+<li><tt>produce_arinc_pst.adb</tt> : this program reads a architecture model, computes
+the scheduling and export the corresponding ARINC 653 PST.
+<br>
+
+
+
+<li> <tt>xml_comprehensive_call.adb</tt> : this program implements the same calls to the framework
+than <tt>comprehensive_call.adb</tt> but the result produced by this program is generated with XML tags
+(in order to be displayed by an Internet browser).
+However, this feature is not fully implemented : some XML tags are missing today.
+<br>
+
+
+<li>
+<tt>Select_feasibility_test_simpl_from_xml</tt> : is an example of feasibility test selection prototype.
+It enable to apply the design pattern recognition method to architecture models.
+
+<br>
+This program can either take an architecture model in xml format as an entry, 
+and also provide 8 architecture examples to illustrate how it works.
+
+<br>
+
+Those 8 example are:
+<br>
+(1) compliant_ttc: an architecture compliant to the Time_Triggered_Communication Design pattern;
+<br>
+(2)uncompliant_ttc: an architecture close but uncompliant to the Time_Triggered_Communication Design pattern; 
+<br>
+(3)compliant_rav: an architecture compliant to the Ravenscar Design pattern;
+<br>
+(4)uncompliant_rav: an architecture close but uncompliant to the Ravenscar Design pattern; 
+<br>
+(5)compliant_unpl: an architecture compliant to the Time_Triggered_Communication Design pattern;
+<br>
+(6)uncompliant_unpl: an architecture close but uncompliant to the Unplugged Design pattern; 
+<br>
+(7)uncompliant_env: an architecture with a multi core processor environment
+<br>
+(8)uncompliant_buff: an architecture close but uncompliant to the Time_Triggered_Communication Design pattern (there is an extra buffer). 
+<br><br>
+The result and the xml representation of the architecture are displayed if the verbose mode is asked (-v).
+The result is stored in a text file whom name is given by the user.
+
+<br><br>
+
+Here is an example of command line to launch the program:
+<br><br>
+./select_feasibility_test_simple_from_xml -v -a 1 -o result1.txt 
+
+<br><br>
+Just change the architecture number to try the different cases.
+As any cheddar tool, the list of possible arguments can be displayed by the '-u' argument.
+
+
+
+</ul>
+<br>
+<br>
+<br>
+
+
+In this folder, there are also some XML examples that show 
+various features of Cheddar :
+
+
+<br>
+<br>
+<ul>
+<li> <tt>arinc653_cyclic_hierarchical.xmlv3</tt> : this is an example of hierarchical scheduling of several address space/partition. Each address space est run for a duration corresponding to its scheduler quantum and the set of addresss spaces are activated in a fixed order.
+<br>
+
+
+<li> <tt>arinc653_offline_hierarchical.xmlv3</tt>  :  same scheduling as above excepts that address spaces are now activated according to a offline scheduling provided by a Cheddar event table (table supposed to be either previously computed or edited by hand).
+<br>
+
+
+<li> <tt>arinc653_fixed_priority_hierarchical.xmlv3</tt> : To be implemented. Should provide a fixed priority scheduling of the address spaces. Address space execution time should be expressed by their 
+capacity.
+<br>
+
+
+<li>  <tt>event_table_of_arinc653_cyclic_hierarchical.xml</tt>  : 
+this is an example of event table produced from an ADL model (an architecture model which models an ARINC 653 systems).
+<br>
+
+
+<li>  <tt>arinc653_partition_activation_table.xml </tt> :  this file is an example of ARINC 653 partition off line scheduling (which is actually a Cheddar event table). This file is read by Cheddar to produce a task scheduling wwith an HIERARCHICAL_OFFLINE_SCHEDULER 
+<br>
+
+
+<li> <tt>arinc653_tsp.xml</tt>    : this file is an example of ARINC 652 TSP produced by Cheddar from a ADL model. This is actually a Cheddar evant table but formatted as ARINC 653 expects it.
+
+
+
+</ul>
+<br>
+<br>
+<br>
+
+
+
+<br>
+<br>
+<br>
+
+
+<br>
+

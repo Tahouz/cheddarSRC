@@ -1,0 +1,9 @@
+
+- creeer les paquepage pere/mere et les laisser, avec 2 paquetage filles/fils (rahma et toi)
+
+paes.ads/adb : tout ce qui est commun rahma et illham (peut etre vide)
+paes-chromosome.ads/adb : tout ce qui est commun sur le chromosome entre illham et rahma (peut etre vide)
+paes-chromosome-security_and_schedulability.ads/adb
+paes-chromosome-function_clustering.ads/adb
+paes-hypervolume.ads/adb
+

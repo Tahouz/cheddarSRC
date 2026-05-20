@@ -1,0 +1,13 @@
+DETACH CLI v0.2 - Analysis Results
+=========================================
+Input file: deadline_monotic_test_case.xml
+
+
+
+Set priorities, Processor cpu : 
+Set priorities according to Deadline Monotonic
+- Updated priorities :
+    T3 => 3
+    T2 => 2
+    T1 => 1
+

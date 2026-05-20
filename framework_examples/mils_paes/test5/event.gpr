@@ -1,0 +1,16 @@
+with "gtkada";
+
+project event extends "../../../gpr/kernelWithParsers.gpr" is 
+	PROJECT_DIR := external("CHEDDAR_DIR") & "/src/";
+	for Source_Dirs use (PROJECT_DIR & "framework/scheduling_simulator/",
+			PROJECT_DIR,
+			PROJECT_DIR & "reusable/",
+                        PROJECT_DIR & "framework_examples/architecture_exploration_tools2/test5");
+	for Main use ("event.adb");
+	for Object_Dir use PROJECT_DIR & "binaries/objects/debug";
+	for Exec_Dir use PROJECT_DIR & "framework_examples/architecture_exploration_tools2/test5";
+end event;
+
+
+
+

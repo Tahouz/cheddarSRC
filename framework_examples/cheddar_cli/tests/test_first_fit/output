@@ -1,0 +1,15 @@
+DETACH CLI v0.2 - Analysis Results
+=========================================
+Input file: first_fit_test_case.xml
+
+
+
+Scheduling feasibility, Partition With First Fit : 
+- Task assignement after partitioning  (see [9], [10])  : 
+
+    T1 =>cpu1
+    T2 =>cpu1
+    T3 =>cpu1
+    T4 =>cpu2
+    T5 =>cpu1
+

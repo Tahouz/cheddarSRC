@@ -1,0 +1,5 @@
+schedulable_task_set
+Nb_preemption_of_the_candidate_sol =  229
+Sum_laxities_of_the_candidate_sol =  437
+Min_laxities_of_the_candidate_sol =  29
+

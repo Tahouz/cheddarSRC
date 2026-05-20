@@ -1,0 +1,41 @@
+with "gtkada";
+
+project buffer_sched extends "kernelWithParsers.gpr" is 
+    PROJECT_DIR := external("CHEDDAR_DIR") & "/src/";
+
+    for Source_Dirs use (PROJECT_DIR & "framework_examples/buffer_sched", 
+                        PROJECT_DIR & "framework_examples/buffer_sched/util",
+                        PROJECT_DIR & "framework_examples/cache_analysis",
+                        PROJECT_DIR & "framework_examples/priority_assignment",
+                        PROJECT_DIR & "graphical_editor",
+                        PROJECT_DIR & "graphical_editor/edit",
+                        PROJECT_DIR & "graphical_editor/files",
+                        PROJECT_DIR & "graphical_editor/help",
+                        PROJECT_DIR & "graphical_editor/tools");
+    for Main use ("buffer_sched.adb");
+
+    case kernel.Build is        
+        when "Debug" =>
+            for Object_Dir use PROJECT_DIR & "binaries/objects/debug";
+            for Exec_Dir use PROJECT_DIR;
+        when "Release" =>
+            for Object_Dir use PROJECT_DIR & "binaries/objects/release";
+            for Exec_Dir use PROJECT_DIR;
+    end case;
+
+    package Builder is
+        Executable := "";
+        
+        case kernel.Build is
+            when "Release" =>
+                Executable := "framework_examples/buffer_sched/buffer_sched";
+            when "Debug" =>
+                Executable := "framework_examples/buffer_sched/buffer_sched_d";
+	    end case;
+
+        for Executable ("buffer_sched.adb") use Executable;
+    end Builder;
+end buffer_sched;
+
+
+

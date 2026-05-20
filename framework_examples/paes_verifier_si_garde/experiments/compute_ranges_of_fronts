@@ -1,0 +1,15 @@
+#!/bin/csh
+# for a set of files, check values
+
+# get ojective values range
+
+
+foreach f ( $*)
+  cat $f >> all$$
+end
+set ranges = ( `cat all$$ | awk ' /^[^#]/ { if (first==0) { first = 1; minO1 = maxO1 = $1; minO2 = maxO2 = $2; }  if ($1<minO1) minO1=$1; if ($2<minO2) minO2=$2; if ($1>maxO1) maxO1=$1; if ($2>maxO2) maxO2=$2; } END { printf ("%d %d %d %d", minO1, maxO1, minO2, maxO2); }'` )
+
+echo $ranges
+
+rm all$$
+

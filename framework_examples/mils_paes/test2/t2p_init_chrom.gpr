@@ -1,0 +1,15 @@
+with "gtkada";
+
+project t2p_init_chrom extends "../../../gpr/kernelWithParsers.gpr" is 
+	PROJECT_DIR := external("CHEDDAR_DIR") & "/src/";
+	for Source_Dirs use (PROJECT_DIR & "framework/optimizers_mils",
+			PROJECT_DIR & "framework/tasks_to_partitions_assignment",
+                        PROJECT_DIR & "framework_examples/architecture_exploration_tools2/test2");
+	for Main use ("t2p_init_chrom_driver.adb");
+	for Object_Dir use PROJECT_DIR & "binaries/objects/debug";
+	for Exec_Dir use PROJECT_DIR & "framework_examples/architecture_exploration_tools2/test2";
+end t2p_init_chrom;
+
+
+
+

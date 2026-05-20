@@ -1,0 +1,47 @@
+@startuml
+
+Actor User as u
+
+participant "cheddar_cli.adb" as cli
+participant "call_framework.adb" as cf
+participant "call_scheduling_framework.adb" as csf
+participant "partitioning_services.adb" as pa
+
+u -> cli : cheddar_cli \ \n  --file=example.xml  \ \n  --request=scheduling_feasibility_next_fit  \ \n --output=stdout_xml_analysis
+
+
+
+
+cli -> cf : <b>sequential_framework_request</b>\n(system \n, requestTable \n, responseTable \n, output=>Xml_Output)
+
+
+
+cf -> cf :<b>call_a_request</b> \n (system \n , request \n , a_response \n , Xml_Output)
+
+note right
+request contains
+<b>scheduling_feasibility_next_fit</b>
+statement
+end note
+
+cf -> csf : <b>partionning_tasks</b> \n ( system \n , a_response \n , next_fit \n , Xml_Output)
+
+csf -> pa : <b>partition_next_fit</b> \n ( sys.processors \n , sys.tasks \n , msg \n , partitionned_task_set )
+
+pa --> csf : <b>partitionned_task_set</b> 
+note right
+<b>partitionned_task_set</b>
+contains the new partition 
+end note
+
+csf --> cf : a_response 
+note left
+response get added
+to the <b>reponseTable</b>
+end note
+
+cf --> cli : reponseTable
+
+cli --> u : responses
+
+@enduml

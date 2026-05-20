@@ -1,0 +1,1086 @@
+@startuml Cheddar_Framework
+
+!theme plain
+skinparam classAttributeIconSize 0
+skinparam classFontSize 10
+skinparam packageFontSize 12
+skinparam linetype ortho
+skinparam nodesep 60
+skinparam ranksep 60
+skinparam packageStyle rectangle
+
+title Cheddar Framework - Ada Package UML Class Diagram
+
+' ============================================================
+' ROOT HIERARCHY - Ada.Finalization.Controlled
+' ============================================================
+
+class "Ada.Finalization.Controlled" as Ada_Controlled <<external>> {
+}
+
+' ============================================================
+' PACKAGE: cheddar_adl (Core Domain Model)
+' ============================================================
+
+package "cheddar_adl" #E8F0FE {
+
+    ' --- Objects hierarchy ---
+    package "objects" #F5F5F5 {
+        class Generic_Object {
+            - cheddar_private_id : Integer
+            - object_type : Unbounded_String
+        }
+        class Named_Object {
+            - name : Unbounded_String
+        }
+        Generic_Object --|> Ada_Controlled
+        Named_Object --|> Generic_Object
+    }
+
+    ' --- Tasks hierarchy ---
+    package "tasks" #FFF3E0 {
+        class Generic_Task {
+            + task_type : Unbounded_String
+            + period : Time_Type
+            + deadline : Time_Type
+            + wcet : Time_Type
+            + priority : Integer
+            + start_time : Time_Type
+            + cpu_name : Unbounded_String
+            + addr_space_name : Unbounded_String
+            + jitter : Time_Type
+            + blocking_time : Time_Type
+        }
+        class Periodic_Task {
+        }
+        class Aperiodic_Task {
+        }
+        class Poisson_Task {
+        }
+        class Sporadic_Task {
+        }
+        class Timed_Task {
+        }
+        class Parametric_Task {
+        }
+        class Scheduling_Task {
+        }
+        class Frame_Task {
+        }
+        class Sporadic_Inner_Periodic_Task {
+        }
+        class Periodic_Inner_Periodic_Task {
+        }
+
+        Generic_Task --|> Named_Object
+        Periodic_Task --|> Generic_Task
+        Aperiodic_Task --|> Generic_Task
+        Poisson_Task --|> Periodic_Task
+        Sporadic_Task --|> Poisson_Task
+        Timed_Task --|> Periodic_Task
+        Parametric_Task --|> Poisson_Task
+        Scheduling_Task --|> Poisson_Task
+        Frame_Task --|> Periodic_Task
+        Sporadic_Inner_Periodic_Task --|> Parametric_Task
+        Periodic_Inner_Periodic_Task --|> Sporadic_Inner_Periodic_Task
+    }
+
+    ' --- Processors hierarchy ---
+    package "processors" #E8F5E9 {
+        class Generic_Processor {
+            + processor_type : Unbounded_String
+            + scheduling_policy : Unbounded_String
+            + quantum : Time_Type
+        }
+        class Mono_Core_Processor {
+        }
+        class Multi_Cores_Processor {
+        }
+
+        Generic_Processor --|> Named_Object
+        Mono_Core_Processor --|> Generic_Processor
+        Multi_Cores_Processor --|> Generic_Processor
+    }
+
+    ' --- Resources hierarchy ---
+    package "resources" #FCE4EC {
+        class Generic_Resource {
+            + protocol : Resource_Protocol_Type
+        }
+        class Np_Resource {
+        }
+        class Pip_Resource {
+        }
+        class Pcp_Resource {
+        }
+        class PPcp_Resource {
+        }
+        class IPcp_Resource {
+        }
+
+        Generic_Resource --|> Named_Object
+        Np_Resource --|> Generic_Resource
+        Pip_Resource --|> Generic_Resource
+        Pcp_Resource --|> Generic_Resource
+        PPcp_Resource --|> Generic_Resource
+        IPcp_Resource --|> Generic_Resource
+    }
+
+    ' --- Memories hierarchy ---
+    package "memories" #F3E5F5 {
+        class Generic_Memory {
+            + memory_type : Unbounded_String
+        }
+        class DRAM_Memory {
+        }
+        class Kalray_Memory {
+        }
+
+        Generic_Memory --|> Named_Object
+        DRAM_Memory --|> Generic_Memory
+        Kalray_Memory --|> Generic_Memory
+    }
+
+    ' --- Networks hierarchy ---
+    package "networks" #E0F7FA {
+        class Generic_Network {
+            + network_type : Unbounded_String
+        }
+        class NOC_Network {
+        }
+        class Spacewire_Network {
+        }
+        class Bus_Network {
+        }
+
+        Generic_Network --|> Named_Object
+        NOC_Network --|> Generic_Network
+        Spacewire_Network --|> Generic_Network
+        Bus_Network --|> Generic_Network
+    }
+
+    ' --- Caches hierarchy ---
+    package "caches" #FFF9C4 {
+        class Cache_Block {
+        }
+        class Cache_Access_Profile {
+        }
+        class Generic_Cache {
+            + cache_type : Unbounded_String
+            + size : Integer
+            + associativity : Integer
+            + line_size : Integer
+        }
+        class Data_Cache {
+        }
+        class Instruction_Cache {
+        }
+        class Data_Instruction_Cache {
+        }
+        class Cache_System {
+        }
+
+        Cache_Block --|> Named_Object
+        Cache_Access_Profile --|> Named_Object
+        Generic_Cache --|> Named_Object
+        Data_Cache --|> Generic_Cache
+        Instruction_Cache --|> Generic_Cache
+        Data_Instruction_Cache --|> Generic_Cache
+        Cache_System --|> Named_Object
+    }
+
+    ' --- Messages hierarchy ---
+    package "messages" #FBE9E7 {
+        class Generic_Message {
+            + message_type : Unbounded_String
+        }
+        class Periodic_Message {
+        }
+        class Aperiodic_Message {
+        }
+
+        Generic_Message --|> Named_Object
+        Periodic_Message --|> Generic_Message
+        Aperiodic_Message --|> Generic_Message
+    }
+
+    ' --- Task Groups hierarchy ---
+    package "task_groups" #E8EAF6 {
+        class Generic_Task_Group {
+        }
+        class Transaction_Task_Group {
+        }
+        class Multiframe_Task_Group {
+        }
+
+        Generic_Task_Group --|> Named_Object
+        Transaction_Task_Group --|> Generic_Task_Group
+        Multiframe_Task_Group --|> Generic_Task_Group
+    }
+
+    ' --- Other cheddar_adl types extending Named_Object ---
+    package "other_domain_types" #F5F5F5 {
+        class Buffer {
+        }
+        class Address_Space {
+        }
+        class Battery {
+        }
+        class Core_Unit {
+        }
+        class Execution_Unit {
+        }
+        class Data_Access {
+        }
+        class Scheduling_Error {
+        }
+        class event_analyzer {
+        }
+        class CFG_Node {
+        }
+        class CFG {
+        }
+        class dfg_variable {
+        }
+        class dfg_statement {
+        }
+
+        Buffer --|> Named_Object
+        Address_Space --|> Named_Object
+        Battery --|> Named_Object
+        Core_Unit --|> Named_Object
+        Execution_Unit --|> Named_Object
+        Data_Access --|> Named_Object
+        Scheduling_Error --|> Named_Object
+        event_analyzer --|> Named_Object
+        CFG_Node --|> Named_Object
+        CFG --|> Named_Object
+        dfg_variable --|> Named_Object
+        dfg_statement --|> Named_Object
+    }
+
+    ' --- CFG extended types ---
+    package "cfg_extended" #EFEBE9 {
+        class cfg_node_ext {
+        }
+        class basic_block {
+        }
+        class basic_block_ext {
+        }
+        class basic_block_ucb {
+        }
+        class crpd_node {
+        }
+
+        cfg_node_ext --|> CFG_Node
+        basic_block --|> CFG_Node
+        basic_block_ext --|> basic_block
+        basic_block_ucb --|> basic_block_ext
+        crpd_node --|> cfg_node_ext
+    }
+
+    ' --- Sections hierarchy ---
+    package "sections" #F1F8E9 {
+        class Generic_Section {
+        }
+        class Computation_Section {
+        }
+        class Synchronization_Section {
+        }
+
+        Generic_Section --|> Named_Object
+        Computation_Section --|> Generic_Section
+        Synchronization_Section --|> Generic_Section
+    }
+
+    ' --- Statements hierarchy ---
+    package "statements" #FFF8E1 {
+        class Generic_Statement {
+        }
+        class Nop_Statement {
+        }
+        class Exit_Statement {
+        }
+        class Put_Statement {
+        }
+        class If_Statement {
+        }
+        class Assign_Statement {
+        }
+        class Clock_Statement {
+        }
+        class Delete_Precedence_Statement {
+        }
+        class Add_Precedence_Statement {
+        }
+        class For_Statement {
+        }
+        class Return_Statement {
+        }
+        class While_Statement {
+        }
+        class Random_Initialize_Statement {
+        }
+        class Set_Statement {
+        }
+        class Subprogram_Statement {
+        }
+        class Subprogram_Call_Statement {
+        }
+
+        Generic_Statement --|> Generic_Object
+        Nop_Statement --|> Generic_Statement
+        Exit_Statement --|> Generic_Statement
+        Put_Statement --|> Generic_Statement
+        If_Statement --|> Generic_Statement
+        Assign_Statement --|> Generic_Statement
+        Clock_Statement --|> Assign_Statement
+        Delete_Precedence_Statement --|> Generic_Statement
+        Add_Precedence_Statement --|> Generic_Statement
+        For_Statement --|> Generic_Statement
+        Return_Statement --|> Generic_Statement
+        While_Statement --|> Generic_Statement
+        Random_Initialize_Statement --|> Generic_Statement
+        Set_Statement --|> Generic_Statement
+        Subprogram_Statement --|> Generic_Statement
+        Subprogram_Call_Statement --|> Generic_Statement
+    }
+
+    ' --- Automaton types ---
+    package "automaton" #FCE4EC {
+        class State {
+        }
+        class Synchronization {
+        }
+        class Transition {
+        }
+
+        State --|> Named_Object
+        Synchronization --|> Named_Object
+        Transition --|> Named_Object
+    }
+
+    ' --- System (standalone tagged) ---
+    class system {
+        + tasks : tasks_set
+        + processors : processors_set
+        + resources : resources_set
+        + buffers : buffers_set
+        + messages : messages_set
+        + networks : networks_set
+        + memories : memories_set
+        + caches : caches_set
+        + task_groups : task_groups_set
+        + address_spaces : address_spaces_set
+        + batteries : batteries_set
+        + dependencies : task_dependencies
+    }
+}
+
+' ============================================================
+' PACKAGE: scheduling_simulator
+' ============================================================
+
+package "scheduling_simulator" #FFF3E0 {
+
+    ' --- Scheduler hierarchy ---
+    package "scheduler" #FFE0B2 {
+
+        class generic_scheduler <<abstract>> {
+            + init()
+            + give_cpu_to()
+            + extract_from_run_queue()
+            + put_in_run_queue()
+            + schedule()*
+        }
+        class fixed_priority_scheduler <<abstract>> {
+        }
+        class dynamic_priority_scheduler <<abstract>> {
+        }
+        class hierarchical_scheduler <<abstract>> {
+        }
+        class round_robin_scheduler {
+        }
+        class no_scheduler {
+        }
+        class time_sharing_based_on_cpu_usage_scheduler {
+        }
+        class time_sharing_based_on_wait_time_scheduler {
+        }
+
+        ' Fixed priority
+        class hpf_scheduler {
+        }
+        class rm_scheduler {
+        }
+        class dm_scheduler {
+        }
+        class aperiodic_server_scheduler <<abstract>> {
+        }
+        class deferrable_aperiodic_server_scheduler {
+        }
+        class priority_exchange_aperiodic_server_scheduler {
+        }
+        class polling_aperiodic_server_scheduler {
+        }
+        class sporadic_aperiodic_server_scheduler {
+        }
+
+        ' Dynamic priority
+        class edf_scheduler {
+        }
+        class edh_scheduler {
+        }
+        class d_over_scheduler {
+        }
+        class edfett_scheduler {
+        }
+        class llf_scheduler {
+        }
+        class llf_runtime_based_scheduler {
+        }
+        class muf_scheduler <<abstract>> {
+        }
+        class deadline_muf_scheduler {
+        }
+        class laxity_muf_scheduler {
+        }
+
+        ' Hierarchical
+        class hierarchical_cyclic_scheduler {
+        }
+        class hierarchical_round_robin_scheduler {
+        }
+        class hierarchical_fixed_priority_scheduler {
+        }
+        class hierarchical_offline_scheduler {
+        }
+
+        generic_scheduler --|> Ada_Controlled
+        fixed_priority_scheduler --|> generic_scheduler
+        dynamic_priority_scheduler --|> generic_scheduler
+        hierarchical_scheduler --|> generic_scheduler
+        round_robin_scheduler --|> generic_scheduler
+        no_scheduler --|> generic_scheduler
+        time_sharing_based_on_cpu_usage_scheduler --|> generic_scheduler
+        time_sharing_based_on_wait_time_scheduler --|> generic_scheduler
+
+        hpf_scheduler --|> fixed_priority_scheduler
+        rm_scheduler --|> fixed_priority_scheduler
+        dm_scheduler --|> fixed_priority_scheduler
+        aperiodic_server_scheduler --|> fixed_priority_scheduler
+        deferrable_aperiodic_server_scheduler --|> aperiodic_server_scheduler
+        priority_exchange_aperiodic_server_scheduler --|> aperiodic_server_scheduler
+        polling_aperiodic_server_scheduler --|> aperiodic_server_scheduler
+        sporadic_aperiodic_server_scheduler --|> aperiodic_server_scheduler
+
+        edf_scheduler --|> dynamic_priority_scheduler
+        edh_scheduler --|> dynamic_priority_scheduler
+        d_over_scheduler --|> dynamic_priority_scheduler
+        edfett_scheduler --|> dynamic_priority_scheduler
+        llf_scheduler --|> dynamic_priority_scheduler
+        llf_runtime_based_scheduler --|> dynamic_priority_scheduler
+        muf_scheduler --|> dynamic_priority_scheduler
+        deadline_muf_scheduler --|> muf_scheduler
+        laxity_muf_scheduler --|> muf_scheduler
+
+        hierarchical_cyclic_scheduler --|> hierarchical_scheduler
+        hierarchical_round_robin_scheduler --|> hierarchical_scheduler
+        hierarchical_fixed_priority_scheduler --|> hierarchical_scheduler
+        hierarchical_offline_scheduler --|> hierarchical_scheduler
+    }
+
+    ' --- TCB (Task Control Block) hierarchy ---
+    package "tcb" #E0E0E0 {
+        class tcb {
+            + task_ptr : Generic_Task
+            + cpu : Integer
+            + remaining_capacity : Time_Type
+            + current_priority : Integer
+        }
+        class fixed_priority_tcb {
+        }
+        class hpf_tcb {
+        }
+        class dynamic_priority_tcb {
+        }
+        class rr_tcb {
+        }
+        class mixed_criticality_tcb {
+        }
+        class pfair_tcb {
+        }
+        class run_tcb {
+        }
+        class edzl_tcb {
+        }
+        class llref_tcb {
+        }
+        class time_sharing_based_on_wait_time_tcb {
+        }
+
+        fixed_priority_tcb --|> tcb
+        hpf_tcb --|> fixed_priority_tcb
+        dynamic_priority_tcb --|> tcb
+        rr_tcb --|> tcb
+        mixed_criticality_tcb --|> tcb
+        pfair_tcb --|> tcb
+        run_tcb --|> tcb
+        edzl_tcb --|> tcb
+        llref_tcb --|> tcb
+        time_sharing_based_on_wait_time_tcb --|> tcb
+    }
+
+    ' --- PCB (Processor Control Block) ---
+    package "pcb" #E0E0E0 {
+        class pcb {
+            + scheduler_ptr : generic_scheduler
+            + run_queue : tcb_list
+            + blocked_queue : tcb_list
+        }
+        class shared_resource {
+            + resource_ptr : Generic_Resource
+            + ceiling_priority : Integer
+        }
+    }
+
+    ' --- Scheduling Analysis ---
+    class Task_Release_Record {
+        + task_name : Unbounded_String
+        + release_time : Time_Type
+        + deadline : Time_Type
+        + wcrt : Time_Type
+    }
+    Task_Release_Record --|> Ada_Controlled
+
+    ' --- Multiprocessor services ---
+    class Run_Server {
+    }
+    class Run_Server_Primal {
+    }
+    class Run_Server_Dual {
+    }
+    Run_Server --|> Periodic_Task
+    Run_Server_Primal --|> Run_Server
+    Run_Server_Dual --|> Run_Server
+}
+
+' ============================================================
+' PACKAGE: design_pattern_analysis
+' ============================================================
+
+package "design_pattern_analysis" #E8F5E9 {
+
+    package "generic_graph" #C8E6C9 {
+        class Generic_Node {
+            - node_id : Integer
+        }
+        class Generic_Edge {
+            - source : Generic_Node
+            - target : Generic_Node
+        }
+        class Graph {
+            - nodes : Node_List
+            - edges : Edge_List
+        }
+        Generic_Node --|> Ada_Controlled
+        Generic_Edge --|> Ada_Controlled
+        Graph --|> Ada_Controlled
+    }
+
+    package "dp_graph" #A5D6A7 {
+        class Task_Node {
+        }
+        class Time_Triggered_Communication_Edge {
+        }
+        class Resource_Edge {
+        }
+        class Precedence_Edge {
+        }
+        class Communication_Edge {
+        }
+        class Buffer_Edge {
+        }
+
+        Task_Node --|> Generic_Node
+        Time_Triggered_Communication_Edge --|> Generic_Edge
+        Resource_Edge --|> Generic_Edge
+        Precedence_Edge --|> Generic_Edge
+        Communication_Edge --|> Generic_Edge
+        Buffer_Edge --|> Generic_Edge
+    }
+}
+
+' ============================================================
+' PACKAGE: arinc653
+' ============================================================
+
+package "arinc653" #F3E5F5 {
+
+    class ARINC_653_Object {
+    }
+    ARINC_653_Object --|> Ada_Controlled
+
+    class Error_ID_Type {
+    }
+    class Error_ID_Action_Type {
+    }
+    class Error_ID_Level_Type {
+    }
+    class System_State_Entry_Type {
+    }
+    class SysHM_Ext_Type {
+    }
+    class System_HM_TableType {
+    }
+    class Mod_HM_Ext_Type {
+    }
+    class Module_HM_Type {
+    }
+    class PortExt_Type {
+    }
+    class PortType {
+    }
+    class SamplingPortType {
+    }
+    class QueuingPortType {
+    }
+    class ProcExt_Type {
+    }
+    class ProcessType {
+    }
+    class PartitionExt_Type {
+    }
+    class PartitionType {
+    }
+    class Memory_Requirements {
+    }
+    class Memory_Ext_Type {
+    }
+    class Partition_Memory_Element {
+    }
+    class Partition_Sched_Ext_Type {
+    }
+    class Window_Schedule_Element {
+    }
+    class Window_Sched_Ext_Type {
+    }
+    class Partition_Schedule_Element {
+    }
+    class Module_Schedule_Type {
+    }
+    class Part_HM_Ext_Type {
+    }
+    class Partition_HM_Type {
+    }
+    class Pseudo_Partition {
+    }
+    class Standard_Partition {
+    }
+    class PortMap_Ext_Type {
+    }
+    class PortMappingType {
+    }
+    class Channel {
+    }
+    class ModExt_Type {
+    }
+    class ARINC_653_Module {
+    }
+
+    Error_ID_Type --|> ARINC_653_Object
+    Error_ID_Action_Type --|> Error_ID_Type
+    Error_ID_Level_Type --|> Error_ID_Type
+    System_State_Entry_Type --|> ARINC_653_Object
+    SysHM_Ext_Type --|> ARINC_653_Object
+    System_HM_TableType --|> ARINC_653_Object
+    Mod_HM_Ext_Type --|> ARINC_653_Object
+    Module_HM_Type --|> ARINC_653_Object
+    PortExt_Type --|> ARINC_653_Object
+    PortType --|> ARINC_653_Object
+    SamplingPortType --|> PortType
+    QueuingPortType --|> PortType
+    ProcExt_Type --|> ARINC_653_Object
+    ProcessType --|> ARINC_653_Object
+    PartitionExt_Type --|> ARINC_653_Object
+    PartitionType --|> ARINC_653_Object
+    Memory_Requirements --|> ARINC_653_Object
+    Memory_Ext_Type --|> ARINC_653_Object
+    Partition_Memory_Element --|> ARINC_653_Object
+    Partition_Sched_Ext_Type --|> ARINC_653_Object
+    Window_Schedule_Element --|> ARINC_653_Object
+    Window_Sched_Ext_Type --|> ARINC_653_Object
+    Partition_Schedule_Element --|> ARINC_653_Object
+    Module_Schedule_Type --|> ARINC_653_Object
+    Part_HM_Ext_Type --|> ARINC_653_Object
+    Partition_HM_Type --|> ARINC_653_Object
+    Pseudo_Partition --|> ARINC_653_Object
+    Standard_Partition --|> ARINC_653_Object
+    PortMap_Ext_Type --|> ARINC_653_Object
+    PortMappingType --|> ARINC_653_Object
+    Channel --|> ARINC_653_Object
+    ModExt_Type --|> ARINC_653_Object
+    ARINC_653_Module --|> ARINC_653_Object
+}
+
+' ============================================================
+' PACKAGE: paes (Pareto Archived Evolution Strategy)
+' ============================================================
+
+package "paes" #E0F7FA {
+
+    class generic_solution <<abstract>> {
+        + objectives : Float_Array
+        + evaluate()*
+        + mutate()*
+    }
+    class solution_t2p {
+    }
+    class solution_t2p_t2c {
+    }
+    class solution_deadline2energy {
+    }
+    class solution_f2t {
+    }
+
+    solution_t2p --|> generic_solution
+    solution_t2p_t2c --|> generic_solution
+    solution_deadline2energy --|> generic_solution
+    solution_f2t --|> generic_solution
+}
+
+' ============================================================
+' PACKAGE: parsers
+' ============================================================
+
+package "parsers" #FFF9C4 {
+
+    class "Sax.Readers.Reader" as Sax_Reader <<external>> {
+    }
+
+    class xml_generic_parser {
+        + start_element()
+        + end_element()
+        + characters()
+    }
+    class xml_event_table_parser {
+    }
+    class xml_architecture_parser {
+    }
+    class xml_project_parser {
+    }
+    class aadl_project_parser {
+    }
+
+    xml_generic_parser --|> Sax_Reader
+    xml_event_table_parser --|> xml_generic_parser
+    xml_architecture_parser --|> xml_generic_parser
+    xml_project_parser --|> xml_generic_parser
+    aadl_project_parser --|> Ada_Controlled
+}
+
+' ============================================================
+' PACKAGE: optimizations
+' ============================================================
+
+package "optimizations" #FBE9E7 {
+
+    class Atomic_Operation {
+    }
+    Atomic_Operation --|> CFG_Node
+
+    class Partitioning_Algorithm {
+    }
+    Partitioning_Algorithm --|> Ada_Controlled
+}
+
+' ============================================================
+' PACKAGE: facade
+' ============================================================
+
+package "facade" #E8EAF6 {
+
+    class Framework <<facade>> {
+        + analyze()
+        + simulate()
+        + check_feasibility()
+    }
+    class Call_Framework <<facade>> {
+        + call()
+    }
+    class Call_Framework_Interface <<interface>> {
+    }
+    class Call_Scheduling_Framework <<facade>> {
+    }
+    class Call_Resource_Framework <<facade>> {
+    }
+    class Call_Network_Framework <<facade>> {
+    }
+    class Call_Cache_Framework <<facade>> {
+    }
+    class Call_Memory_Framework <<facade>> {
+    }
+    class Call_Dependency_Framework <<facade>> {
+    }
+    class Call_Random_Framework <<facade>> {
+    }
+    class Call_Design_Pattern_Framework <<facade>> {
+    }
+    class Call_Security_Framework <<facade>> {
+    }
+    class Initialize_Framework <<facade>> {
+    }
+
+    Call_Framework ..|> Call_Framework_Interface
+}
+
+' ============================================================
+' PACKAGE: feasibility_tests
+' ============================================================
+
+package "feasibility_tests" #FFF3E0 {
+
+    class Feasibility_Test <<utility>> {
+        + test() : Boolean
+    }
+
+    package "feasibility_test" #FFE0B2 {
+        class Periodic_Task_Worst_Case_Response_Time <<utility>> {
+        }
+        class Processor_Utilization <<utility>> {
+        }
+        class Multiprocessor_Utilization <<utility>> {
+        }
+        class Processor_Demand <<utility>> {
+        }
+        class Worst_Case_Blocking_Time <<utility>> {
+        }
+        class Feasibility_Interval <<utility>> {
+        }
+        class Ceiling_Priority <<utility>> {
+        }
+        class Cache_Interferences <<utility>> {
+        }
+        class Memory_Interferences <<utility>> {
+        }
+    }
+}
+
+' ============================================================
+' PACKAGE: priority_assignment
+' ============================================================
+
+package "priority_assignment" #F1F8E9 {
+
+    class Priority_Assignment <<utility>> {
+        + assign()
+    }
+    class Audsley_OPA <<utility>> {
+    }
+    class Audsley_OPA_CRPD <<utility>> {
+    }
+    class Ceiling_Priority_Assignment <<utility>> {
+    }
+    class RM_Priority <<utility>> {
+    }
+    class DM_Priority <<utility>> {
+    }
+
+    class task_release_record_ext {
+    }
+}
+
+' ============================================================
+' PACKAGE: network_analysis
+' ============================================================
+
+package "network_analysis" #E0F7FA {
+
+    class Distributed_Scheduling <<utility>> {
+    }
+    class Mesh_Analysis <<utility>> {
+    }
+    class Spacewire_Analysis <<utility>> {
+    }
+}
+
+' ============================================================
+' PACKAGE: multicore_analysis
+' ============================================================
+
+package "multicore_analysis" #F3E5F5 {
+
+    class Basic_Block_Analysis <<utility>> {
+    }
+    class Cache_Utility <<utility>> {
+    }
+    class Cache_System_Analysis <<utility>> {
+    }
+    class IPC_Analysis <<utility>> {
+    }
+}
+
+' ============================================================
+' PACKAGE: mils
+' ============================================================
+
+package "mils" #FFEBEE {
+
+    class MILS_Security <<utility>> {
+    }
+    class MILS_Analysis <<utility>> {
+    }
+}
+
+' ============================================================
+' PACKAGE: queueing_system
+' ============================================================
+
+package "queueing_system" #E8EAF6 {
+
+    class Queueing_System <<utility>> {
+    }
+
+    package "theoretical" #C5CAE9 {
+        class PP1_Theoretical <<utility>> {
+        }
+        class MP1_Theoretical <<utility>> {
+        }
+        class MG1_Theoretical <<utility>> {
+        }
+        class MMS_Theoretical <<utility>> {
+        }
+    }
+
+    package "simulation" #9FA8DA {
+        class PP1_Simulation <<utility>> {
+        }
+        class MP1_Simulation <<utility>> {
+        }
+        class MM1_Simulation <<utility>> {
+        }
+        class MG1_Simulation <<utility>> {
+        }
+    }
+}
+
+' ============================================================
+' PACKAGE: transformation
+' ============================================================
+
+package "transformation" #FFF9C4 {
+
+    class Spacewire_Flow_Transformation <<utility>> {
+    }
+    class Noc_Flow_Transformation <<utility>> {
+    }
+    class Task_Group_Transformation <<utility>> {
+    }
+    class Mosar_Transformation <<utility>> {
+    }
+}
+
+' ============================================================
+' PACKAGE: random
+' ============================================================
+
+package "random" #FBE9E7 {
+
+    class Laws <<utility>> {
+    }
+    class Random_Tools <<utility>> {
+    }
+    class Random_Project <<utility>> {
+    }
+    class Random_Scheduling <<utility>> {
+    }
+}
+
+' ============================================================
+' PACKAGE: scheduling_anomalies
+' ============================================================
+
+package "scheduling_anomalies" #EFEBE9 {
+
+    class Scheduling_Anomalies_Services <<utility>> {
+    }
+    class Scheduling_Anomalies_Offline <<utility>> {
+    }
+    class Scheduling_Anomalies_Online <<utility>> {
+    }
+}
+
+' ============================================================
+' STANDALONE UTILITY PACKAGES
+' ============================================================
+
+package "utility_services" #F5F5F5 {
+
+    class Hierarchical_Analysis <<utility>> {
+    }
+    class Energy_Services <<utility>> {
+    }
+    class Dependency_Services <<utility>> {
+    }
+    class Voltage_Scaling <<utility>> {
+    }
+    class Partitioning_Services <<utility>> {
+    }
+    class Debug <<utility>> {
+    }
+}
+
+' ============================================================
+' KEY COMPOSITION/ASSOCIATION RELATIONSHIPS
+' ============================================================
+
+' System aggregates all domain collections
+system *-- "0..*" Generic_Task : contains
+system *-- "0..*" Generic_Processor : contains
+system *-- "0..*" Generic_Resource : contains
+system *-- "0..*" Generic_Network : contains
+system *-- "0..*" Generic_Memory : contains
+system *-- "0..*" Generic_Message : contains
+
+' Scheduler uses tasks and processors
+generic_scheduler o-- Generic_Task : schedules
+generic_scheduler o-- Generic_Processor : runs_on
+
+' TCB references a task
+tcb --> Generic_Task : references
+
+' PCB references a scheduler
+pcb --> generic_scheduler : uses
+
+' DP Graph relates domain objects
+Task_Node --> Generic_Task : models
+Resource_Edge --> Generic_Resource : involves
+Communication_Edge --> Generic_Message : involves
+Buffer_Edge --> Buffer : involves
+
+' Cache system relates to processors
+Cache_System --> Generic_Cache : contains
+Generic_Cache --> Cache_Block : contains
+
+' Processor contains cores
+Multi_Cores_Processor *-- "1..*" Core_Unit : contains
+
+' Facade accesses framework components
+Framework --> system : analyzes
+Call_Scheduling_Framework --> generic_scheduler : configures
+Call_Framework ..> Framework : invokes
+
+' Parser produces system model
+xml_generic_parser --> system : parses_into
+
+' Feasibility tests depend on tasks and scheduler
+Feasibility_Test ..> Generic_Task : tests
+Feasibility_Test ..> generic_scheduler : uses
+
+' PAES optimizes system
+generic_solution --> system : optimizes
+
+' Priority assignment
+Priority_Assignment ..> Generic_Task : assigns_to
+
+@enduml

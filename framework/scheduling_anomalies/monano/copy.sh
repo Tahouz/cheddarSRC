@@ -1,0 +1,17 @@
+cp ../../../../../artefacts/AE24/evaluation4/monano/configure.h .
+cp ../../../../../artefacts/AE24/evaluation4/monano/monano.h .
+cp ../../../../../artefacts/AE24/evaluation4/monano/monano_attr.c .
+cp ../../../../../artefacts/AE24/evaluation4/monano/monano_configure.h .
+cp ../../../../../artefacts/AE24/evaluation4/monano/monano_constraints.c .
+cp ../../../../../artefacts/AE24/evaluation4/monano/monano_constraints.h .
+cp ../../../../../artefacts/AE24/evaluation4/monano/monano_core.c .
+cp ../../../../../artefacts/AE24/evaluation4/monano/monano_data.h .
+cp ../../../../../artefacts/AE24/evaluation4/monano/monano_data.h .
+cp ../../../../../artefacts/AE24/evaluation4/monano/pmacros.h .
+cp ../../../../../artefacts/AE24/evaluation4/monano/returncode.h .
+cp ../../../../../artefacts/AE24/evaluation4/monano/returncode.c .
+cp ../../../../../artefacts/AE24/evaluation4/monano/system.h .
+cp ../../../../../artefacts/AE24/evaluation4/monano/time_conversion.h .
+cp ../../../../../artefacts/AE24/evaluation4/monano/time_conversion.c .
+cp ../../../../../artefacts/AE24/evaluation4/monano/ts.h .
+cp ../../../../../artefacts/AE24/evaluation4/monano/ts.c .

@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<event_table>
+ <mono_core_processor id="id_2">
+  <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+  <name>CPU_1</name>
+  <processor_type>MONOCORE_TYPE</processor_type>
+  <migration_type>NO_MIGRATION_TYPE</migration_type>
+  <core ref="id_1">
+  </core>
+ </mono_core_processor>
+ <scheduling_result>
+  <has_error>FALSE</has_error>
+  <result>
+   <time_unit>0 </time_unit>
+   <time_unit_event>
+    <type_of_event>TASK_ACTIVATION</type_of_event>
+    <activation_task ref="id_4">
+    </activation_task>
+   </time_unit_event>
+   <time_unit>0 </time_unit>
+   <time_unit_event>
+    <type_of_event>TASK_ACTIVATION</type_of_event>
+    <activation_task ref="id_5">
+    </activation_task>
+   </time_unit_event>
+   <time_unit>0 </time_unit>
+   <time_unit_event>
+    <type_of_event>TASK_ACTIVATION</type_of_event>
+    <activation_task ref="id_6">
+    </activation_task>
+   </time_unit_event>
+   <time_unit>0 </time_unit>
+   <time_unit_event>
+    <type_of_event>START_OF_TASK_CAPACITY</type_of_event>
+    <start_task ref="id_4">
+    </start_task>
+   </time_unit_event>
+   <time_unit>0 </time_unit>
+   <time_unit_event>
+    <type_of_event>RUNNING_TASK</type_of_event>
+    <running_core>Core_1</running_core>
+    <running_task ref="id_4">
+    </running_task>
+    <current_priority>6</current_priority>
+   </time_unit_event>
+   <time_unit>1 </time_unit>
+   <time_unit_event>
+    <type_of_event>RUNNING_TASK</type_of_event>
+    <running_core>Core_1</running_core>
+    <running_task ref="id_4">
+    </running_task>
+    <current_priority>6</current_priority>
+   </time_unit_event>
+   <time_unit>2 </time_unit>
+   <time_unit_event>
+    <type_of_event>RUNNING_TASK</type_of_event>
+    <running_core>Core_1</running_core>
+    <running_task ref="id_4">
+    </running_task>
+    <current_priority>6</current_priority>
+   </time_unit_event>
+   <time_unit>3 </time_unit>
+   <time_unit_event>
+    <type_of_event>RUNNING_TASK</type_of_event>
+    <running_core>Core_1</running_core>
+    <running_task ref="id_4">
+    </running_task>
+    <current_priority>6</current_priority>
+   </time_unit_event>
+   <time_unit>4 </time_unit>
+   <time_unit_event>
+    <type_of_event>RUNNING_TASK</type_of_event>
+    <running_core>Core_1</running_core>
+    <running_task ref="id_4">
+    </running_task>
+    <current_priority>6</current_priority>
+   </time_unit_event>
+   <time_unit>5 </time_unit>
+   <time_unit_event>
+    <type_of_event>BUFFER_OVERFLOW</type_of_event>
+    <overflow_buffer ref="id_7">
+    </overflow_buffer>
+    <overflow_task ref="id_4">
+    </overflow_task>
+    <overflow_write_size>11</overflow_write_size>
+    <overflow_buffer_current_data_size>0</overflow_buffer_current_data_size>
+   </time_unit_event>
+   <time_unit>5 </time_unit>
+   <time_unit_event>
+    <type_of_event>RUNNING_TASK</type_of_event>
+    <running_core>Core_1</running_core>
+    <running_task ref="id_4">
+    </running_task>
+    <current_priority>6</current_priority>
+   </time_unit_event>
+   <time_unit>6 </time_unit>
+   <time_unit_event>
+    <type_of_event>END_OF_TASK_CAPACITY</type_of_event>
+    <end_task ref="id_4">
+    </end_task>
+   </time_unit_event>
+   <time_unit>40</time_unit>
+   <time_unit_event>
+    <type_of_event>TASK_ACTIVATION</type_of_event>
+    <activation_task ref="id_4">
+    </activation_task>
+   </time_unit_event>
+   <time_unit>6 </time_unit>
+   <time_unit_event>
+    <type_of_event>WRITE_TO_BUFFER</type_of_event>
+    <write_buffer ref="id_8">
+    </write_buffer>
+    <write_task ref="id_5">
+    </write_task>
+    <write_size>3</write_size>
+    <write_buffer_current_data_size>0</write_buffer_current_data_size>
+   </time_unit_event>
+   <time_unit>6 </time_unit>
+   <time_unit_event>
+    <type_of_event>BUFFER_UNDERFLOW</type_of_event>
+    <underflow_buffer ref="id_7">
+    </underflow_buffer>
+    <underflow_task ref="id_5">
+    </underflow_task>
+    <underflow_read_size>3</underflow_read_size>
+    <underflow_buffer_current_data_size>0</underflow_buffer_current_data_size>
+   </time_unit_event>
+   <time_unit>6 </time_unit>
+   <time_unit_event>
+    <type_of_event>START_OF_TASK_CAPACITY</type_of_event>
+    <start_task ref="id_5">
+    </start_task>
+   </time_unit_event>
+   <time_unit>6 </time_unit>
+   <time_unit_event>
+    <type_of_event>RUNNING_TASK</type_of_event>
+    <running_core>Core_1</running_core>
+    <running_task ref="id_5">
+    </running_task>
+    <current_priority>6</current_priority>
+   </time_unit_event>
+   <time_unit>7 </time_unit>
+   <time_unit_event>
+    <type_of_event>RUNNING_TASK</type_of_event>
+    <running_core>Core_1</running_core>
+    <running_task ref="id_5">
+    </running_task>
+    <current_priority>6</current_priority>
+   </time_unit_event>
+   <time_unit>8 </time_unit>
+   <time_unit_event>
+    <type_of_event>RUNNING_TASK</type_of_event>
+    <running_core>Core_1</running_core>
+    <running_task ref="id_5">
+    </running_task>
+    <current_priority>6</current_priority>
+   </time_unit_event>
+   <time_unit>9 </time_unit>
+   <time_unit_event>
+    <type_of_event>RUNNING_TASK</type_of_event>
+    <running_core>Core_1</running_core>
+    <running_task ref="id_5">
+    </running_task>
+    <current_priority>6</current_priority>
+   </time_unit_event>
+   <time_unit>10</time_unit>
+   <time_unit_event>
+    <type_of_event>RUNNING_TASK</type_of_event>
+    <running_core>Core_1</running_core>
+    <running_task ref="id_5">
+    </running_task>
+    <current_priority>6</current_priority>
+   </time_unit_event>
+   <time_unit>11</time_unit>
+   <time_unit_event>
+    <type_of_event>RUNNING_TASK</type_of_event>
+    <running_core>Core_1</running_core>
+    <running_task ref="id_5">
+    </running_task>
+    <current_priority>6</current_priority>
+   </time_unit_event>
+   <time_unit>12</time_unit>
+   <time_unit_event>
+    <type_of_event>END_OF_TASK_CAPACITY</type_of_event>
+    <end_task ref="id_5">
+    </end_task>
+   </time_unit_event>
+   <time_unit>40</time_unit>
+   <time_unit_event>
+    <type_of_event>TASK_ACTIVATION</type_of_event>
+    <activation_task ref="id_5">
+    </activation_task>
+   </time_unit_event>
+   <time_unit>12</time_unit>
+   <time_unit_event>
+    <type_of_event>START_OF_TASK_CAPACITY</type_of_event>
+    <start_task ref="id_6">
+    </start_task>
+   </time_unit_event>
+   <time_unit>12</time_unit>
+   <time_unit_event>
+    <type_of_event>RUNNING_TASK</type_of_event>
+    <running_core>Core_1</running_core>
+    <running_task ref="id_6">
+    </running_task>
+    <current_priority>6</current_priority>
+   </time_unit_event>
+   <time_unit>13</time_unit>
+   <time_unit_event>
+    <type_of_event>RUNNING_TASK</type_of_event>
+    <running_core>Core_1</running_core>
+    <running_task ref="id_6">
+    </running_task>
+    <current_priority>6</current_priority>
+   </time_unit_event>
+   <time_unit>14</time_unit>
+   <time_unit_event>
+    <type_of_event>RUNNING_TASK</type_of_event>
+    <running_core>Core_1</running_core>
+    <running_task ref="id_6">
+    </running_task>
+    <current_priority>6</current_priority>
+   </time_unit_event>
+   <time_unit>15</time_unit>
+   <time_unit_event>
+    <type_of_event>RUNNING_TASK</type_of_event>
+    <running_core>Core_1</running_core>
+    <running_task ref="id_6">
+    </running_task>
+    <current_priority>6</current_priority>
+   </time_unit_event>
+   <time_unit>16</time_unit>
+   <time_unit_event>
+    <type_of_event>RUNNING_TASK</type_of_event>
+    <running_core>Core_1</running_core>
+    <running_task ref="id_6">
+    </running_task>
+    <current_priority>6</current_priority>
+   </time_unit_event>
+   <time_unit>17</time_unit>
+   <time_unit_event>
+    <type_of_event>RUNNING_TASK</type_of_event>
+    <running_core>Core_1</running_core>
+    <running_task ref="id_6">
+    </running_task>
+    <current_priority>6</current_priority>
+   </time_unit_event>
+   <time_unit>18</time_unit>
+   <time_unit_event>
+    <type_of_event>END_OF_TASK_CAPACITY</type_of_event>
+    <end_task ref="id_6">
+    </end_task>
+   </time_unit_event>
+   <time_unit>40</time_unit>
+   <time_unit_event>
+    <type_of_event>TASK_ACTIVATION</type_of_event>
+    <activation_task ref="id_6">
+    </activation_task>
+   </time_unit_event>
+  </result>
+ </scheduling_result>
+</event_table>
+

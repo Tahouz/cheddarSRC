@@ -1,0 +1,229 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="cheddar_project.xsl"?>
+<!DOCTYPE cheddar [
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT scheduler (#PCDATA)>
+<!ELEMENT parameter (#PCDATA)>
+<!ELEMENT network_link (#PCDATA)>
+<!ELEMENT offset (#PCDATA)>
+<!ELEMENT period (#PCDATA)>
+<!ELEMENT capacity (#PCDATA)>
+<!ELEMENT deadline (#PCDATA)>
+<!ELEMENT context_switch_overhead (#PCDATA)>
+<!ELEMENT start_time (#PCDATA)>
+<!ELEMENT blocking_time (#PCDATA)>
+<!ELEMENT policy (#PCDATA)>
+<!ELEMENT priority (#PCDATA)>
+<!ELEMENT criticality (#PCDATA)>
+<!ELEMENT cpu_name (#PCDATA)>
+<!ELEMENT address_space_name (#PCDATA)>
+<!ELEMENT jitter (#PCDATA)>
+<!ELEMENT seed (#PCDATA)>
+<!ELEMENT predictable_seed (#PCDATA)>
+<!ELEMENT activation_rule (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT size (#PCDATA)>
+<!ELEMENT qs (#PCDATA)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT buffer_user (#PCDATA)>
+<!ELEMENT resource_user (#PCDATA)>
+<!ELEMENT event_analyzer (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT text_memory_size (#PCDATA)>
+<!ELEMENT heap_memory_size (#PCDATA)>
+<!ELEMENT stack_memory_size (#PCDATA)>
+<!ELEMENT data_memory_size (#PCDATA)>
+<!ELEMENT cheddar (processors , address_spaces? , tasks? , (event_analyzers? | networks? | buffers? | resources? | messages?) , dependencies?)>
+<!ELEMENT processors (processor)+>
+<!ELEMENT processor (name | scheduler | network_link)>
+<!ELEMENT address_spaces (address_space)+>
+<!ELEMENT address_space (name | text_memory_size | data_memory_size | stack_memory_size | heap_memory_size | scheduler?)>
+<!ELEMENT networks (network)+>
+<!ELEMENT network (name | type)>
+<!ELEMENT tasks (task)+>
+<!ELEMENT task (name | cpu_name | address_space_name | capacity | start_time | context_switch_overhead? | stack_memory_size? | text_memory_size? | period? | deadline? | parameters? | offsets? | jitter? | policy? | criticality? | priority? | predictable_seed? | blocking_time? | seed? | activation_rule?)>
+<!ELEMENT offsets (offset)+>
+<!ELEMENT parameters (parameter)+>
+<!ELEMENT messages (message)+>
+<!ELEMENT message (name | size | period? | deadline? | jitter?)>
+<!ELEMENT buffers (buffer)+>
+<!ELEMENT buffer (cpu_name | address_space_name | qs | name | size | buffer_used_by?)>
+<!ELEMENT buffer_used_by (buffer_user)+>
+<!ELEMENT resources (resource)+>
+<!ELEMENT resource (cpu_name | address_space_name | name | protocol | state? | resource_used_by?)>
+<!ELEMENT resource_used_by (resource_user)+>
+<!ELEMENT dependencies (dependency)+>
+<!ELEMENT event_analyzers (event_analyzer)+>
+<!ELEMENT dependency (#PCDATA)>
+<!ATTLIST scheduler quantum CDATA "0">
+<!ATTLIST scheduler is_preemptive CDATA "PREEMPTIVE">
+<!ATTLIST scheduler automaton_name CDATA "">
+<!ATTLIST scheduler parametric_file_name CDATA "">
+<!ATTLIST event_analyzer parametric_file_name CDATA "">
+<!ATTLIST task task_type CDATA "APERIODIC_TYPE">
+<!ATTLIST task x CDATA "0">
+<!ATTLIST task y CDATA "0">
+<!ATTLIST buffer x CDATA "0">
+<!ATTLIST buffer y CDATA "0">
+<!ATTLIST message x CDATA "0">
+<!ATTLIST message y CDATA "0">
+<!ATTLIST buffer_user buffer_role CDATA "producer">
+<!ATTLIST dependency from_type CDATA "task">
+<!ATTLIST dependency to_type CDATA "task">
+<!ATTLIST parameter parameter_type CDATA "integer">
+]>
+<cheddar>
+  <core_units>
+    <core_unit id=" 3">
+      <name>core1</name>
+      <object_type>CORE_OBJECT_TYPE</object_type>
+      <scheduling>
+        <scheduling_parameters>
+          <scheduler_type>POSIX_1003_HIGHEST_PRIORITY_FIRST_PROTOCOL</scheduler_type>
+          <quantum>100</quantum>
+          <preemptive_type>PREEMPTIVE</preemptive_type>
+          <capacity>101</capacity>
+          <period>102</period>
+          <priority>103</priority>
+          <start_time>0</start_time>
+        </scheduling_parameters>
+      </scheduling>
+      <speed>1</speed>
+    </core_unit>
+  </core_units>
+  <address_spaces>
+    <address_space id=" 5">
+      <name>addr1</name>
+      <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+      <cpu_name>processor1</cpu_name>
+      <text_memory_size>0</text_memory_size>
+      <stack_memory_size>0</stack_memory_size>
+      <data_memory_size>0</data_memory_size>
+      <heap_memory_size>0</heap_memory_size>
+      <scheduling>
+        <scheduling_parameters>
+          <scheduler_type>NO_SCHEDULING_PROTOCOL</scheduler_type>
+          <quantum>0</quantum>
+          <preemptive_type>PREEMPTIVE</preemptive_type>
+          <capacity>0</capacity>
+          <period>0</period>
+          <priority>0</priority>
+          <start_time>0</start_time>
+        </scheduling_parameters>
+      </scheduling>
+    </address_space>
+  </address_spaces>
+  <processors>
+    <mono_core_processor id=" 4">
+      <name>processor1</name>
+      <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+      <network>a_network</network>
+      <processor_type>MONOCORE_TYPE</processor_type>
+      <migration_type>NO_MIGRATION_TYPE</migration_type>
+      <core ref=" 3"/>
+    </mono_core_processor>
+  </processors>
+  <tasks>
+    <periodic_task id=" 6">
+      <name>A</name>
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>processor1</cpu_name>
+      <address_space_name>addr1</address_space_name>
+      <capacity>30</capacity>
+      <deadline>110</deadline>
+      <start_time>0</start_time>
+      <offset>51</offset>
+      <priority>5</priority>
+      <blocking_time>10</blocking_time>
+      <policy>SCHED_FIFO</policy>
+      <text_memory_size>0</text_memory_size>
+      <stack_memory_size>0</stack_memory_size>
+      <criticality>0</criticality>
+      <context_switch_overhead>0</context_switch_overhead>
+      <period>161</period>
+      <jitter>0</jitter>
+    </periodic_task>
+    <periodic_task id=" 7">
+      <name>B</name>
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>processor1</cpu_name>
+      <address_space_name>addr1</address_space_name>
+      <capacity>30</capacity>
+      <deadline>40</deadline>
+      <start_time>11</start_time>
+      <offset>11</offset>
+      <priority>1</priority>
+      <blocking_time>10</blocking_time>
+      <policy>SCHED_FIFO</policy>
+      <text_memory_size>0</text_memory_size>
+      <stack_memory_size>0</stack_memory_size>
+      <criticality>0</criticality>
+      <context_switch_overhead>0</context_switch_overhead>
+      <period>51</period>
+      <jitter>0</jitter>
+    </periodic_task>
+    <periodic_task id=" 8">
+      <name>C</name>
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>processor1</cpu_name>
+      <address_space_name>addr1</address_space_name>
+      <capacity>30</capacity>
+      <deadline>30</deadline>
+      <start_time>60</start_time>
+      <offset>60</offset>
+      <priority>3</priority>
+      <blocking_time>10</blocking_time>
+      <policy>SCHED_FIFO</policy>
+      <text_memory_size>0</text_memory_size>
+      <stack_memory_size>0</stack_memory_size>
+      <criticality>0</criticality>
+      <context_switch_overhead>0</context_switch_overhead>
+      <period>90</period>
+      <jitter>0</jitter>
+    </periodic_task>
+    <periodic_task id=" 9">
+      <name>D</name>
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>processor1</cpu_name>
+      <address_space_name>addr1</address_space_name>
+      <capacity>10</capacity>
+      <deadline>59</deadline>
+      <start_time>41</start_time>
+      <offset>41</offset>
+      <priority>2</priority>
+      <blocking_time>10</blocking_time>
+      <policy>SCHED_FIFO</policy>
+      <text_memory_size>0</text_memory_size>
+      <stack_memory_size>0</stack_memory_size>
+      <criticality>0</criticality>
+      <context_switch_overhead>0</context_switch_overhead>
+      <period>100</period>
+      <jitter>0</jitter>
+    </periodic_task>
+    <periodic_task id=" 10">
+      <name>E</name>
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>processor1</cpu_name>
+      <address_space_name>addr1</address_space_name>
+      <capacity>50</capacity>
+      <deadline>50</deadline>
+      <start_time>90</start_time>
+      <offset>90</offset>
+      <priority>4</priority>
+      <blocking_time>10</blocking_time>
+      <policy>SCHED_FIFO</policy>
+      <text_memory_size>0</text_memory_size>
+      <stack_memory_size>0</stack_memory_size>
+      <criticality>0</criticality>
+      <context_switch_overhead>0</context_switch_overhead>
+      <period>140</period>
+      <jitter>0</jitter>
+    </periodic_task>
+  </tasks>
+</cheddar>

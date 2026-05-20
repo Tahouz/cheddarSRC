@@ -1,0 +1,13 @@
+DETACH CLI v0.2 - Analysis Results
+=========================================
+Input file: rate_monotic_test_case.xml
+
+
+
+Set priorities, Processor cpu : 
+Set priorities according to Rate Monotonic
+- Updated priorities :
+    T1 => 1
+    T2 => 3
+    T3 => 2
+

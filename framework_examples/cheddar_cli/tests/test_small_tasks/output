@@ -1,0 +1,29 @@
+DETACH CLI v0.2 - Analysis Results
+=========================================
+Input file: small_tasks_test_case.xml
+
+
+
+Scheduling feasibility, Partition With Small Task : 
+- Task assignement after partitioning  (see [9], [10])  : 
+
+    T1 =>cpu1
+    T2 =>cpu1
+    T3 =>cpu2
+    T4 =>cpu2
+    T5 =>cpu3
+
+DETACH CLI v0.2 - Analysis Results
+=========================================
+Input file: small_tasks_test_case2.xml
+
+
+
+Scheduling feasibility, Partition With Small Task : 
+- Task assignement after partitioning  (see [9], [10])  : 
+
+    T1 =>cpu1
+    T2 =>cpu1
+    T4 =>cpu2
+    T5 =>cpu2
+

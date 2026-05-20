@@ -1,0 +1,13 @@
+with "gtkada";
+
+project priority_assignment_opa extends "../../../gpr/kernelWithParsers.gpr" is 
+	PROJECT_DIR := external("CHEDDAR_DIR") & "/src/";
+	for Source_Dirs use (PROJECT_DIR & "framework_examples/priority_assignment/util",
+			     PROJECT_DIR & "framework_examples/priority_assignment/ex1_priority_assignment_opa");
+	for Main use ("priority_assignment_opa_driver.adb");
+	for Object_Dir use PROJECT_DIR & "binaries/objects/debug";
+	for Exec_Dir use PROJECT_DIR & "framework_examples/priority_assignment/ex1_priority_assignment_opa";
+end priority_assignment_opa;
+
+
+

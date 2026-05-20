@@ -1,0 +1,14 @@
+with "kernelWithParsers.gpr";
+
+project cheddar_cli is
+    PROJECT_DIR := external("CHEDDAR_DIR") & "/src/";
+
+    for Source_Dirs use (
+      PROJECT_DIR & "framework_examples/cache_analysis/util",
+      PROJECT_DIR & "framework_examples/cheddar_cli"
+      );
+          
+    for Main use ("cheddar_cli.adb");
+	for Object_Dir use PROJECT_DIR & "binaries/objects/debug";
+    for Exec_Dir use ".";    
+end cheddar_cli;

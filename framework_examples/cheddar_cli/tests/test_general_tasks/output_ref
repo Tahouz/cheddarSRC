@@ -1,0 +1,16 @@
+DETACH CLI v0.2 - Analysis Results
+=========================================
+Input file: general_tasks_test_case.xml
+
+
+
+Scheduling feasibility, Partition With General Task : 
+- Task assignement after partitioning  (see [9], [10])  : 
+
+    T1 =>cpu1
+    T2 =>cpu1
+    T3 =>cpu3
+    T4 =>cpu2
+    T5 =>cpu2
+    T6 =>cpu3
+

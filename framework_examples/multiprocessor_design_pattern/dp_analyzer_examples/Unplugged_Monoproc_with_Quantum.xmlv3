@@ -1,0 +1,94 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="cheddar_project.xsl"?>
+<cheddar>
+  <core_units>
+    <core_unit id="root.hpf.core">
+      <name>hpf.core</name>
+      <object_type>CORE_OBJECT_TYPE</object_type>
+      <speed>1</speed>
+      <scheduling>
+        <scheduling_parameters>
+          <scheduler_type>POSIX_1003_HIGHEST_PRIORITY_FIRST_PROTOCOL</scheduler_type>
+          <quantum>2</quantum>
+          <preemptive_type>PREEMPTIVE</preemptive_type>
+        </scheduling_parameters>
+      </scheduling>
+    </core_unit>
+  </core_units>
+  <processors>
+    <mono_core_processor id="root.hpf">
+      <name>hpf</name>
+      <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+      <processor_type>MONOCORE_TYPE</processor_type>
+      <network>No_Network</network>
+      <migration_type>NO_MIGRATION_TYPE</migration_type>
+      <core ref="root.hpf.core"/>
+    </mono_core_processor>
+  </processors>
+  <address_spaces>
+    <address_space id="root.ea_hpf">
+      <name>ea_hpf</name>
+      <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+      <cpu_name>hpf</cpu_name>
+      <text_memory_size>0</text_memory_size>
+      <stack_memory_size>0</stack_memory_size>
+      <data_memory_size>0</data_memory_size>
+      <heap_memory_size>0</heap_memory_size>
+      <scheduling>
+        <scheduling_parameters>
+          <scheduler_type>NO_SCHEDULING_PROTOCOL</scheduler_type>
+          <quantum>0</quantum>
+          <preemptive_type>PREEMPTIVE</preemptive_type>
+        </scheduling_parameters>
+      </scheduling>
+    </address_space>
+  </address_spaces>
+  <tasks>
+    <periodic_task id="root.ea_hpf.TQ1">
+      <name>ea_hpf.tq1</name>
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <task_type>PERIODIC_TYPE</task_type>
+      <address_space_name>ea_hpf</address_space_name>
+      <cpu_name>hpf</cpu_name>
+      <policy>SCHED_RR</policy>
+      <period>210</period>
+      <capacity>20</capacity>
+      <deadline>210</deadline>
+      <priority>1</priority>
+      <start_time>0</start_time>
+      <criticality>0</criticality>
+      <jitter>0</jitter>
+      <text_memory_size>0</text_memory_size>
+      <stack_memory_size>0</stack_memory_size>
+      <predictable_seed>TRUE</predictable_seed>
+      <seed>0</seed>
+      <blocking_time>0</blocking_time>
+    </periodic_task>
+    <periodic_task id="root.ea_hpf.TQ2">
+      <name>ea_hpf.tq2</name>
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <task_type>PERIODIC_TYPE</task_type>
+      <address_space_name>ea_hpf</address_space_name>
+      <cpu_name>hpf</cpu_name>
+      <policy>SCHED_RR</policy>
+      <period>210</period>
+      <capacity>20</capacity>
+      <deadline>210</deadline>
+      <priority>1</priority>
+      <start_time>0</start_time>
+      <criticality>0</criticality>
+      <jitter>0</jitter>
+      <text_memory_size>0</text_memory_size>
+      <stack_memory_size>0</stack_memory_size>
+      <predictable_seed>TRUE</predictable_seed>
+      <seed>0</seed>
+      <blocking_time>0</blocking_time>
+    </periodic_task>
+  </tasks>
+  <resources>
+  </resources>
+  <buffers>
+  </buffers>
+  <dependencies>
+  </dependencies>
+</cheddar>

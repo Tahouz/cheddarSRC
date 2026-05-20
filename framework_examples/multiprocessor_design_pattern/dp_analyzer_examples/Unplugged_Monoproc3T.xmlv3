@@ -1,0 +1,111 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="cheddar_project.xsl"?>
+<cheddar>
+  <core_units>
+    <core_unit id="root.rm.core">
+      <name>rm.core</name>
+      <object_type>CORE_OBJECT_TYPE</object_type>
+      <speed>1</speed>
+      <scheduling>
+        <scheduling_parameters>
+          <scheduler_type>RATE_MONOTONIC_PROTOCOL</scheduler_type>
+          <quantum>0</quantum>
+          <preemptive_type>NOT_PREEMPTIVE</preemptive_type>
+        </scheduling_parameters>
+      </scheduling>
+    </core_unit>
+  </core_units>
+  <processors>
+    <mono_core_processor id="root.rm">
+      <name>rm</name>
+      <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+      <processor_type>MONOCORE_TYPE</processor_type>
+      <network>No_Network</network>
+      <migration_type>NO_MIGRATION_TYPE</migration_type>
+      <core ref="root.rm.core"/>
+    </mono_core_processor>
+  </processors>
+  <address_spaces>
+    <address_space id="root.ea_rm">
+      <name>ea_rm</name>
+      <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+      <cpu_name>rm</cpu_name>
+      <text_memory_size>0</text_memory_size>
+      <stack_memory_size>0</stack_memory_size>
+      <data_memory_size>0</data_memory_size>
+      <heap_memory_size>0</heap_memory_size>
+      <scheduling>
+        <scheduling_parameters>
+          <scheduler_type>NO_SCHEDULING_PROTOCOL</scheduler_type>
+          <quantum>0</quantum>
+          <preemptive_type>PREEMPTIVE</preemptive_type>
+        </scheduling_parameters>
+      </scheduling>
+    </address_space>
+  </address_spaces>
+  <tasks>
+    <periodic_task id="root.ea_rm.rm1">
+      <name>ea_rm.rm1</name>
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <task_type>PERIODIC_TYPE</task_type>
+      <address_space_name>ea_rm</address_space_name>
+      <cpu_name>rm</cpu_name>
+      <policy>SCHED_OTHERS</policy>
+      <period>20</period>
+      <capacity>3</capacity>
+      <deadline>20</deadline>
+      <start_time>0</start_time>
+      <criticality>0</criticality>
+      <jitter>0</jitter>
+      <text_memory_size>0</text_memory_size>
+      <stack_memory_size>0</stack_memory_size>
+      <predictable_seed>TRUE</predictable_seed>
+      <seed>0</seed>
+      <blocking_time>0</blocking_time>
+    </periodic_task>
+    <periodic_task id="root.ea_rm.rm2">
+      <name>ea_rm.rm2</name>
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <task_type>PERIODIC_TYPE</task_type>
+      <address_space_name>ea_rm</address_space_name>
+      <cpu_name>rm</cpu_name>
+      <policy>SCHED_OTHERS</policy>
+      <period>5</period>
+      <capacity>2</capacity>
+      <deadline>5</deadline>
+      <start_time>0</start_time>
+      <criticality>0</criticality>
+      <jitter>0</jitter>
+      <text_memory_size>0</text_memory_size>
+      <stack_memory_size>0</stack_memory_size>
+      <predictable_seed>TRUE</predictable_seed>
+      <seed>0</seed>
+      <blocking_time>0</blocking_time>
+    </periodic_task>
+    <periodic_task id="root.ea_rm.rm3">
+      <name>ea_rm.rm3</name>
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <task_type>PERIODIC_TYPE</task_type>
+      <address_space_name>ea_rm</address_space_name>
+      <cpu_name>rm</cpu_name>
+      <policy>SCHED_OTHERS</policy>
+      <period>10</period>
+      <capacity>2</capacity>
+      <deadline>10</deadline>
+      <start_time>0</start_time>
+      <criticality>0</criticality>
+      <jitter>0</jitter>
+      <text_memory_size>0</text_memory_size>
+      <stack_memory_size>0</stack_memory_size>
+      <predictable_seed>TRUE</predictable_seed>
+      <seed>0</seed>
+      <blocking_time>0</blocking_time>
+    </periodic_task>
+  </tasks>
+  <resources>
+  </resources>
+  <buffers>
+  </buffers>
+  <dependencies>
+  </dependencies>
+</cheddar>

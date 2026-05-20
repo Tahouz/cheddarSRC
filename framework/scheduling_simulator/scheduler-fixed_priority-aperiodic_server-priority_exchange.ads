@@ -1,0 +1,79 @@
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+-- Cheddar is a GNU GPL real-time scheduling analysis tool.
+-- This program provides services to automatically check schedulability and
+-- other performance criteria of real-time architecture models.
+--
+-- Copyright (C) 2002-2023, Frank Singhoff, Alain Plantec, Jerome Legrand,
+--                          Hai Nam Tran, Stephane Rubini
+--
+-- The Cheddar project was started in 2002 by
+-- Frank Singhoff, Lab-STICC UMR 6285, Université de Bretagne Occidentale
+--
+-- Cheddar has been published in the "Agence de Protection des Programmes/France" in 2008.
+-- Since 2008, Ellidiss technologies also contributes to the development of
+-- Cheddar and provides industrial support.
+--
+-- The full list of contributors and sponsors can be found in README.md
+--
+-- This program is free software; you can redistribute it and/or modify
+-- it under the terms of the GNU General Public License as published by
+-- the Free Software Foundation; either version 2 of the License, or
+-- (at your option) any later version.
+--
+-- This program is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-- GNU General Public License for more details.
+--
+-- You should have received a copy of the GNU General Public License
+-- along with this program; if not, write to the Free Software
+-- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+--
+--
+-- Contact : cheddar@listes.univ-brest.fr
+--
+------------------------------------------------------------------------------
+-- Last update :
+--    $Rev: 4589 $
+--    $Date: 2023-09-29 16:02:19 +0200 (ven., 29 sept. 2023) $
+--    $Author: singhoff $
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+
+package scheduler.fixed_priority.aperiodic_server.priority_exchange is
+
+   type priority_exchange_aperiodic_server_scheduler is
+     new aperiodic_server_scheduler with private;
+   type priority_exchange_aperiodic_server_scheduler_ptr is
+     access all aperiodic_server_scheduler'class;
+
+   procedure initialize
+     (a_scheduler : in out priority_exchange_aperiodic_server_scheduler);
+
+   function copy
+     (a_scheduler : in priority_exchange_aperiodic_server_scheduler)
+      return generic_scheduler_ptr;
+
+   procedure do_election
+     (my_scheduler       : in out priority_exchange_aperiodic_server_scheduler;
+      si                 : in out scheduling_information;
+      result             : in out scheduling_sequence_ptr;
+      msg                : in out Unbounded_String;
+      current_time       : in     Natural;
+      processor_name     : in     Unbounded_String;
+      address_space_name : in     Unbounded_String;
+      core_name          : in     Unbounded_String;
+      options            : in     scheduling_option;
+      event_to_generate  : in     time_unit_event_type_boolean_table;
+      elected            : in out tasks_range;
+      no_task            : in out Boolean);
+
+private
+
+   type priority_exchange_aperiodic_server_scheduler is new aperiodic_server_scheduler with
+   record
+      address_space_index : scheduler_table_range := 0;
+   end record;
+
+end scheduler.fixed_priority.aperiodic_server.priority_exchange;

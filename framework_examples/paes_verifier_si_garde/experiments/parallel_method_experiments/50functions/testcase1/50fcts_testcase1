@@ -1,0 +1,134 @@
+#!/bin/csh
+
+# The number of iterations is fixed to 2000
+set iter = 2 #2000
+
+# Varying the size of the problem; varying the number of functions from 20 to 100 per step of 20
+set nbfunctions = 50
+
+# Testcase index
+set testcase = 1
+
+# The number of runs :  1 .. 5
+set run = 1
+set maxrun = 2 #5
+
+set slaves = 4
+set maxslaves = 16
+
+# All runs are done with the GLOBAL selection method
+
+
+	# Generate a test case and run paes with the sequantial method (i.e 0 slaves)
+	
+	################
+	### 0 slaves ###
+	################
+	mkdir 0slaves
+	cd 0slaves
+
+	touch runtime_all_runs
+	touch runtime_average_0slaves_testcase${testcase}.txt
+	touch hypervolume_average_0slaves_testcase${testcase}.txt
+		
+	set run = 1
+
+	mkdir run${run}
+	cd run${run}
+
+
+	../../../../../../../../paes -n ${nbfunctions} -iter ${iter} -u 80 -sched RM -fitness "f1 f4" -select local
+
+	cp initial_tasks_set.xmlv3 ../../testcase${testcase}.xmlv3
+	
+	cat runtime.txt >> ../runtime_all_runs		
+	@ run++
+		
+	while (${run} <= ${maxrun})   
+
+               	cd ..
+    		mkdir run${run}
+		cd run${run}
+			
+		../../../../../../../../paes -n ${nbfunctions} -iter ${iter} -i ../../testcase${testcase}.xmlv3 -sched RM -fitness "f1 f4" -select global
+		cat runtime.txt >> ../runtime_all_runs 
+		@ run++
+			
+	end
+
+	cd ..
+	set runtime_average_0slaves = ` cat runtime_all_runs  | awk '{s += $1} END { printf("%5.5lf\n", s/NR);}' `
+        echo $runtime_average_0slaves >> runtime_average_0slaves_testcase${testcase}.txt
+
+
+	
+	
+	# with the same test case, run paes with 4 slaves, 8 slaves and 16 slaves
+	########################################
+	### 4 slaves, 8 slaves and 16 slaves ###
+	########################################
+
+	while (${slaves} <= ${maxslaves})
+		
+		cd ..
+		mkdir ${slaves}slaves
+		cd ${slaves}slaves
+
+		touch runtime_all_runs
+		touch runtime_average_${slaves}slaves_testcase${testcase}.txt 	
+		touch speed_up_${slaves}slaves_testcase${testcase}.txt 
+		
+
+		set run = 1
+			
+		while (${run} <= ${maxrun})   
+
+    			mkdir run${run}
+			cd run${run}
+			
+			../../../../../../../../paes -n ${nbfunctions} -iter ${iter} -i ../../testcase${testcase}.xmlv3 -sched RM -fitness "f1 f4" -select global -p ${slaves}
+			cat runtime.txt >> ../runtime_all_runs 
+			cd ..
+			@ run++
+			
+		end
+
+		set runtime_average = ` cat runtime_all_runs  | awk '{s += $1} END { printf("%5.5lf\n", s/NR);}' `
+        	echo $runtime_average >> runtime_average_${slaves}slaves_testcase${testcase}.txt
+		# compute average speed-up
+		echo "$runtime_average_0slaves $runtime_average" | awk '{printf "%5.5lf\n", $1/$2}' >> speed_up_${slaves}slaves_testcase${testcase}.txt
+
+		@ slaves *= 2
+
+	end
+
+	# get ojective values range of testcase1
+
+	cd ..
+	
+	../../../compute_ranges_of_fronts *slaves/run*/front.dat >> objectifs_ranges.txt
+
+	# compute average Hypervolume 0slaves
+	cd 0slaves
+
+	../../../../call_hypervolume_eval2 run*/front.dat > hypervolume_average_0slaves_testcase${testcase}_${nbfunctions}fcts.txt
+
+	# compute average Hypervolume for local selection 4slaves
+	cd ../4slaves
+
+	../../../../call_hypervolume_eval2 run*/front.dat > hypervolume_average_4slaves_testcase${testcase}_${nbfunctions}fcts.txt
+
+
+	# compute average Hypervolume for global selection 0slaves
+	cd ../8slaves
+
+	../../../../call_hypervolume_eval2 run*/front.dat > hypervolume_average_8slaves_testcase${testcase}_${nbfunctions}fcts.txt
+
+	# compute average Hypervolume for global selection 4slaves
+	cd ../16slaves
+
+	../../../../call_hypervolume_eval2 run*/front.dat > hypervolume_average_16slaves_testcase${testcase}_${nbfunctions}fcts.txt
+
+
+##############################################################################################################################################
+

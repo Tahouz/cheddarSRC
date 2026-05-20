@@ -1,0 +1,871 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<cheddar>
+  <core_units>
+    <core_unit id="core0">
+      <object_type>CORE_OBJECT_TYPE</object_type>
+      <name>core0</name>
+      <scheduling>
+        <scheduling_parameters>
+          <scheduler_type>POSIX_1003_HIGHEST_PRIORITY_FIRST_PROTOCOL</scheduler_type>
+          <preemptive_type>PREEMPTIVE</preemptive_type>
+        </scheduling_parameters>
+      </scheduling>
+    </core_unit>
+  </core_units>
+  <processors>
+    <mono_core_processor id="proc0">
+      <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+      <name>proc0</name>
+      <processor_type>MONOCORE_TYPE</processor_type>
+      <migration_type>NO_MIGRATION_TYPE</migration_type>
+      <core ref="core0"></core>
+    </mono_core_processor>
+  </processors>
+  <address_spaces>
+    <address_space id="adds0">
+      <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+      <name>adds0</name>
+      <cpu_name>proc0</cpu_name>
+    </address_space>
+  </address_spaces>
+  <tasks>
+    <periodic_task id="a1">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>huffman</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>236070</capacity>
+      <deadline>12446832</deadline>
+      <start_time>0</start_time>
+      <priority>1</priority>
+      <period>12446832</period>
+    </periodic_task>
+    <periodic_task id="a2">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>req0</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>139325</capacity>
+      <deadline>6223416</deadline>
+      <start_time>0</start_time>
+      <priority>8</priority>
+      <period>6223416</period>
+    </periodic_task>
+    <periodic_task id="a3">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>reorder0</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>69385</capacity>
+      <deadline>6223416</deadline>
+      <start_time>0</start_time>
+      <priority>5</priority>
+      <period>6223416</period>
+    </periodic_task>
+    <periodic_task id="a4">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>req1</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>139325</capacity>
+      <deadline>6223416</deadline>
+      <start_time>0</start_time>
+      <priority>7</priority>
+      <period>6223416</period>
+    </periodic_task>
+    <periodic_task id="a5">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>reorder1</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>69385</capacity>
+      <deadline>6223416</deadline>
+      <start_time>0</start_time>
+      <priority>4</priority>
+      <period>6223416</period>
+    </periodic_task>
+    <periodic_task id="a6">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>stereo</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>73618</capacity>
+      <deadline>6223416</deadline>
+      <start_time>0</start_time>
+      <priority>6</priority>
+      <period>6223416</period>
+    </periodic_task>
+    <periodic_task id="a7">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>aliasreduct0</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>13088</capacity>
+      <deadline>6223416</deadline>
+      <start_time>0</start_time>
+      <priority>3</priority>
+      <period>6223416</period>
+    </periodic_task>
+    <periodic_task id="a8">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>IMDCT0</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>711744</capacity>
+      <deadline>6223416</deadline>
+      <start_time>0</start_time>
+      <priority>12</priority>
+      <period>6223416</period>
+    </periodic_task>
+    <periodic_task id="a9">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>freqinv0</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>157184</capacity>
+      <deadline>6223416</deadline>
+      <start_time>0</start_time>
+      <priority>10</priority>
+      <period>6223416</period>
+    </periodic_task>
+    <periodic_task id="a10">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>synth0</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>1866138</capacity>
+      <deadline>6223416</deadline>
+      <start_time>0</start_time>
+      <priority>14</priority>
+      <period>6223416</period>
+    </periodic_task>
+    <periodic_task id="a11">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>aliasreduct1</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>13088</capacity>
+      <deadline>6223416</deadline>
+      <start_time>0</start_time>
+      <priority>2</priority>
+      <period>6223416</period>
+    </periodic_task>
+    <periodic_task id="a12">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>IMDCT1</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>711744</capacity>
+      <deadline>6223416</deadline>
+      <start_time>0</start_time>
+      <priority>11</priority>
+      <period>6223416</period>
+    </periodic_task>
+    <periodic_task id="a13">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>freqinv1</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>157184</capacity>
+      <deadline>6223416</deadline>
+      <start_time>0</start_time>
+      <priority>9</priority>
+      <period>6223416</period>
+    </periodic_task>
+    <periodic_task id="a14">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>synth1</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>1866138</capacity>
+      <deadline>6223416</deadline>
+      <start_time>0</start_time>
+      <priority>13</priority>
+      <period>6223416</period>
+    </periodic_task>
+  </tasks>
+  <buffers>
+    <buffer id="c1">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_0</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>huffman</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>236070</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>req0</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c2">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_1</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>huffman</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>236070</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>req1</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c15">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_14</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>req0</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>139325</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>stereo</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c3">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_2</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>req0</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>139325</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>reorder0</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c5">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_4</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>reorder0</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>69385</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>stereo</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c16">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_15</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>req1</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>139325</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>stereo</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c4">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_3</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>req1</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>139325</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>reorder1</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c6">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_5</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>reorder1</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>69385</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>stereo</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c17">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_16</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>stereo</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>73618</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>IMDCT0</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c18">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_17</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>stereo</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>73618</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>IMDCT1</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c7">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_6</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>stereo</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>73618</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>aliasreduct0</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c8">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_7</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>stereo</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>73618</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>aliasreduct1</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c9">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_8</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>aliasreduct0</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>13088</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>IMDCT0</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c11">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_10</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>IMDCT0</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>711744</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>freqinv0</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c13">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_12</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>freqinv0</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>157184</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>synth0</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c10">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_9</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>aliasreduct1</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>13088</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>IMDCT1</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c12">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_11</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>IMDCT1</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>711744</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>freqinv1</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c14">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_13</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>freqinv1</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>157184</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>synth1</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+  </buffers>
+  <dependencies>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a2"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c1"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a1"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c1"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a4"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c2"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a1"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c2"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a6"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c15"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a2"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c15"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a3"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c3"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a2"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c3"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a6"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c5"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a3"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c5"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a6"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c16"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a4"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c16"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a5"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c4"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a4"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c4"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a6"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c6"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a5"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c6"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a8"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c17"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a6"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c17"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a12"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c18"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a6"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c18"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a7"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c7"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a6"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c7"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a11"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c8"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a6"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c8"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a8"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c9"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a7"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c9"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a9"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c11"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a8"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c11"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a10"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c13"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a9"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c13"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a12"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c10"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a11"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c10"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a13"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c12"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a12"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c12"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a14"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c14"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a13"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c14"></buffer_dependency_object>
+    </dependency>
+  </dependencies>
+</cheddar>

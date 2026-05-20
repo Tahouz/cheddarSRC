@@ -1,0 +1,16 @@
+- Number of context switches :  52
+- Number of preemptions :  4
+
+- Task response time computed from simulation : 
+    1 => 40/worst 
+    2 => 609/worst 
+    3 => 599/worst 
+    4 => 576/worst 
+    5 => 300/worst 
+    6 => 90/worst 
+    7 => 20/worst 
+    8 => 20/worst 
+    9 => 576/worst 
+- No deadline missed in the computed scheduling : the task set is schedulable if you computed the scheduling on the feasibility interval.
+
+

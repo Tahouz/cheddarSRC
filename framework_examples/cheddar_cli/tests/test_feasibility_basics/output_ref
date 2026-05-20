@@ -1,0 +1,24 @@
+DETACH CLI v0.2 - Analysis Results
+=========================================
+Input file: feasibility_basics_test_case.xml
+
+
+Scheduling feasibility, Processor cpu : 
+1) Feasibility test based on the processor utilization factor : 
+
+- The feasibility interval is 290.0, see Leung and Merill (1980) from [21].
+- 104 units of time are unused in the feasibility interval.
+- Number of cores hosted by this processor :  1. 
+- Processor utilization factor with deadline is 0.64138 (see [1], page 6). 
+- Processor utilization factor with period is 0.64138 (see [1], page 6). 
+- In the preemptive case, with RM, the task set is schedulable because the processor utilization factor 0.64138 is equal or less than 0.77976 (see [1], page 16, theorem 8). 
+
+
+2) Feasibility test based on worst case response time for periodic tasks : 
+
+- Worst case task response time :  (see [2], page 3, equation 4). 
+    T2 => 1
+    T3 => 3
+    T1 => 14
+- All task deadlines will be met : the task set is schedulable.
+

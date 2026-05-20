@@ -1,0 +1,73 @@
+#!/bin/csh
+
+set paes = /home/cheddar/trunk/src/paes_d
+
+set cpu = 80
+set iter = 3000
+#set iter = 20
+
+#set taskmin = 18
+#set taskmax = 34
+
+set taskmin = 20
+set taskmax = 20
+
+set nbrun = 5
+#set MaxTestPerSize = 10
+
+set MaxTestPerSize = 10
+
+set ts = ${taskmin}
+
+rm -r -f  experiments/processor_utilization_${cpu}
+mkdir  experiments/processor_utilization_${cpu}
+
+while ( ${ts} <= ${taskmax} )
+        cd experiments/processor_utilization_${cpu}
+	mkdir ${ts}tasks
+        cd ${ts}tasks
+        
+	set t = 1;
+
+        
+
+	while (${t} <= ${MaxTestPerSize})
+
+                mkdir test${t}
+                cd test${t}
+
+		set r = 1;
+                mkdir run${r}
+                cd run${r}
+
+		#rm -f initial.dat
+		${paes} -n ${ts} -iter ${iter} -u ${cpu} -sched RM -obj2 sum_lax | tee test${t}_RM_${ts}tasks_u${cpu}_sumlax_run${r}.txt
+		#cp initial.dat /mes/exemples/${ts}/...		
+
+		@ r++
+		
+		while ($r <= $nbrun) 
+                	cd ..
+    			mkdir run${r}
+                        cd run${r}
+                 
+			${paes} -n ${ts} -iter ${iter} -i ../run1/initial_tasks_set.xmlv3 -u ${cpu} -sched RM -obj2 sum_lax | tee test${t}_RM_${ts}tasks_u${cpu}_sumlax_run${r}.txt
+
+			@ r++
+		end
+              
+                cd ..
+
+		frontStatsfinal  run*/*.dat | tee test${t}_RM_${ts}tasks_u${cpu}_sumlax_hv.txt
+
+		@ t++
+
+                cd ..
+	end
+
+	@ ts += 2
+end
+
+
+
+

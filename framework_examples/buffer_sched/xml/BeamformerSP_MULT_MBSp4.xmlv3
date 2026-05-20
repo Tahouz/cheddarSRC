@@ -1,0 +1,3377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cheddar>
+  <core_units>
+    <core_unit id="core0">
+      <object_type>CORE_OBJECT_TYPE</object_type>
+      <name>core0</name>
+      <scheduling>
+        <scheduling_parameters>
+          <scheduler_type>POSIX_1003_HIGHEST_PRIORITY_FIRST_PROTOCOL</scheduler_type>
+          <preemptive_type>PREEMPTIVE</preemptive_type>
+        </scheduling_parameters>
+      </scheduling>
+    </core_unit>
+    <core_unit id="core1">
+      <object_type>CORE_OBJECT_TYPE</object_type>
+      <name>core1</name>
+      <scheduling>
+        <scheduling_parameters>
+          <scheduler_type>POSIX_1003_HIGHEST_PRIORITY_FIRST_PROTOCOL</scheduler_type>
+          <preemptive_type>PREEMPTIVE</preemptive_type>
+        </scheduling_parameters>
+      </scheduling>
+    </core_unit>
+    <core_unit id="core2">
+      <object_type>CORE_OBJECT_TYPE</object_type>
+      <name>core2</name>
+      <scheduling>
+        <scheduling_parameters>
+          <scheduler_type>POSIX_1003_HIGHEST_PRIORITY_FIRST_PROTOCOL</scheduler_type>
+          <preemptive_type>PREEMPTIVE</preemptive_type>
+        </scheduling_parameters>
+      </scheduling>
+    </core_unit>
+    <core_unit id="core3">
+      <object_type>CORE_OBJECT_TYPE</object_type>
+      <name>core3</name>
+      <scheduling>
+        <scheduling_parameters>
+          <scheduler_type>POSIX_1003_HIGHEST_PRIORITY_FIRST_PROTOCOL</scheduler_type>
+          <preemptive_type>PREEMPTIVE</preemptive_type>
+        </scheduling_parameters>
+      </scheduling>
+    </core_unit>
+  </core_units>
+  <processors>
+    <mono_core_processor id="proc0">
+      <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+      <name>proc0</name>
+      <processor_type>MONOCORE_TYPE</processor_type>
+      <migration_type>NO_MIGRATION_TYPE</migration_type>
+      <core ref="core0"></core>
+    </mono_core_processor>
+    <mono_core_processor id="proc1">
+      <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+      <name>proc1</name>
+      <processor_type>MONOCORE_TYPE</processor_type>
+      <migration_type>NO_MIGRATION_TYPE</migration_type>
+      <core ref="core1"></core>
+    </mono_core_processor>
+    <mono_core_processor id="proc2">
+      <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+      <name>proc2</name>
+      <processor_type>MONOCORE_TYPE</processor_type>
+      <migration_type>NO_MIGRATION_TYPE</migration_type>
+      <core ref="core2"></core>
+    </mono_core_processor>
+    <mono_core_processor id="proc3">
+      <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+      <name>proc3</name>
+      <processor_type>MONOCORE_TYPE</processor_type>
+      <migration_type>NO_MIGRATION_TYPE</migration_type>
+      <core ref="core3"></core>
+    </mono_core_processor>
+  </processors>
+  <address_spaces>
+    <address_space id="adds0">
+      <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+      <name>adds0</name>
+      <cpu_name>proc0</cpu_name>
+    </address_space>
+    <address_space id="adds1">
+      <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+      <name>adds1</name>
+      <cpu_name>proc1</cpu_name>
+    </address_space>
+    <address_space id="adds2">
+      <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+      <name>adds2</name>
+      <cpu_name>proc2</cpu_name>
+    </address_space>
+    <address_space id="adds3">
+      <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+      <name>adds3</name>
+      <cpu_name>proc3</cpu_name>
+    </address_space>
+  </address_spaces>
+  <tasks>
+    <periodic_task id="a1">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>WEIGHTED_ROUND_ROBIN_Splitter_111</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>1</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>46</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a34">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>InputGenerate__283</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>1286</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>57</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a2">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>InputGenerate__19</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>1286</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>56</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a35">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__306</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>5076</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>55</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a3">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__42</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>5076</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>54</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a4">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__65</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>2548</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>53</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a25">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>InputGenerate__85</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>1286</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>52</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a26">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__108</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>5076</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>51</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a27">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__131</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>2548</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>50</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a28">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>InputGenerate__151</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>1286</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>49</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a29">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__174</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>5076</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>48</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a30">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__197</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <capacity>2548</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>47</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a32">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__240</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>5076</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>25</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a33">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__263</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>2548</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>45</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a6">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>DUPLICATE_Splitter_113</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>1</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>44</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a7">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamForm__811</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>390</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>43</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a8">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__834</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>5034</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>42</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a9">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>Magnitude__847</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>332</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>41</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a10">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>Detector__853</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>21</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>40</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a11">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>WEIGHTED_ROUND_ROBIN_Joiner_114</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>1</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>39</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a12">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>FileWriter__1042</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>1</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>38</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a13">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamForm__873</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>390</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>37</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a14">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__896</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>5034</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>36</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a15">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>Magnitude__909</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>332</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>35</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a16">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>Detector__915</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>21</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>34</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a17">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamForm__935</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>390</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>33</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a18">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__958</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>5034</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>32</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a19">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>Magnitude__971</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>332</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>31</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a20">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>Detector__977</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>21</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>30</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a21">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamForm__997</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>390</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>29</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a22">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__1020</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>5034</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>28</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a23">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>Magnitude__1033</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>332</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>27</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a24">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>Detector__1039</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>21</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>26</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a31">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>InputGenerate__217</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <capacity>1286</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>24</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a48">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__593</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <capacity>2548</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>12</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a36">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__329</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <capacity>2548</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>23</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a5">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>WEIGHTED_ROUND_ROBIN_Joiner_112</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <capacity>1</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>22</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a37">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>InputGenerate__349</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <capacity>1286</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>21</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a38">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__372</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <capacity>5076</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>20</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a39">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__395</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <capacity>2548</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>19</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a40">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>InputGenerate__415</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <capacity>1286</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>18</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a41">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__438</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <capacity>5076</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>17</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a42">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__461</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <capacity>2548</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>16</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a43">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>InputGenerate__481</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <capacity>1286</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>15</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a44">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__504</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <capacity>5076</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>14</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a45">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__527</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <capacity>2548</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>13</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a49">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>InputGenerate__613</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <capacity>1286</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>1</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a50">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__636</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <capacity>5076</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>11</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a51">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__659</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <capacity>2548</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>10</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a52">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>InputGenerate__679</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <capacity>1286</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>9</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a53">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__702</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <capacity>5076</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>8</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a54">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__725</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <capacity>2548</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>7</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a55">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>InputGenerate__745</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <capacity>1286</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>6</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a56">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__768</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <capacity>5076</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>5</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a57">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__791</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <capacity>2548</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>4</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a46">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>InputGenerate__547</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <capacity>1286</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>3</priority>
+      <period>36882</period>
+    </periodic_task>
+    <periodic_task id="a47">
+      <object_type>TASK_OBJECT_TYPE</object_type>
+      <name>BeamFirFilter__570</name>
+      <task_type>PERIODIC_TYPE</task_type>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <capacity>5076</capacity>
+      <deadline>36882</deadline>
+      <start_time>0</start_time>
+      <priority>2</priority>
+      <period>36882</period>
+    </periodic_task>
+  </tasks>
+  <buffers>
+    <buffer id="c1">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_0</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>WEIGHTED_ROUND_ROBIN_Splitter_111</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>InputGenerate__19</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c2">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_1</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>WEIGHTED_ROUND_ROBIN_Splitter_111</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>InputGenerate__85</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c11">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_10</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>WEIGHTED_ROUND_ROBIN_Splitter_111</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>InputGenerate__679</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c12">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_11</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>WEIGHTED_ROUND_ROBIN_Splitter_111</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>InputGenerate__745</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c3">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_2</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>WEIGHTED_ROUND_ROBIN_Splitter_111</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>InputGenerate__151</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c4">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_3</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>WEIGHTED_ROUND_ROBIN_Splitter_111</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>InputGenerate__217</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c5">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_4</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>WEIGHTED_ROUND_ROBIN_Splitter_111</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>InputGenerate__283</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c6">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_5</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>WEIGHTED_ROUND_ROBIN_Splitter_111</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>InputGenerate__349</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c7">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_6</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>WEIGHTED_ROUND_ROBIN_Splitter_111</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>InputGenerate__415</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c8">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_7</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>WEIGHTED_ROUND_ROBIN_Splitter_111</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>InputGenerate__481</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c9">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_8</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>WEIGHTED_ROUND_ROBIN_Splitter_111</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>InputGenerate__547</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c10">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_9</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>WEIGHTED_ROUND_ROBIN_Splitter_111</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>InputGenerate__613</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c47">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_46</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>InputGenerate__283</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>1286</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__306</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c13">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_12</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>InputGenerate__19</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>1286</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__42</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c48">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_47</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>8</buffer_size>
+      <buffer_initial_data_size>4</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__306</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>5076</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__329</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c14">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_13</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__42</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>5076</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__65</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c15">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_14</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>2</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__65</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>2548</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>WEIGHTED_ROUND_ROBIN_Joiner_112</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>2</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c38">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_37</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>InputGenerate__85</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>1286</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__108</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c39">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_38</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__108</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>5076</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__131</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c40">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_39</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>2</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__131</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>2548</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>WEIGHTED_ROUND_ROBIN_Joiner_112</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>2</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c41">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_40</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>InputGenerate__151</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>1286</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__174</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c42">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_41</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__174</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>5076</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__197</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c43">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_42</name>
+      <cpu_name>proc0</cpu_name>
+      <address_space_name>adds0</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>2</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__197</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>2548</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>WEIGHTED_ROUND_ROBIN_Joiner_112</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>2</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c45">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_44</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>4</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__240</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>5076</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__263</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c46">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_45</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>2</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__263</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>2548</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>WEIGHTED_ROUND_ROBIN_Joiner_112</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>2</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c17">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_16</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>24</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>DUPLICATE_Splitter_113</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>24</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamForm__811</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>24</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c18">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_17</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>24</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>DUPLICATE_Splitter_113</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>24</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamForm__873</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>24</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c19">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_18</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>24</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>DUPLICATE_Splitter_113</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>24</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamForm__935</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>24</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c20">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_19</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>24</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>DUPLICATE_Splitter_113</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>24</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamForm__997</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>24</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c21">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_20</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamForm__811</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>390</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__834</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>2</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c22">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_21</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__834</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>5034</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>Magnitude__847</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>2</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c23">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_22</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>Magnitude__847</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>332</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>Detector__853</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c24">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_23</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>Detector__853</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>21</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>WEIGHTED_ROUND_ROBIN_Joiner_114</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c25">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_24</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>WEIGHTED_ROUND_ROBIN_Joiner_114</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>FileWriter__1042</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c26">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_25</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamForm__873</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>390</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__896</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>2</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c27">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_26</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__896</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>5034</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>Magnitude__909</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>2</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c28">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_27</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>Magnitude__909</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>332</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>Detector__915</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c29">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_28</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>Detector__915</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>21</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>WEIGHTED_ROUND_ROBIN_Joiner_114</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c30">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_29</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamForm__935</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>390</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__958</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>2</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c31">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_30</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__958</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>5034</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>Magnitude__971</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>2</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c32">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_31</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>Magnitude__971</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>332</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>Detector__977</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c33">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_32</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>Detector__977</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>21</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>WEIGHTED_ROUND_ROBIN_Joiner_114</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c34">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_33</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamForm__997</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>390</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__1020</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>2</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c35">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_34</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__1020</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>5034</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>Magnitude__1033</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>2</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c36">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_35</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>Magnitude__1033</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>332</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>Detector__1039</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c37">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_36</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>1</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>Detector__1039</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>21</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>WEIGHTED_ROUND_ROBIN_Joiner_114</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c44">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_43</name>
+      <cpu_name>proc1</cpu_name>
+      <address_space_name>adds1</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>4</buffer_initial_data_size>
+      <roles>
+        <task_name>InputGenerate__217</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>1286</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__240</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c61">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_60</name>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>2</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__593</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>2548</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>WEIGHTED_ROUND_ROBIN_Joiner_112</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>2</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c49">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_48</name>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__329</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>2548</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>WEIGHTED_ROUND_ROBIN_Joiner_112</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>2</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c16">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_15</name>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>1</buffer_initial_data_size>
+      <roles>
+        <task_name>WEIGHTED_ROUND_ROBIN_Joiner_112</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>DUPLICATE_Splitter_113</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>1</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c50">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_49</name>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>InputGenerate__349</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>1286</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__372</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c51">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_50</name>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__372</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>5076</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__395</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c52">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_51</name>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>2</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__395</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>2548</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>WEIGHTED_ROUND_ROBIN_Joiner_112</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>2</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c53">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_52</name>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>InputGenerate__415</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>1286</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__438</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c54">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_53</name>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__438</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>5076</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__461</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c55">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_54</name>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>2</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__461</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>2548</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>WEIGHTED_ROUND_ROBIN_Joiner_112</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>2</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c56">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_55</name>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>InputGenerate__481</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>1286</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__504</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c57">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_56</name>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__504</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>5076</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__527</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c58">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_57</name>
+      <cpu_name>proc2</cpu_name>
+      <address_space_name>adds2</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>2</buffer_size>
+      <buffer_initial_data_size>2</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__527</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>2548</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>WEIGHTED_ROUND_ROBIN_Joiner_112</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>2</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c62">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_61</name>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>4</buffer_initial_data_size>
+      <roles>
+        <task_name>InputGenerate__613</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>1286</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__636</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c63">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_62</name>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__636</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>5076</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__659</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c64">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_63</name>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>2</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__659</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>2548</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>WEIGHTED_ROUND_ROBIN_Joiner_112</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>2</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c65">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_64</name>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>InputGenerate__679</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>1286</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__702</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c66">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_65</name>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__702</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>5076</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__725</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c67">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_66</name>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>2</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__725</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>2548</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>WEIGHTED_ROUND_ROBIN_Joiner_112</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>2</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c68">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_67</name>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>InputGenerate__745</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>1286</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__768</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c69">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_68</name>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__768</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>5076</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__791</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c70">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_69</name>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>2</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__791</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>2</size>
+          <time>2548</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>WEIGHTED_ROUND_ROBIN_Joiner_112</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>2</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c59">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_58</name>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>4</buffer_size>
+      <buffer_initial_data_size>0</buffer_initial_data_size>
+      <roles>
+        <task_name>InputGenerate__547</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>1286</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__570</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+    <buffer id="c60">
+      <object_type>BUFFER_OBJECT_TYPE</object_type>
+      <name>ED_59</name>
+      <cpu_name>proc3</cpu_name>
+      <address_space_name>adds3</address_space_name>
+      <queueing_system_type>QS_PP1</queueing_system_type>
+      <buffer_size>8</buffer_size>
+      <buffer_initial_data_size>4</buffer_initial_data_size>
+      <roles>
+        <task_name>BeamFirFilter__570</task_name>
+        <buffer_role>
+          <the_role>QUEUING_PRODUCER</the_role>
+          <size>4</size>
+          <time>5076</time>
+          <timeout>0</timeout>
+        </buffer_role>
+        <task_name>BeamFirFilter__593</task_name>
+        <buffer_role>
+          <the_role>QUEUING_CONSUMER</the_role>
+          <size>4</size>
+          <time>1</time>
+          <timeout>0</timeout>
+        </buffer_role>
+      </roles>
+    </buffer>
+  </buffers>
+  <dependencies>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a2"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c1"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a1"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c1"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a25"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c2"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a1"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c2"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a52"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c11"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a1"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c11"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a55"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c12"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a1"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c12"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a28"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c3"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a1"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c3"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a31"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c4"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a1"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c4"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a34"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c5"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a1"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c5"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a37"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c6"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a1"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c6"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a40"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c7"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a1"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c7"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a43"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c8"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a1"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c8"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a46"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c9"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a1"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c9"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a49"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c10"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a1"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c10"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a35"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c47"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a34"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c47"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a3"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c13"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a2"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c13"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a36"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c48"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a35"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c48"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a4"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c14"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a3"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c14"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a5"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c15"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a4"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c15"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a26"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c38"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a25"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c38"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a27"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c39"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a26"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c39"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a5"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c40"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a27"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c40"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a29"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c41"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a28"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c41"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a30"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c42"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a29"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c42"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a5"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c43"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a30"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c43"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a33"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c45"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a32"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c45"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a5"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c46"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a33"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c46"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a7"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c17"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a6"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c17"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a13"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c18"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a6"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c18"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a17"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c19"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a6"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c19"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a21"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c20"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a6"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c20"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a8"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c21"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a7"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c21"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a9"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c22"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a8"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c22"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a10"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c23"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a9"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c23"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a11"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c24"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a10"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c24"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a12"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c25"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a11"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c25"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a14"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c26"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a13"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c26"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a15"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c27"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a14"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c27"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a16"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c28"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a15"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c28"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a11"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c29"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a16"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c29"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a18"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c30"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a17"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c30"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a19"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c31"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a18"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c31"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a20"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c32"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a19"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c32"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a11"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c33"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a20"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c33"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a22"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c34"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a21"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c34"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a23"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c35"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a22"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c35"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a24"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c36"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a23"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c36"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a11"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c37"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a24"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c37"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a32"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c44"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a31"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c44"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a5"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c61"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a48"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c61"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a5"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c49"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a36"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c49"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a6"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c16"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a5"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c16"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a38"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c50"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a37"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c50"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a39"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c51"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a38"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c51"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a5"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c52"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a39"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c52"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a41"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c53"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a40"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c53"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a42"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c54"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a41"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c54"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a5"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c55"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a42"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c55"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a44"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c56"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a43"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c56"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a45"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c57"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a44"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c57"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a5"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c58"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a45"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c58"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a50"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c62"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a49"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c62"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a51"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c63"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a50"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c63"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a5"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c64"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a51"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c64"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a53"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c65"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a52"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c65"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a54"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c66"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a53"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c66"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a5"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c67"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a54"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c67"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a56"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c68"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a55"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c68"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a57"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c69"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a56"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c69"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a5"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c70"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a57"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c70"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a47"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c59"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a46"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c59"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a48"></buffer_dependent_task>
+      <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+      <buffer_dependency_object ref="c60"></buffer_dependency_object>
+    </dependency>
+    <dependency>
+      <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+      <buffer_dependent_task ref="a47"></buffer_dependent_task>
+      <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+      <buffer_dependency_object ref="c60"></buffer_dependency_object>
+    </dependency>
+  </dependencies>
+</cheddar>

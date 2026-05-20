@@ -1,0 +1,22 @@
+
+Après avoir récupérer les sources de cheddar depuis le dépôt et les compiler :
+
+   cd chemin_vers_cheddar/trunk/src
+   source ../compile.bash
+   make cheddar
+
+1. compiler paes et call_cheddar :
+   make paes
+   make callCheddar
+
+2. placer l'exécutable call_cheddar (qui se trouve dans trunk/src)dans votre répertoire personnel (ex: /home/rahma)
+
+3. dans chemin_vers_cheddar/trunk/src/framework_examples/paes/experiments/11tasks
+
+        on trouve un fichier xml qui s'appelle initial_task_set; on va tester paes avec l'ensemble de tâche donné dans ce fichier
+	
+	on crée un repertoire run1 ou run2 ou ... et on se place dans ce repertoire puis:
+
+	./../../../../../paes -n 11 -iter 500 -p 4 -i  ../initial_tasks_set.xmlv3 -sched RM -fitness "f1 f4" | tee 11tasks_test_run1.txt
+
+

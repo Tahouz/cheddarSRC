@@ -1,0 +1,12 @@
+with "gtkada";
+
+project memory_parser_writer extends "../../../gpr/kernelWithParsers.gpr" is 
+	PROJECT_DIR := external("CHEDDAR_DIR") & "/src/";
+	for Source_Dirs use (PROJECT_DIR & "framework_examples/memory_interferences/ex1_memory_parser_writer");
+	for Main use ("memory_parser_writer_driver.adb");
+	for Object_Dir use PROJECT_DIR & "binaries/objects/debug";
+	for Exec_Dir use PROJECT_DIR & "framework_examples/memory_interferences/ex1_memory_parser_writer";
+end memory_parser_writer;
+
+
+

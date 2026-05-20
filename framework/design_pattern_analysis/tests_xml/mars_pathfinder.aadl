@@ -1,0 +1,195 @@
+
+data tampon_donnees
+end tampon_donnees;
+
+data implementation tampon_donnees.Impl
+	properties 
+		Cheddar_Properties::Data_Concurrency_State =>  1;
+		Concurrency_Control_Protocol => PRIORITY_INHERITANCE_PROTOCOL;
+end tampon_donnees.Impl;
+
+thread ordo_bus
+end ordo_bus;
+
+thread implementation ordo_bus.Impl
+	properties
+		Dispatch_Protocol => Periodic;
+		Cheddar_Properties::Context_Switch_Overhead =>  0 ms ;
+		Source_Code_Size =>  0 kb ;
+		Source_Stack_Size =>  0 kb ;
+		Compute_Execution_Time =>  10 ms ..  10 ms;
+		Cheddar_Properties::Dispatch_Absolute_Time =>  0 ms ;
+		Cheddar_Properties::POSIX_Scheduling_Policy => SCHED_FIFO;
+		Cheddar_Properties::Fixed_Priority =>  7;
+		Cheddar_Properties::Bound_On_Data_Blocking_Time =>  0 ms ;
+		Deadline  =>  50 ms ;
+		Cheddar_Properties::Criticality  =>  0;
+		Period =>  50 ms ;
+		Cheddar_Properties::Dispatch_Jitter =>  0 ms ;
+end ordo_bus.Impl;
+
+thread distribution_donnees
+	features
+		tampon_donnees_features : requires data access tampon_donnees.Impl;
+end distribution_donnees;
+
+thread implementation distribution_donnees.Impl
+	properties
+		Dispatch_Protocol => Periodic;
+		Cheddar_Properties::Context_Switch_Overhead =>  0 ms ;
+		Source_Code_Size =>  0 kb ;
+		Source_Stack_Size =>  0 kb ;
+		Compute_Execution_Time =>  10 ms ..  10 ms;
+		Cheddar_Properties::Dispatch_Absolute_Time =>  0 ms ;
+		Cheddar_Properties::POSIX_Scheduling_Policy => SCHED_FIFO;
+		Cheddar_Properties::Fixed_Priority =>  6;
+		Cheddar_Properties::Bound_On_Data_Blocking_Time =>  0 ms ;
+		Deadline  =>  50 ms ;
+		Cheddar_Properties::Criticality  =>  0;
+		Period =>  50 ms ;
+		Cheddar_Properties::Dispatch_Jitter =>  0 ms ;
+end distribution_donnees.Impl;
+
+thread tache_pilotage
+	features
+		tampon_donnees_features : requires data access tampon_donnees.Impl;
+end tache_pilotage;
+
+thread implementation tache_pilotage.Impl
+	properties
+		Dispatch_Protocol => Periodic;
+		Cheddar_Properties::Context_Switch_Overhead =>  0 ms ;
+		Source_Code_Size =>  0 kb ;
+		Source_Stack_Size =>  0 kb ;
+		Compute_Execution_Time =>  10 ms ..  10 ms;
+		Cheddar_Properties::Dispatch_Absolute_Time =>  0 ms ;
+		Cheddar_Properties::POSIX_Scheduling_Policy => SCHED_FIFO;
+		Cheddar_Properties::Fixed_Priority =>  5;
+		Cheddar_Properties::Bound_On_Data_Blocking_Time =>  0 ms ;
+		Deadline  =>  100 ms ;
+		Cheddar_Properties::Criticality  =>  0;
+		Period =>  100 ms ;
+		Cheddar_Properties::Dispatch_Jitter =>  0 ms ;
+end tache_pilotage.Impl;
+
+thread tache_radio
+end tache_radio;
+
+thread implementation tache_radio.Impl
+	properties
+		Dispatch_Protocol => Periodic;
+		Cheddar_Properties::Context_Switch_Overhead =>  0 ms ;
+		Source_Code_Size =>  0 kb ;
+		Source_Stack_Size =>  0 kb ;
+		Compute_Execution_Time =>  10 ms ..  10 ms;
+		Cheddar_Properties::Dispatch_Absolute_Time =>  0 ms ;
+		Cheddar_Properties::POSIX_Scheduling_Policy => SCHED_FIFO;
+		Cheddar_Properties::Fixed_Priority =>  4;
+		Cheddar_Properties::Bound_On_Data_Blocking_Time =>  0 ms ;
+		Deadline  =>  100 ms ;
+		Cheddar_Properties::Criticality  =>  0;
+		Period =>  100 ms ;
+		Cheddar_Properties::Dispatch_Jitter =>  0 ms ;
+end tache_radio.Impl;
+
+thread tache_camera
+end tache_camera;
+
+thread implementation tache_camera.Impl
+	properties
+		Dispatch_Protocol => Periodic;
+		Cheddar_Properties::Context_Switch_Overhead =>  0 ms ;
+		Source_Code_Size =>  0 kb ;
+		Source_Stack_Size =>  0 kb ;
+		Compute_Execution_Time =>  10 ms ..  10 ms;
+		Cheddar_Properties::Dispatch_Absolute_Time =>  0 ms ;
+		Cheddar_Properties::POSIX_Scheduling_Policy => SCHED_FIFO;
+		Cheddar_Properties::Fixed_Priority =>  3;
+		Cheddar_Properties::Bound_On_Data_Blocking_Time =>  0 ms ;
+		Deadline  =>  100 ms ;
+		Cheddar_Properties::Criticality  =>  0;
+		Period =>  100 ms ;
+		Cheddar_Properties::Dispatch_Jitter =>  0 ms ;
+end tache_camera.Impl;
+
+thread tache_mesures
+	features
+		tampon_donnees_features : requires data access tampon_donnees.Impl;
+end tache_mesures;
+
+thread implementation tache_mesures.Impl
+	properties
+		Dispatch_Protocol => Periodic;
+		Cheddar_Properties::Context_Switch_Overhead =>  0 ms ;
+		Source_Code_Size =>  0 kb ;
+		Source_Stack_Size =>  0 kb ;
+		Compute_Execution_Time =>  20 ms ..  20 ms;
+		Cheddar_Properties::Dispatch_Absolute_Time =>  0 ms ;
+		Cheddar_Properties::POSIX_Scheduling_Policy => SCHED_FIFO;
+		Cheddar_Properties::Fixed_Priority =>  2;
+		Cheddar_Properties::Bound_On_Data_Blocking_Time =>  0 ms ;
+		Deadline  =>  2000 ms ;
+		Cheddar_Properties::Criticality  =>  0;
+		Period =>  2000 ms ;
+		Cheddar_Properties::Dispatch_Jitter =>  0 ms ;
+end tache_mesures.Impl;
+
+thread tache_meteo
+	features
+		tampon_donnees_features : requires data access tampon_donnees.Impl;
+end tache_meteo;
+
+thread implementation tache_meteo.Impl
+	properties
+		Dispatch_Protocol => Periodic;
+		Cheddar_Properties::Context_Switch_Overhead =>  0 ms ;
+		Source_Code_Size =>  0 kb ;
+		Source_Stack_Size =>  0 kb ;
+		Compute_Execution_Time =>  23 ms ..  23 ms;
+		Cheddar_Properties::Dispatch_Absolute_Time =>  0 ms ;
+		Cheddar_Properties::POSIX_Scheduling_Policy => SCHED_FIFO;
+		Cheddar_Properties::Fixed_Priority =>  1;
+		Cheddar_Properties::Bound_On_Data_Blocking_Time =>  0 ms ;
+		Deadline  =>  2000 ms ;
+		Cheddar_Properties::Criticality  =>  0;
+		Period =>  2000 ms ;
+		Cheddar_Properties::Dispatch_Jitter =>  0 ms ;
+end tache_meteo.Impl;
+
+process ea1
+end ea1;
+
+process implementation ea1.Impl
+	properties
+		Cheddar_Properties::Source_Global_Text_Size =>  0 kb ;
+		Cheddar_Properties::Source_Global_Data_Size =>  0 kb ;
+		Cheddar_Properties::Source_Global_Heap_Size =>  0 kb ;
+		Cheddar_Properties::Source_Global_Stack_Size =>  0 kb ;
+end ea1.Impl;
+
+processor cpu
+	features
+		bus_connected : requires bus access ;
+end cpu;
+
+processor implementation cpu.Impl
+	properties 
+		Scheduling_Protocol => RATE_MONOTONIC_PROTOCOL;
+		Cheddar_Properties::Scheduler_Quantum =>  0 ms ;
+		Cheddar_Properties::Preemptive_Scheduler => True;
+end cpu.Impl;
+
+
+system Cheddar
+end Cheddar;
+
+system implementation Cheddar.Impl
+	subcomponents
+		instancied_cpu : processor cpu.Impl;
+		instancied_ea1 : process ea1.Impl;
+	properties
+		Actual_Processor_Binding => reference instancied_cpu applies to instancied_ea1;
+end Cheddar.Impl;
+
+
+

@@ -1,0 +1,94 @@
+#!/bin/csh
+
+
+set iter = 3000
+set nbfunctions = 11
+set MinSlaves = 2
+set Maxslaves = 16
+
+set p = ${MinSlaves}
+
+set nbrun = 30
+
+        
+        cd local_selection
+
+        while ( ${p} <= ${Maxslaves} )
+
+           mkdir ${p}slaves
+           cd ${p}slaves
+
+           set r = 1;
+           mkdir run${r}
+           cd run${r}
+
+           ../../../../../../../paes -n ${nbfunctions} -iter ${iter} -sched RM -fitness "f1 f4" -p ${p} -select local -i ../../../initial_tasks_set.xmlv3
+
+           @ r++
+	   while ($r <= $nbrun) 
+                cd ..
+    		mkdir run${r}
+                cd run${r}
+                ../../../../../../../paes -n ${nbfunctions} -iter ${iter} -sched RM -fitness "f1 f4" -p ${p} -select local -i ../../../initial_tasks_set.xmlv3
+
+                @ r++
+           end
+
+           cd ..
+
+           # ici on calcule la moyenne des IGD sur les 30 runs
+           ../../call_igd  run*/front.dat
+
+           @ p *= 2
+
+           cd ..
+
+        end 
+
+        set p=2 
+
+        cd ../global_selection
+
+        while ( ${p} <= ${Maxslaves} )
+
+           mkdir ${p}slaves
+           cd ${p}slaves
+
+           set r = 1;
+           mkdir run${r}
+           cd run${r}
+
+           ../../../../../../../paes -n ${nbfunctions} -iter ${iter} -sched RM -fitness "f1 f4" -p ${p} -select global -i ../../../initial_tasks_set.xmlv3
+
+           @ r++
+	   while ($r <= $nbrun) 
+                cd ..
+    		mkdir run${r}
+                cd run${r}
+                ../../../../../../../paes -n ${nbfunctions} -iter ${iter} -sched RM -fitness "f1 f4" -p ${p} -select local -i ../../../initial_tasks_set.xmlv3
+
+                @ r++
+           end
+
+           cd ..
+
+           # ici on calcule la moyenne des IGD sur les 30 runs
+           ../../call_igd  run*/front.dat
+
+           @ p *= 2
+
+           cd ..
+
+        end 
+
+
+
+
+
+
+
+
+
+
+
+

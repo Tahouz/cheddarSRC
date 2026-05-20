@@ -1,0 +1,36 @@
+with "gtkada";
+
+project cnn_sdf extends "kernelWithParsers.gpr" is 
+    PROJECT_DIR := external("CHEDDAR_DIR") & "/src/";
+
+    for Source_Dirs use (PROJECT_DIR & "framework_examples/cnn_sdf", 
+    			PROJECT_DIR & "framework_examples/cnn_sdf/util",
+    			PROJECT_DIR & "framework_examples/buffer_sched",
+    			PROJECT_DIR & "framework_examples/buffer_sched/util");
+    for Main use ("cnn_sdf.adb");
+
+    case kernel.Build is        
+        when "Debug" =>
+            for Object_Dir use PROJECT_DIR & "binaries/objects/debug";
+            for Exec_Dir use PROJECT_DIR;
+        when "Release" =>
+            for Object_Dir use PROJECT_DIR & "binaries/objects/release";
+            for Exec_Dir use PROJECT_DIR;
+    end case;
+
+    package Builder is
+        Executable := "";
+        
+        case kernel.Build is
+            when "Release" =>
+                Executable := "framework_examples/cnn_sdf/cnn_sdf";
+            when "Debug" =>
+                Executable := "framework_examples/cnn_sdf/cnn_sdf_d";
+	    end case;
+
+        for Executable ("cnn_sdf.adb") use Executable;
+    end Builder;
+end cnn_sdf;
+
+
+

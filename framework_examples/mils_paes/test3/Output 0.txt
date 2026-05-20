@@ -1,0 +1,5 @@
+schedulability : false
+f1 = missedDeadlines  12
+f2 = bellViolations 0
+f3 = bibaViolations 0
+

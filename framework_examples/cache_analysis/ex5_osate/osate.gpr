@@ -1,0 +1,13 @@
+with "gtkada";
+
+project osate extends "kernelWithParsers.gpr" is 
+	PROJECT_DIR := external("CHEDDAR_DIR") & "/src/";
+	for Source_Dirs use (PROJECT_DIR & "framework_examples/cache_analysis/util",
+						PROJECT_DIR & "framework_examples/cache_analysis/ex5_osate");
+	for Main use ("osate_driver.adb");
+	for Object_Dir use PROJECT_DIR & "binaries/objects/debug";
+	for Exec_Dir use PROJECT_DIR & "framework_examples/cache_analysis/ex5_osate";
+end osate;
+
+
+

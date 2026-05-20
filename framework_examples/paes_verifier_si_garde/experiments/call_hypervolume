@@ -1,0 +1,40 @@
+#!/bin/csh
+# for a set of files, check values
+
+set hv = /media/DATA/These_Rahma/CHEDDAR/trunk/required_packages/hypervolume/hv
+
+# get ojective values range
+
+#touch tmp$$
+#foreach f ( $*)
+#  cat $f >> all$$
+#end
+#set ranges = `cat all$$ | awk ' /^[^#]/ { if (first==0) { first = 1; minO1 = maxO1 = $1; minO2 = maxO2 = $2; }  if ($1<minO1) minO1=$1; if ($2<minO2) minO2=$2; if ($1>maxO1) maxO1=$1; if ($2>maxO2) maxO2=$2; } END { printf ("%d %d %d %d", minO1, maxO1, minO2, maxO2); }'` )
+
+#echo $ranges
+#echo "The Ideal value of preemption minO1 is set to zero"  
+#set ranges[1] = 0
+#echo ref point $ranges[2] $ranges[4]
+
+set min01 = ` cut -f1 ../../objectifs_ranges.txt  `
+set max01 = ` cut -f2 ../../objectifs_ranges.txt  `
+set min02 = ` cut -f3 ../../objectifs_ranges.txt  `
+set max02 = ` cut -f4 ../../objectifs_ranges.txt  `
+
+touch hv_all_runs
+
+foreach f ( $*)
+	echo "#" $min01 $max01 $min02 $max02 rangeline > tmpOO$$
+	cut -f1,2 $f >> tmpOO$$
+	#echo -n $f ": " 
+        set hvalue = ` cat tmpOO$$ | awk '/rangeline/ { minO1 = $2; range1 = $3-$2; minO2 = $4; range2= $5-$4; } /^[^#]/  { print ($1 - minO1)/range1, ($2 - minO2)/range2 }' | $hv -r "1.001 1.001" `
+	#echo $hvalue
+	echo $hvalue >> hv_all_runs
+end
+
+set average =  ` cat hv_all_runs | awk '{s += $1} END { printf("%2.6lf\n", s/NR);}' `
+echo $average
+
+rm tmpOO$$
+
+

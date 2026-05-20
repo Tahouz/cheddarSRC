@@ -1,0 +1,31 @@
+#!/bin/csh
+
+set CHEDDAR_DIR=/media/DATA/These_Rahma/cheddar2015/trunk
+set igd = $CHEDDAR_DIR/framework_examples/paes/igd
+
+
+        # ici on calcule l'IGD sur les 30 runs
+        touch igd_all_runs
+        touch igd_average
+        foreach f ( $*)
+            echo -n $f ": " 
+            set igd_value =  ` cat igd_all_runs | $igd 2 exact_front.txt $f `
+            echo $igd_value
+            echo $igd_value >> igd_all_runs
+        end 
+        
+        echo -n "# average IGD : "
+        set igd_average =  ` cat igd_all_runs | awk '{s += $1} END { printf("%5.5lf\n", s/NR);}' `
+        echo $igd_average
+        echo $igd_average >> igd_average    
+        
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+- Number of context switches :  0
+- Number of preemptions :  0
+
+- Task response time computed from simulation : 
+    1 => 0/worst ,  response time not computed since the task did not run all its capacity
+    10 => 0/worst ,  response time not computed since the task did not run all its capacity
+    11 => 0/worst ,  response time not computed since the task did not run all its capacity
+    12 => 0/worst ,  response time not computed since the task did not run all its capacity
+    2 => 0/worst ,  response time not computed since the task did not run all its capacity
+    3 => 0/worst ,  response time not computed since the task did not run all its capacity
+    4 => 0/worst ,  response time not computed since the task did not run all its capacity
+    5 => 0/worst ,  response time not computed since the task did not run all its capacity
+    6 => 0/worst ,  response time not computed since the task did not run all its capacity
+    7 => 0/worst ,  response time not computed since the task did not run all its capacity
+    8 => 0/worst ,  response time not computed since the task did not run all its capacity
+    9 => 0/worst ,  response time not computed since the task did not run all its capacity
+- One or several tasks did not complete their execution.
+

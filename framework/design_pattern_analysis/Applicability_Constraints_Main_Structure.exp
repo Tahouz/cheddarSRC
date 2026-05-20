@@ -1,0 +1,45 @@
+SCHEMA Applicability_Constraints_Main_Structure;
+	USE FROM basic_types;
+
+	ENTITY Applicability_Constraint_Function;
+	END_ENTITY;
+
+	ENTITY Applicability_Constraint;
+		Name : STRING;
+		Result : BOOLEAN;
+		Corresponding_Function : Applicability_Constraint_Function;
+	END_ENTITY;
+
+	ENTITY Applicability_Constraints_List_Package;
+		List_ : Applicability_Constraints_List;
+		Iterator : Applicability_Constraints_List_Iterator;
+	END_ENTITY;
+
+	TYPE Applicability_Constraints_List = LIST OF Applicability_Constraint_Case;
+	END_TYPE;
+
+	TYPE Applicability_Constraints_List_Iterator = Iterator;
+	END_TYPE;
+
+	ENTITY Applicability_Constraint_Case;
+		Name : STRING;
+		Feasibility_Test_Names : STRING;
+		Applicability_Constraints : Applicability_Constraints_List;
+	END_ENTITY; 
+
+	ENTITY Applicability_Constraint_Cases_List_Package;
+		List_ : Applicability_Constraint_Cases_List;
+		Iterator : Applicability_Constraint_Cases_List_Iterator;
+	END_ENTITY;
+
+	TYPE Applicability_Constraint_Cases_List = LIST OF Applicability_Constraint_Case;
+	END_TYPE;
+
+	TYPE Applicability_Constraint_Cases_List_Iterator = Iterator;
+	END_TYPE;
+
+	ENTITY All_Cases_Structure;
+		Cases : Applicability_Constraint_Cases_List;
+	END_ENTITY;
+
+END_SCHEMA;

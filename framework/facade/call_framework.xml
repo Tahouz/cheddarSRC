@@ -1,0 +1,130 @@
+<?xml version="1.0" standalone="yes"?>  
+<!DOCTYPE cheddar [  
+<!ELEMENT name (#PCDATA) > 
+<!ELEMENT scheduler (#PCDATA) > 
+<!ELEMENT parameter (#PCDATA) > 
+<!ELEMENT offset (#PCDATA) > 
+<!ELEMENT period (#PCDATA) > 
+<!ELEMENT capacity (#PCDATA) > 
+<!ELEMENT deadline (#PCDATA) > 
+<!ELEMENT blocking_time (#PCDATA) > 
+<!ELEMENT policy (#PCDATA) > 
+<!ELEMENT priority (#PCDATA) > 
+<!ELEMENT location (#PCDATA) > 
+<!ELEMENT jitter (#PCDATA) > 
+<!ELEMENT state (#PCDATA) > 
+<!ELEMENT protocol (#PCDATA) > 
+<!ELEMENT size (#PCDATA) > 
+<!ELEMENT buffer_user (#PCDATA) >  
+<!ELEMENT resource_user (#PCDATA) >  
+<!ELEMENT cheddar (processors, (tasks)?, ((buffers)?|(resources)?|(messages)?),(dependencies)?  )  >   
+<!ELEMENT processors (processor)+ >  
+<!ELEMENT processor (name|scheduler) >  
+<!ELEMENT tasks (task)+>  
+<!ELEMENT task (name|location|capacity|start_time|(period)?|(deadline)?|(parameters)?|(offsets)?|(jitter)?|(policy)?|(priority)?|(blocking_time)?) >  
+<!ELEMENT offsets (offset)+ >  
+<!ELEMENT parameters (parameter)+ >  
+<!ELEMENT messages (message)+ >  
+<!ELEMENT message (name|size|(period)?|(deadline)?|(jitter)?) >  
+<!ELEMENT buffers (buffer)+ >  
+<!ELEMENT buffer (location|name|size|(buffer_used_by)?) >  
+<!ELEMENT buffer_used_by (buffer_user)+ >  
+<!ELEMENT resources (resource)+ >  
+<!ELEMENT resource (location|name|protocol|(state)?|(resource_used_by)?) >  
+<!ELEMENT resource_used_by (resource_user)+ >  
+<!ELEMENT dependencies (dependency)+ >  
+<!ELEMENT dependency (#PCDATA)  >  
+<!ATTLIST scheduler 
+        quantum CDATA  "0"  
+        is_preemptive CDATA  "PREEMPTIVE"  
+        behavior_file_name CDATA "" >  
+<!ATTLIST task
+        task_type CDATA "APERIODIC_TASK"
+        x CDATA "0"  
+        y CDATA "0" > 
+<!ATTLIST buffer  
+        x CDATA "0" 
+        y CDATA "0" > 
+<!ATTLIST message  
+        x CDATA "0" 
+        y CDATA "0" > 
+<!ATTLIST buffer_user 
+        buffer_role CDATA  "producer" >  
+<!ATTLIST dependency 
+        from_type CDATA "task" 
+        to_type CDATA "task" > 
+<!ATTLIST parameter 
+        parameter_type CDATA  "integer" >  
+] >  
+
+
+
+
+<cheddar>
+<processors>
+	<processor>
+		<name>cpua</name>
+		<scheduler> RATE_MONOTONIC </scheduler>
+	</processor>
+	<processor>
+		<name>cpub</name>
+		<scheduler> RATE_MONOTONIC </scheduler>
+	</processor>
+</processors>
+<tasks>
+        <task x=" 77" y=" 89" task_type="PERIODIC_TYPE">
+                <location >cpua</location>
+		<name>T1</name>
+		<capacity> 1</capacity>
+		<start_time> 0</start_time>
+		<policy>SCHED_FIFO</policy>
+		<deadline> 10</deadline>
+		<blocking_time> 0</blocking_time>
+		<priority> 1</priority>
+		<period> 10</period>
+		<jitter> 0</jitter>
+	</task>
+        <task x=" 66" y=" 201" task_type="PERIODIC_TYPE">
+		<location>cpua</location>
+		<name>T2</name>
+		<capacity> 2</capacity>
+		<start_time> 0</start_time>
+		<policy>SCHED_FIFO</policy>
+		<deadline> 10</deadline>
+		<blocking_time> 0</blocking_time>
+		<priority> 1</priority>
+		<period> 10</period>
+		<jitter> 0</jitter>
+	</task>
+        <task x=" 352" y=" 70" task_type="PERIODIC_TYPE" >
+		<location>cpub</location>
+		<name>T3</name>
+		<capacity> 3</capacity>
+		<start_time> 0</start_time>
+		<policy>SCHED_FIFO</policy>
+		<deadline> 10</deadline>
+		<blocking_time> 0</blocking_time>
+		<priority> 1</priority>
+		<period> 10</period>
+		<jitter> 0</jitter>
+	</task>
+        <task x=" 343" y=" 233" task_type="PERIODIC_TYPE">
+		<location>cpub</location>
+		<name>T4</name>
+		<capacity> 4</capacity>
+		<start_time> 0</start_time>
+		<policy>SCHED_FIFO</policy>
+		<deadline> 10</deadline>
+		<blocking_time> 0</blocking_time>
+		<priority> 1</priority>
+		<period> 10</period>
+		<jitter> 0</jitter>
+	</task>
+</tasks>
+<dependencies>
+	<dependency> T1 T3 </dependency>
+	<dependency> T4 T2 </dependency>
+</dependencies>
+</cheddar>
+
+

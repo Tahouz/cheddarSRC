@@ -1,0 +1,55 @@
+@startuml
+
+Actor User as u
+
+participant "cheddar_cli.adb" as cli
+participant "call_framework.adb" as cf
+participant "call_scheduling_framework.adb" as csf
+
+u -> cli : cheddar_cli \ \n  --file=example.xml  \ \n  --request=scheduling_feasibility_basics  \ \n --output=stdout_xml_analysis
+
+
+
+
+cli -> cf : <b>sequential_framework_request</b>\n(system \n, requestTable \n, responseTable \n, output=>Xml_Output)
+
+
+
+cf -> cf :<b>call_a_request</b> \n (system \n , request \n , a_response \n , Xml_Output)
+
+note right
+request contains
+<b>scheduling_feasibility_basics</b>
+statement
+end note
+
+cf -> csf : <b>compute_feasibility_basics</b> \n ( system \n , result \n , a_processor \n , Xml_Output)
+
+csf -> csf :<b>compute_feasibility_processor_utilization_factor</b> \n ( system \n , result \n , a_processor \n , Xml_Output)
+
+note right
+this function computes :
+- <b>feasibility_interval</b>
+- <b>processor_utilization_over_deadline</b>
+- <b>processor_utilization_over_period</b>
+- <b>utilization_factor_feasibility_test</b>
+end note
+
+
+csf -> csf :<b>compute_feasibility_response_time</b> \n (sys \n , result \n , periodic \n , no_memory_interference \n , no_crpd \n , a_processor \n , Xml_Output);
+
+note right
+this function computes <b>WCRT</b> the task set
+end note
+
+csf --> cf : a_response 
+note left
+response get added
+to the <b>reponseTable</b>
+end note
+
+cf --> cli : reponseTable
+
+cli --> u : responses
+
+@enduml

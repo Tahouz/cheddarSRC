@@ -1,0 +1,40 @@
+with "gtkada";
+
+project scheduler_discard_missed_deadlines extends "kernelWithParsers.gpr" is 
+    PROJECT_DIR := external("CHEDDAR_DIR") & "/src/";
+
+    for Source_Dirs use (PROJECT_DIR & "framework_examples/scheduler_discard_missed_deadlines", 
+                        PROJECT_DIR & "framework_examples/cache_analysis",
+                        PROJECT_DIR & "framework_examples/priority_assignment",
+                        PROJECT_DIR & "graphical_editor",
+                        PROJECT_DIR & "graphical_editor/edit",
+                        PROJECT_DIR & "graphical_editor/files",
+                        PROJECT_DIR & "graphical_editor/help",
+                        PROJECT_DIR & "graphical_editor/tools");
+    for Main use ("scheduler_discard_missed_deadlines.adb");
+
+    case kernel.Build is        
+        when "Debug" =>
+            for Object_Dir use PROJECT_DIR & "binaries/objects/debug";
+            for Exec_Dir use PROJECT_DIR;
+        when "Release" =>
+            for Object_Dir use PROJECT_DIR & "binaries/objects/release";
+            for Exec_Dir use PROJECT_DIR;
+    end case;
+
+    package Builder is
+        Executable := "";
+        
+        case kernel.Build is
+            when "Release" =>
+                Executable := "framework_examples/scheduler_discard_missed_deadlines/scheduler_discard_missed_deadlines";
+            when "Debug" =>
+                Executable := "framework_examples/scheduler_discard_missed_deadlines/scheduler_discard_missed_deadlines_d";
+	    end case;
+
+        for Executable ("scheduler_discard_missed_deadlines.adb") use Executable;
+    end Builder;
+end scheduler_discard_missed_deadlines;
+
+
+
