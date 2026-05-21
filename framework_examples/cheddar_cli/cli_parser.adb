@@ -553,7 +553,11 @@ procedure Parse_Parameter(Param_Str : String) is
                            Parse_Boolean(Value(1..Value_Len)));     
       elsif Name(1..Name_Len) = "feasibility_test_name" then
          cli_params.Add_Str(cli_params.feasibility_test_name,
-                           To_Unbounded_String(Value(1..Value_Len)));                                     
+                           To_Unbounded_String(Value(1..Value_Len)));
+      elsif Name(1..Name_Len) = "wcrt_crpd" then
+         cli_params.Add_wcrt_crpd_options(Integer'Value(Value(1..Value_Len))); 
+      elsif Name(1..Name_Len) = "wcrt_memory_interferences" then
+         cli_params.Add_wcrt_memory_interferences_options(Integer'Value(Value(1..Value_Len)));                                      
       else
          Put_Line("Warning: Unknown parameter: " & Name(1..Name_Len));
       end if;

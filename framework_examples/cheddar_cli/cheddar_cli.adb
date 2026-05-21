@@ -192,9 +192,9 @@ end;
          Create(Result_File, Out_File, To_String(Config.Output_File));
          Put(Result_File, To_String(Result));
          Close(Result_File);
-         put("Analysis exported to file : " & To_String(Config.Output_File));
+         put_line("Analysis exported to file : " & To_String(Config.Output_File));
       else
-      put(To_string(result));
+      put_line(To_string(result));
       end if;
       
    end case;

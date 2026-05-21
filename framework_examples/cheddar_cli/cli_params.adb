@@ -7,6 +7,19 @@ package body cli_params is
 
 
 
+
+wcrt_crpd_options : array (wcrt_crpd_options_range ) of Unbounded_String:=(
+   To_Unbounded_String ("wcrt_without_crpd")
+   ,To_Unbounded_String ("wcrt_with_crpd_ECB_only")
+   ,To_Unbounded_String ("wcrt_with_crpd_ECB_union_multiset"),
+   To_Unbounded_String ("wcrt_with_crpd_UCB_union_multiset"),
+   To_Unbounded_String ("wcrt_with_crpd_combined_multiset")
+   );
+wcrt_memory_interferences_options : array (wcrt_memory_interferences_options_range ) of Unbounded_String:=(
+   To_Unbounded_String ("wcrt_without_memory_interferences")
+   ,To_Unbounded_String ("wcrt_with_DRAM_single_arbiter")
+   ,To_Unbounded_String ("wcrt_with_kalray_multi_arbiter")
+   );
 --tout initiliser à null
 procedure initialize is 
 begin 
@@ -131,12 +144,6 @@ begin
       when schedule_with_discard_missed_deadlines =>
          return To_Unbounded_String("schedule_with_discard_missed_deadlines");
 
-      when wcrt_with_crpd =>
-         return To_Unbounded_String("wcrt_with_crpd");
-
-      when wcrt_with_memory_interferences =>
-         return To_Unbounded_String("wcrt_with_memory_interferences");
-
       when feasibility_test_name =>
          return To_Unbounded_String("feasibility_test_name");
 
@@ -148,7 +155,8 @@ begin
 
       when r_average_case | b_average_case =>
          return To_Unbounded_String("average_case");
-
+      when others =>
+         raise Constraint_Error; 
    end case;
 end To_Unbounded;
 
@@ -181,9 +189,19 @@ A_Param.parameter_name:=To_Unbounded(Key);
 cli_parameters(Key) := A_Param;
 end Add_Str;
 
+procedure Add_wcrt_crpd_options(index : wcrt_crpd_options_range) is
+A_Param:Parameter_Ptr:=new Parameter(string_Parameter);
+begin 
+A_Param.parameter_name:=wcrt_crpd_options(index);
+cli_parameters(wcrt_crpd) := A_Param;
+end Add_wcrt_crpd_options;
 
-
-
+procedure Add_wcrt_memory_interferences_options(index : wcrt_memory_interferences_options_range) is
+A_Param:Parameter_Ptr:=new Parameter(string_Parameter);
+begin 
+A_Param.parameter_name:=wcrt_memory_interferences_options(index);
+cli_parameters(wcrt_memory_interferences) := A_Param;
+end Add_wcrt_memory_interferences_options;
 
 
 

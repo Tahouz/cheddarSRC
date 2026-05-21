@@ -5,6 +5,9 @@ use Parameters;
 with Call_Framework_Interface;
 use Call_Framework_Interface;
 package cli_params is
+
+subtype wcrt_crpd_options_range is Integer range 1 .. 5  ;
+subtype wcrt_memory_interferences_options_range is Integer range 1 .. 3 ;
 type PARAMS_KEYS is(
    --parameters for scheduling_simulation_time_line 
    preemption,
@@ -43,8 +46,8 @@ type PARAMS_KEYS is(
    schedule_with_crpd,
    schedule_with_discard_missed_deadlines,
    --compute_feasibility_response_time
-   wcrt_with_crpd,
-   wcrt_with_memory_interferences,
+   wcrt_crpd,
+   wcrt_memory_interferences,
    -- compute_feasibility_test_by_name
    feasibility_test_name,
    --scheduling_simulation_response_time 
@@ -61,7 +64,7 @@ type ClI_PARAM_LIST is array(PARAMS_KEYS) of Parameter_Ptr;
 subtype simulation_time_line_range is PARAMS_KEYS range 
   preemption .. schedule_with_discard_missed_deadlines;
 subtype feasibility_response_time_range is PARAMS_KEYS range 
-  wcrt_with_crpd .. wcrt_with_memory_interferences;
+  wcrt_crpd .. wcrt_memory_interferences;
   subtype feasibility_test_by_name_range is PARAMS_KEYS range 
   feasibility_test_name .. feasibility_test_name;
   subtype simulation_response_time_range is PARAMS_KEYS range 
@@ -82,5 +85,8 @@ procedure Add_Bool(Key : PARAMS_KEYS; Val : Boolean);
 procedure Add_Int(Key : PARAMS_KEYS; Val : Integer);
 procedure Add_Str(Key : PARAMS_KEYS; Val : Unbounded_String);
 
+procedure Add_wcrt_memory_interferences_options(index : wcrt_memory_interferences_options_range);
+
+procedure Add_wcrt_crpd_options(index : wcrt_crpd_options_range);
 
 end cli_params;

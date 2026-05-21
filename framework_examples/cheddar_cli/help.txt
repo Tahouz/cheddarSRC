@@ -1,0 +1,38 @@
+DETACH CLI v0.2 - Command Line Interface for Cheddar
+
+Usage: detach_cli [options]
+
+------------------------------------------------------OPTIONS------------------------------------------------------
+  --file=<filename.xml>                                             Specify the system file to analyze
+  --output=<type>[=<filename>]                                      Configure la sortie, où type est:
+     stdout_analysis                                                         Sortie standard en texte (défaut)
+     stdout_xml_sysmodel                                            Sortie XML du modèle système sur stdout
+     stdout_xml_eventtable                                          Sortie XML de la table d'événements sur stdout
+     file_analysis=<filename>                                   Sortie XML des analyses dans un fichier
+     file_xml_sysmodel=<filename>                                   Sortie XML du modèle système dans un fichier
+     file_xml_eventtable=<filename>                                 Sortie XML de la table d'événements dans un fichier
+
+------------------------------------------------------REQUESTS------------------------------------------------------
+  --request=<type1>,<type2>,...                                    Liste des analyses (ex. simulation,feasibility)
+     simulation                                                     Simulation temporelle
+     feasibility                                                    Tests de faisabilité
+     scheduling_simulation_time_line                                Génère une simulation temporelle
+     scheduling_feasibility_basics                                  Exécute les tests de faisabilité théoriques
+     scheduling_simulation_response_time                            Analyse des temps de réponse par simulation
+     scheduling_set_priorities_according_to_rate_monotonic          Calcule les priorités selon RM
+     scheduling_set_priorities_according_to_deadline_monotonic      Calcule les priorités selon DM
+     scheduling_feasibility_first_fit                               Algorithme de placement First-Fit
+     scheduling_feasibility_best_fit                                Algorithme de placement Best-Fit
+     scheduling_feasibility_next_fit                                Algorithme de placement Next-Fit
+     scheduling_feasibility_small_task                              Algorithme de placement Small-Task
+     scheduling_feasibility_general_task                            Algorithme de placement General-Task
+     scheduling_simulation_basics                            Analyse basique par simulation
+     scheduling_simulation_blocking_time                            Analyse des temps de blocage par simulation
+
+------------------------------------------------------PARAMETERS------------------------------------------------------
+  --param=period=<value>                                            Définir la période maximale de simulation
+  --param=schedule_with_offsets=0|1                                 Activer/désactiver les offsets en simulation
+  --param=schedule_with_resources=0|1                               Activer/désactiver les ressources en simulation
+  --param=running_task=0|1                                          Activer/désactiver les événements de tâche
+  --param=task_activation=0|1                                       Activer/désactiver les événements d'activation
+  --help                                                            Afficher ce message d'aide

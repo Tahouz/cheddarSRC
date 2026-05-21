@@ -1,3 +1,17 @@
+<response statement="SCHEDULING_SET_PRIORITIES_ACCORDING_TO_RATE_MONOTONIC">
+    <processor name="cpu">
+        <priority task="T3"> 2</priority>
+        <priority task="T2"> 3</priority>
+        <priority task="T1"> 1</priority>
+    </processor>
+</response>
+<response statement="SCHEDULING_SET_PRIORITIES_ACCORDING_TO_DEADLINE_MONOTONIC">
+    <processor name="cpu">
+        <priority task="T3"> 2</priority>
+        <priority task="T2"> 3</priority>
+        <priority task="T1"> 1</priority>
+    </processor>
+</response>
 <response statement="SCHEDULING_FEASIBILITY_BASICS">
     <processor name="cpu">
         <scheduling_period> 290.0</scheduling_period>
@@ -13,24 +27,8 @@
         <schedulable scheduler="RATE_MONOTONIC_PROTOCOL" preemptive="true" result="true" explanation="All task deadlines will be met : the task set is schedulable." biblio=""/>
     </processor>
 </response>
-<response statement="SCHEDULING_FEASIBILITY_CPU_UTILIZATION">
-    <processor name="cpu">
-        <scheduling_period> 290.0</scheduling_period>
-        <unused>104.00000</unused>
-        <utilization_over_deadline>0.64138</utilization_over_deadline>
-        <utilization_over_period>0.64138</utilization_over_period>
-        <schedulable scheduler="RATE_MONOTONIC_PROTOCOL" preemptive="true" result="true" explanation="the task set is schedulable because the processor utilization factor 0.64138 is equal or less than 0.77976" biblio=" (see [1], page 16, theorem 8). "/>
-    </processor>
-</response>
-<response statement="SCHEDULING_FEASIBILITY_FIRST_FIT">
+<response statement="SCHEDULING_FEASIBILITY_NEXT_FIT">
     <placement task="T1">cpu</placement>
     <placement task="T2">cpu</placement>
     <placement task="T3">cpu</placement>
-</response>
-<response statement="SCHEDULING_SET_PRIORITIES_ACCORDING_TO_RATE_MONOTONIC">
-    <processor name="cpu">
-        <priority task="T1"> 1</priority>
-        <priority task="T2"> 3</priority>
-        <priority task="T3"> 2</priority>
-    </processor>
 </response>

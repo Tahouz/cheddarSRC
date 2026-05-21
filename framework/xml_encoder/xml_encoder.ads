@@ -20,19 +20,16 @@ package Placement_Wrapper is new xml_tag_with_id(Tag_Name => To_Unbounded_String
 package scheduling_period_wrapper is new xml_tags(Tag_Name => To_Unbounded_String("scheduling_period"));
 package unused_period_wrapper is new xml_tags(Tag_Name => To_Unbounded_String("unused"));
 package utilization_over_deadline_wrapper is new xml_tags(Tag_Name => To_Unbounded_String("utilization_over_deadline"));
-
 package utilization_over_period_wrapper is new xml_tags(Tag_Name => To_Unbounded_String("utilization_over_period"));
-
 package cores_wrapper is new xml_tags(Tag_Name => To_Unbounded_String("cores"));
-
 package core_Wrapper is new xml_tag_with_id(Tag_Name => To_Unbounded_String("core") ,Id_Name => To_Unbounded_String("name"));
-
 package wcrts_wrapper is new xml_tags(Tag_Name => To_Unbounded_String("wcrts"));
 package wcrt_Wrapper is new xml_tag_with_id(Tag_Name => To_Unbounded_String("wcrt" ), Id_Name => To_Unbounded_String("task"));
 
 procedure wrap_cores(Content :in out Unbounded_String) ;
 
 procedure wrap_wcrt(Content : in out Unbounded_String ; task_name : Unbounded_String  );
+
 procedure wrap_wcrts(Content : in out Unbounded_String  );
 
 procedure wrap_responses (Content :in out Unbounded_String) ;

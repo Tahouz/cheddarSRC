@@ -1,0 +1,2 @@
+./cheddar_cli --request=scheduling_set_priorities_according_to_rate_monotonic,scheduling_set_priorities_according_to_deadline_monotonic,scheduling_feasibility_basics,scheduling_feasibility_next_fit --file=./xmls/exemple_simple.xml --output=file_xml_analysis=simple
+./cheddar_cli --request=scheduling_feasibility_next_fit,scheduling_set_priorities_according_to_rate_monotonic,scheduling_set_priorities_according_to_deadline_monotonic,scheduling_feasibility_basics --file=tests/test_next_fit/next_fit_test_case.xml --output=file_xml_analysis=next_fit
