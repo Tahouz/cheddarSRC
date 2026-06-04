@@ -25,6 +25,28 @@ package cores_wrapper is new xml_tags(Tag_Name => To_Unbounded_String("cores"));
 package core_Wrapper is new xml_tag_with_id(Tag_Name => To_Unbounded_String("core") ,Id_Name => To_Unbounded_String("name"));
 package wcrts_wrapper is new xml_tags(Tag_Name => To_Unbounded_String("wcrts"));
 package wcrt_Wrapper is new xml_tag_with_id(Tag_Name => To_Unbounded_String("wcrt" ), Id_Name => To_Unbounded_String("task"));
+package response_time_wrapper is new xml_tag_with_id
+  (Tag_Name => To_Unbounded_String("response_time"),
+   Id_Name  => To_Unbounded_String("task"));
+
+package best_wrapper is new xml_tags
+  (Tag_Name => To_Unbounded_String("best"));
+
+package average_wrapper is new xml_tags
+  (Tag_Name => To_Unbounded_String("average"));
+
+package worst_wrapper is new xml_tags
+  (Tag_Name => To_Unbounded_String("worst"));
+
+
+procedure wrap_response_time(Content   : in out Unbounded_String; task_name : Unbounded_String);
+
+
+procedure wrap_best(Content : in out Unbounded_String);
+
+procedure wrap_average(Content : in out Unbounded_String);
+
+procedure wrap_worst(Content : in out Unbounded_String);
 
 procedure wrap_cores(Content :in out Unbounded_String) ;
 
@@ -49,6 +71,8 @@ procedure wrap_response(Content : in out Unbounded_String ; a_statement : Call_F
 function priority_xml(sys : in Systems.system ;a_processor : in generic_processor_ptr) return Unbounded_String ;
 
 function partioning_xml(sys : in Systems.system) return Unbounded_String ;
+
+function response_time_xml(task_name : Unbounded_String; best      : Unbounded_String; average   : Unbounded_String; worst     : Unbounded_String) return Unbounded_String;
 
 
 end xml_encoder;

@@ -465,7 +465,9 @@ procedure Parse_Parameter(Param_Str : String) is
       elsif Name(1..Name_Len) = "task_specific_seed" then
          cli_params.Add_Bool(cli_params.task_specific_seed,
                            Parse_Boolean(Value(1..Value_Len)));
-
+      elsif Name(1..Name_Len) = "predictable" then
+         cli_params.Add_Bool(cli_params.predictable,
+                           Parse_Boolean(Value(1..Value_Len)));
       elsif Name(1..Name_Len) = "start_of_task_capacity" then
          cli_params.Add_Bool(cli_params.start_of_task_capacity,
                            Parse_Boolean(Value(1..Value_Len)));
@@ -481,7 +483,9 @@ procedure Parse_Parameter(Param_Str : String) is
       elsif Name(1..Name_Len) = "read_from_buffer" then
          cli_params.Add_Bool(cli_params.read_from_buffer,
                            Parse_Boolean(Value(1..Value_Len)));
-
+      elsif Name(1..Name_Len) = "discard_missed_deadline" then
+         cli_params.Add_Bool(cli_params.discard_missed_deadline,
+                           Parse_Boolean(Value(1..Value_Len)));
       elsif Name(1..Name_Len) = "send_message" then
          cli_params.Add_Bool(cli_params.send_message,
                            Parse_Boolean(Value(1..Value_Len)));
@@ -505,7 +509,9 @@ procedure Parse_Parameter(Param_Str : String) is
       elsif Name(1..Name_Len) = "address_space_activation" then
          cli_params.Add_Bool(cli_params.address_space_activation,
                            Parse_Boolean(Value(1..Value_Len)));
-
+      elsif Name(1..Name_Len) = "schedule_with_jitters" then
+         cli_params.Add_Bool(cli_params.schedule_with_jitters,
+                           Parse_Boolean(Value(1..Value_Len)));
       elsif Name(1..Name_Len) = "context_switch_overhead" then
          cli_params.Add_Bool(cli_params.context_switch_overhead,
                            Parse_Boolean(Value(1..Value_Len)));
@@ -521,15 +527,33 @@ procedure Parse_Parameter(Param_Str : String) is
       elsif Name(1..Name_Len) = "dvfs" then
          cli_params.Add_Bool(cli_params.dvfs,
                            Parse_Boolean(Value(1..Value_Len)));
-
+      elsif Name(1..Name_Len) = "preemption" then
+         cli_params.Add_Bool(cli_params.preemption,
+                           Parse_Boolean(Value(1..Value_Len)));
+      elsif Name(1..Name_Len) = "wait_for_memory" then
+         cli_params.Add_Bool(cli_params.wait_for_memory,
+                           Parse_Boolean(Value(1..Value_Len)));
+      elsif Name(1..Name_Len) = "buffer_underflow" then
+         cli_params.Add_Bool(cli_params.buffer_underflow,
+                           Parse_Boolean(Value(1..Value_Len)));
+      elsif Name(1..Name_Len) = "buffer_overflow" then
+         cli_params.Add_Bool(cli_params.buffer_overflow,
+                           Parse_Boolean(Value(1..Value_Len)));
       elsif Name(1..Name_Len) = "mode_change" then
          cli_params.Add_Bool(cli_params.mode_change,
                            Parse_Boolean(Value(1..Value_Len)));
-
+      elsif Name(1..Name_Len) = "schedule_with_precedencies" then
+         cli_params.Add_Bool(cli_params.schedule_with_precedencies,
+                           Parse_Boolean(Value(1..Value_Len)));
       elsif Name(1..Name_Len) = "tdma_slot" then
          cli_params.Add_Bool(cli_params.tdma_slot,
                            Parse_Boolean(Value(1..Value_Len)));
-
+      elsif Name(1..Name_Len) = "schedule_with_crpd" then
+         cli_params.Add_Bool(cli_params.schedule_with_crpd,
+                           Parse_Boolean(Value(1..Value_Len)));
+      elsif Name(1..Name_Len) = "schedule_with_discard_missed_deadlines" then
+         cli_params.Add_Bool(cli_params.schedule_with_discard_missed_deadlines,
+                           Parse_Boolean(Value(1..Value_Len)));
       elsif Name(1..Name_Len) = "energy" then
          cli_params.Add_Bool(cli_params.energy,
                            Parse_Boolean(Value(1..Value_Len)));

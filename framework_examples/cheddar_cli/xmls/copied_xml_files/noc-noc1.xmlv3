@@ -1,0 +1,737 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cheddar>
+
+ <core_units>
+
+  <core_unit id="id_1">
+   <object_type>CORE_OBJECT_TYPE</object_type>
+   <name>c1</name>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>RATE_MONOTONIC_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+   <speed>1</speed>
+  </core_unit>
+
+  <core_unit id="id_2">
+   <object_type>CORE_OBJECT_TYPE</object_type>
+   <name>c2</name>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>RATE_MONOTONIC_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+   <speed>1</speed>
+  </core_unit>
+
+<core_unit id="id_3">
+   <object_type>CORE_OBJECT_TYPE</object_type>
+   <name>c3</name>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>RATE_MONOTONIC_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+   <speed>1</speed>
+  </core_unit>
+
+<core_unit id="id_4">
+   <object_type>CORE_OBJECT_TYPE</object_type>
+   <name>c4</name>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>RATE_MONOTONIC_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+   <speed>1</speed>
+  </core_unit>
+
+<core_unit id="id_5">
+   <object_type>CORE_OBJECT_TYPE</object_type>
+   <name>c5</name>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>RATE_MONOTONIC_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+   <speed>1</speed>
+  </core_unit>
+
+<core_unit id="id_6">
+   <object_type>CORE_OBJECT_TYPE</object_type>
+   <name>c6</name>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>RATE_MONOTONIC_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+   <speed>1</speed>
+  </core_unit>
+
+
+
+<core_unit id="id_7">
+   <object_type>CORE_OBJECT_TYPE</object_type>
+   <name>c7</name>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>RATE_MONOTONIC_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+   <speed>1</speed>
+  </core_unit>
+
+<core_unit id="id_8">
+   <object_type>CORE_OBJECT_TYPE</object_type>
+   <name>c8</name>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>RATE_MONOTONIC_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+   <speed>1</speed>
+  </core_unit>
+
+<core_unit id="id_9">
+   <object_type>CORE_OBJECT_TYPE</object_type>
+   <name>c9</name>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>RATE_MONOTONIC_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+   <speed>1</speed>
+  </core_unit>
+
+
+
+ </core_units>
+
+ <processors>
+
+  <mono_core_processor id="id_10">
+   <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+   <name>cpu1</name>
+   <processor_type>MONOCORE_TYPE</processor_type>
+   <migration_type>NO_MIGRATION_TYPE</migration_type>
+   <core ref="id_1">
+   </core>
+  </mono_core_processor>
+
+  <mono_core_processor id="id_11">
+   <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+   <name>cpu2</name>
+   <processor_type>MONOCORE_TYPE</processor_type>
+   <migration_type>NO_MIGRATION_TYPE</migration_type>
+   <core ref="id_2">
+   </core>
+  </mono_core_processor>
+
+ <mono_core_processor id="id_12">
+   <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+   <name>cpu3</name>
+   <processor_type>MONOCORE_TYPE</processor_type>
+   <migration_type>NO_MIGRATION_TYPE</migration_type>
+   <core ref="id_3">
+   </core>
+  </mono_core_processor>
+
+ <mono_core_processor id="id_13">
+   <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+   <name>cpu4</name>
+   <processor_type>MONOCORE_TYPE</processor_type>
+   <migration_type>NO_MIGRATION_TYPE</migration_type>
+   <core ref="id_4">
+   </core>
+  </mono_core_processor>
+
+
+
+ <mono_core_processor id="id_14">
+   <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+   <name>cpu5</name>
+   <processor_type>MONOCORE_TYPE</processor_type>
+   <migration_type>NO_MIGRATION_TYPE</migration_type>
+   <core ref="id_5">
+   </core>
+  </mono_core_processor>
+
+
+ <mono_core_processor id="id_15">
+   <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+   <name>cpu6</name>
+   <processor_type>MONOCORE_TYPE</processor_type>
+   <migration_type>NO_MIGRATION_TYPE</migration_type>
+   <core ref="id_6">
+   </core>
+  </mono_core_processor>
+
+
+
+ <mono_core_processor id="id_16">
+   <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+   <name>cpu7</name>
+   <processor_type>MONOCORE_TYPE</processor_type>
+   <migration_type>NO_MIGRATION_TYPE</migration_type>
+   <core ref="id_7">
+   </core>
+  </mono_core_processor>
+
+
+
+ <mono_core_processor id="id_17">
+   <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+   <name>cpu8</name>
+   <processor_type>MONOCORE_TYPE</processor_type>
+   <migration_type>NO_MIGRATION_TYPE</migration_type>
+   <core ref="id_8">
+   </core>
+  </mono_core_processor>
+
+
+ <mono_core_processor id="id_18">
+   <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+   <name>cpu9</name>
+   <processor_type>MONOCORE_TYPE</processor_type>
+   <migration_type>NO_MIGRATION_TYPE</migration_type>
+   <core ref="id_9">
+   </core>
+  </mono_core_processor>
+
+
+
+ </processors>
+
+ <address_spaces>
+
+  <address_space id="id_19">
+   <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+   <name>ea1</name>
+   <cpu_name>cpu1</cpu_name>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <data_memory_size>0</data_memory_size>
+   <heap_memory_size>0</heap_memory_size>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>NO_SCHEDULING_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+  </address_space>
+
+  <address_space id="id_20">
+   <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+   <name>ea2</name>
+   <cpu_name>cpu2</cpu_name>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <data_memory_size>0</data_memory_size>
+   <heap_memory_size>0</heap_memory_size>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>NO_SCHEDULING_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+  </address_space>
+
+  <address_space id="id_21">
+   <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+   <name>ea3</name>
+   <cpu_name>cpu3</cpu_name>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <data_memory_size>0</data_memory_size>
+   <heap_memory_size>0</heap_memory_size>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>NO_SCHEDULING_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+  </address_space>
+
+  <address_space id="id_22">
+   <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+   <name>ea4</name>
+   <cpu_name>cpu4</cpu_name>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <data_memory_size>0</data_memory_size>
+   <heap_memory_size>0</heap_memory_size>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>NO_SCHEDULING_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+  </address_space>
+
+
+  <address_space id="id_23">
+   <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+   <name>ea5</name>
+   <cpu_name>cpu5</cpu_name>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <data_memory_size>0</data_memory_size>
+   <heap_memory_size>0</heap_memory_size>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>NO_SCHEDULING_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+  </address_space>
+
+
+  <address_space id="id_24">
+   <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+   <name>ea6</name>
+   <cpu_name>cpu6</cpu_name>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <data_memory_size>0</data_memory_size>
+   <heap_memory_size>0</heap_memory_size>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>NO_SCHEDULING_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+  </address_space>
+
+
+  <address_space id="id_25">
+   <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+   <name>ea7</name>
+   <cpu_name>cpu7</cpu_name>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <data_memory_size>0</data_memory_size>
+   <heap_memory_size>0</heap_memory_size>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>NO_SCHEDULING_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+  </address_space>
+
+
+
+  <address_space id="id_26">
+   <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+   <name>ea8</name>
+   <cpu_name>cpu8</cpu_name>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <data_memory_size>0</data_memory_size>
+   <heap_memory_size>0</heap_memory_size>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>NO_SCHEDULING_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+  </address_space>
+
+
+
+  <address_space id="id_27">
+   <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+   <name>ea9</name>
+   <cpu_name>cpu9</cpu_name>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <data_memory_size>0</data_memory_size>
+   <heap_memory_size>0</heap_memory_size>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>NO_SCHEDULING_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+  </address_space>
+
+
+
+ </address_spaces>
+
+ <tasks>
+
+  <periodic_task id="id_28">
+   <object_type>TASK_OBJECT_TYPE</object_type>
+   <name>T1</name>
+   <task_type>PERIODIC_TYPE</task_type>
+   <cpu_name>cpu1</cpu_name>
+   <address_space_name>ea1</address_space_name>
+   <capacity>1</capacity>
+   <deadline>10</deadline>
+   <start_time>0</start_time>
+   <priority>1</priority>
+   <blocking_time>0</blocking_time>
+   <policy>SCHED_FIFO</policy>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <criticality>0</criticality>
+   <context_switch_overhead>0</context_switch_overhead>
+   <period>10</period>
+   <jitter>0</jitter>
+   <every>0</every>
+  </periodic_task>
+
+  <periodic_task id="id_29">
+   <object_type>TASK_OBJECT_TYPE</object_type>
+   <name>T2</name>
+   <task_type>PERIODIC_TYPE</task_type>
+   <cpu_name>cpu2</cpu_name>
+   <address_space_name>ea2</address_space_name>
+   <capacity>1</capacity>
+   <deadline>10</deadline>
+   <start_time>0</start_time>
+   <priority>1</priority>
+   <blocking_time>0</blocking_time>
+   <policy>SCHED_FIFO</policy>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <criticality>0</criticality>
+   <context_switch_overhead>0</context_switch_overhead>
+   <period>10</period>
+   <jitter>0</jitter>
+   <every>0</every>
+  </periodic_task>
+
+
+  <periodic_task id="id_30">
+   <object_type>TASK_OBJECT_TYPE</object_type>
+   <name>T3</name>
+   <task_type>PERIODIC_TYPE</task_type>
+   <cpu_name>cpu3</cpu_name>
+   <address_space_name>ea3</address_space_name>
+   <capacity>1</capacity>
+   <deadline>10</deadline>
+   <start_time>0</start_time>
+   <priority>1</priority>
+   <blocking_time>0</blocking_time>
+   <policy>SCHED_FIFO</policy>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <criticality>0</criticality>
+   <context_switch_overhead>0</context_switch_overhead>
+   <period>10</period>
+   <jitter>0</jitter>
+   <every>0</every>
+  </periodic_task>
+ </tasks>
+
+
+  <periodic_task id="id_31">
+   <object_type>TASK_OBJECT_TYPE</object_type>
+   <name>T4</name>
+   <task_type>PERIODIC_TYPE</task_type>
+   <cpu_name>cpu4</cpu_name>
+   <address_space_name>ea4</address_space_name>
+   <capacity>1</capacity>
+   <deadline>10</deadline>
+   <start_time>0</start_time>
+   <priority>1</priority>
+   <blocking_time>0</blocking_time>
+   <policy>SCHED_FIFO</policy>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <criticality>0</criticality>
+   <context_switch_overhead>0</context_switch_overhead>
+   <period>10</period>
+   <jitter>0</jitter>
+   <every>0</every>
+  </periodic_task>
+
+
+  <periodic_task id="id_32">
+   <object_type>TASK_OBJECT_TYPE</object_type>
+   <name>T5</name>
+   <task_type>PERIODIC_TYPE</task_type>
+   <cpu_name>cpu9</cpu_name>
+   <address_space_name>ea9</address_space_name>
+   <capacity>1</capacity>
+   <deadline>10</deadline>
+   <start_time>0</start_time>
+   <priority>1</priority>
+   <blocking_time>0</blocking_time>
+   <policy>SCHED_FIFO</policy>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <criticality>0</criticality>
+   <context_switch_overhead>0</context_switch_overhead>
+   <period>10</period>
+   <jitter>0</jitter>
+   <every>0</every>
+  </periodic_task>
+
+
+ <messages>
+
+  <periodic_message id="id_33">
+   <object_type>MESSAGE_OBJECT_TYPE</object_type>
+   <name>M1</name>
+   <message_type>PERIODIC_TYPE</message_type>
+   <deadline>10</deadline>
+   <size>1</size>
+   <response_time>10</response_time>
+   <communication_time>5</communication_time>
+  </periodic_message>
+
+<periodic_message id="id_34">
+   <object_type>MESSAGE_OBJECT_TYPE</object_type>
+   <name>M2</name>
+   <message_type>PERIODIC_TYPE</message_type>
+   <deadline>10</deadline>
+   <size>1</size>
+   <response_time>12</response_time>
+   <communication_time>6</communication_time>
+  </periodic_message>
+
+<periodic_message id="id_35">
+   <object_type>MESSAGE_OBJECT_TYPE</object_type>
+   <name>M3</name>
+   <message_type>PERIODIC_TYPE</message_type>
+   <deadline>10</deadline>
+   <size>1</size>
+   <response_time>7</response_time>
+   <communication_time>3</communication_time>
+  </periodic_message>
+
+<periodic_message id="id_36">
+   <object_type>MESSAGE_OBJECT_TYPE</object_type>
+   <name>M4</name>
+   <message_type>PERIODIC_TYPE</message_type>
+   <deadline>10</deadline>
+   <size>1</size>
+   <response_time>8</response_time>
+   <communication_time>2</communication_time>
+  </periodic_message>
+
+
+
+<periodic_message id="id_37">
+   <object_type>MESSAGE_OBJECT_TYPE</object_type>
+   <name>M5</name>
+   <message_type>PERIODIC_TYPE</message_type>
+   <deadline>10</deadline>
+   <size>1</size>
+   <response_time>9</response_time>
+   <communication_time>5</communication_time>
+  </periodic_message>
+
+ </messages>
+
+ <dependencies>
+
+  <dependency>
+   <type_of_dependency>ASYNCHRONOUS_COMMUNICATION_DEPENDENCY</type_of_dependency>
+   <asynchronous_communication_dependent_task ref="id_28">
+   </asynchronous_communication_dependent_task>
+   <asynchronous_communication_orientation>FROM_TASK_TO_OBJECT</asynchronous_communication_orientation>
+   <asynchronous_communication_dependency_object ref="id_33">
+   </asynchronous_communication_dependency_object>
+  </dependency>
+
+  <dependency>
+   <type_of_dependency>ASYNCHRONOUS_COMMUNICATION_DEPENDENCY</type_of_dependency>
+   <asynchronous_communication_dependent_task ref="id_29">
+   </asynchronous_communication_dependent_task>
+   <asynchronous_communication_orientation>FROM_OBJECT_TO_TASK</asynchronous_communication_orientation>
+   <asynchronous_communication_dependency_object ref="id_33">
+   </asynchronous_communication_dependency_object>
+  </dependency>
+
+
+
+  <dependency>
+   <type_of_dependency>ASYNCHRONOUS_COMMUNICATION_DEPENDENCY</type_of_dependency>
+   <asynchronous_communication_dependent_task ref="id_28">
+   </asynchronous_communication_dependent_task>
+   <asynchronous_communication_orientation>FROM_TASK_TO_OBJECT</asynchronous_communication_orientation>
+   <asynchronous_communication_dependency_object ref="id_34">
+   </asynchronous_communication_dependency_object>
+  </dependency>
+
+  <dependency>
+   <type_of_dependency>ASYNCHRONOUS_COMMUNICATION_DEPENDENCY</type_of_dependency>
+   <asynchronous_communication_dependent_task ref="id_30">
+   </asynchronous_communication_dependent_task>
+   <asynchronous_communication_orientation>FROM_OBJECT_TO_TASK</asynchronous_communication_orientation>
+   <asynchronous_communication_dependency_object ref="id_34">
+   </asynchronous_communication_dependency_object>
+  </dependency>
+
+
+
+
+  <dependency>
+   <type_of_dependency>ASYNCHRONOUS_COMMUNICATION_DEPENDENCY</type_of_dependency>
+   <asynchronous_communication_dependent_task ref="id_28">
+   </asynchronous_communication_dependent_task>
+   <asynchronous_communication_orientation>FROM_TASK_TO_OBJECT</asynchronous_communication_orientation>
+   <asynchronous_communication_dependency_object ref="id_35">
+   </asynchronous_communication_dependency_object>
+  </dependency>
+
+  <dependency>
+   <type_of_dependency>ASYNCHRONOUS_COMMUNICATION_DEPENDENCY</type_of_dependency>
+   <asynchronous_communication_dependent_task ref="id_31">
+   </asynchronous_communication_dependent_task>
+   <asynchronous_communication_orientation>FROM_OBJECT_TO_TASK</asynchronous_communication_orientation>
+   <asynchronous_communication_dependency_object ref="id_35">
+   </asynchronous_communication_dependency_object>
+  </dependency>
+
+
+  <dependency>
+   <type_of_dependency>ASYNCHRONOUS_COMMUNICATION_DEPENDENCY</type_of_dependency>
+   <asynchronous_communication_dependent_task ref="id_29">
+   </asynchronous_communication_dependent_task>
+   <asynchronous_communication_orientation>FROM_TASK_TO_OBJECT</asynchronous_communication_orientation>
+   <asynchronous_communication_dependency_object ref="id_36">
+   </asynchronous_communication_dependency_object>
+  </dependency>
+
+  <dependency>
+   <type_of_dependency>ASYNCHRONOUS_COMMUNICATION_DEPENDENCY</type_of_dependency>
+   <asynchronous_communication_dependent_task ref="id_32">
+   </asynchronous_communication_dependent_task>
+   <asynchronous_communication_orientation>FROM_OBJECT_TO_TASK</asynchronous_communication_orientation>
+   <asynchronous_communication_dependency_object ref="id_36">
+   </asynchronous_communication_dependency_object>
+  </dependency>
+
+
+
+  <dependency>
+   <type_of_dependency>ASYNCHRONOUS_COMMUNICATION_DEPENDENCY</type_of_dependency>
+   <asynchronous_communication_dependent_task ref="id_31">
+   </asynchronous_communication_dependent_task>
+   <asynchronous_communication_orientation>FROM_TASK_TO_OBJECT</asynchronous_communication_orientation>
+   <asynchronous_communication_dependency_object ref="id_37">
+   </asynchronous_communication_dependency_object>
+  </dependency>
+
+  <dependency>
+   <type_of_dependency>ASYNCHRONOUS_COMMUNICATION_DEPENDENCY</type_of_dependency>
+   <asynchronous_communication_dependent_task ref="id_32">
+   </asynchronous_communication_dependent_task>
+   <asynchronous_communication_orientation>FROM_OBJECT_TO_TASK</asynchronous_communication_orientation>
+   <asynchronous_communication_dependency_object ref="id_37">
+   </asynchronous_communication_dependency_object>
+  </dependency>
+
+
+ </dependencies>
+
+
+
+
+</cheddar>
+

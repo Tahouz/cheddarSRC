@@ -93,6 +93,7 @@ with cache_access_profile_set;          use cache_access_profile_set;
 with Processor_Interface;               use Processor_Interface;
 with feasibility_test.processor_demand; use feasibility_test.processor_demand;
 with xml_tag;                           use xml_tag;
+with xml_encoder; use xml_encoder;
 
 package body call_scheduling_framework is
 
@@ -565,50 +566,52 @@ package body call_scheduling_framework is
                         min,
                         average);
 
+                  
+
                      if output /= xml_output then
+
                         result :=
-                          result &
-                          lb_tab4 &
-                          a_task.name &
-                          To_Unbounded_String (" =>");
+                        result &
+                        lb_tab4 &
+                        a_task.name &
+                        To_Unbounded_String (" =>");
+
                      else
-                        result :=
-                          result &
-                          start_computation &
-                          To_Unbounded_String (" name=") &
-                          To_Unbounded_String ("""") &
-                          Lb_Xml_Response_Time
-                            (Current_Language) &
-                          To_Unbounded_String ("""") &
-                          To_Unbounded_String (" reference=") &
-                          To_Unbounded_String ("""") &
-                          a_task.name &
-                          To_Unbounded_String ("""");
-                     end if;
+                        declare
+                           Best_Str    : Unbounded_String := empty_string;
+                           Average_Str : Unbounded_String := empty_string;
+                           Worst_Str   : Unbounded_String := empty_string;
 
-                     if output = xml_output then
-                        if (worst_case) and (max = 0) then
-                           Max_Str     := empty_string;
-                           Min_Str     := empty_string;
-                           Average_Str := empty_string;
-                        else
-                           Max_Str     := To_Unbounded_String (max'img);
-                           Min_Str     := To_Unbounded_String (min'img);
-                           Average_Str := format (average);
-                        end if;
-                     end if;
+                        begin
 
+                           if best_case then
+                              Best_Str := To_Unbounded_String(min'Img);
+                           end if;
+
+                           if average_case then
+                              Average_Str := format(average);
+                           end if;
+
+                           if worst_case then
+                              Worst_Str := To_Unbounded_String(max'Img);
+                           end if;
+
+                           result :=
+                           result &
+                           response_time_xml
+                              (a_task.name,
+                              Best_Str,
+                              Average_Str,
+                              Worst_Str) &
+                           unbounded_lf;
+
+                        end;
+                     end if;
                      if worst_case then
                         if output /= xml_output then
                            result :=
                              result & max'img & To_Unbounded_String ("/worst ");
-                        else
-                           result :=
-                             result &
-                             To_Unbounded_String (" worst=") &
-                             To_Unbounded_String ("""") &
-                             Max_Str &
-                             To_Unbounded_String ("""");
+   
                         end if;
                      end if;
 
@@ -616,13 +619,7 @@ package body call_scheduling_framework is
                         if output /= xml_output then
                            result :=
                              result & min'img & To_Unbounded_String ("/best ");
-                        else
-                           result :=
-                             result &
-                             To_Unbounded_String (" best=") &
-                             To_Unbounded_String ("""") &
-                             Min_Str &
-                             To_Unbounded_String ("""");
+                        
                         end if;
                      end if;
 
@@ -632,13 +629,7 @@ package body call_scheduling_framework is
                              result &
                              format (average) &
                              To_Unbounded_String ("/average ");
-                        else
-                           result :=
-                             result &
-                             To_Unbounded_String (" average=") &
-                             To_Unbounded_String ("""") &
-                             Average_Str &
-                             To_Unbounded_String ("""");
+                        
                         end if;
                      end if;
 
@@ -649,26 +640,12 @@ package body call_scheduling_framework is
                              lb_comma &
                              lb_task_is_not_over_response_time_is_not_computed
                                (Current_Language);
-                        else
-                           result :=
-                             result &
-                             To_Unbounded_String (" note=") &
-                             To_Unbounded_String ("""") &
-                             lb_task_is_not_over_response_time_is_not_computed
-                               (Current_Language) &
-                             To_Unbounded_String ("""");
                         end if;
 
                         completed := False;
                      end if;
 
-                     if output = xml_output then
-                        result :=
-                          result &
-                          To_Unbounded_String (" biblio=") &
-                          To_Unbounded_String ("""""/>") &
-                          unbounded_lf;
-                     else
+                     if output /= xml_output then
                         result := result & check & unbounded_lf;
                      end if;
 
@@ -688,6 +665,7 @@ package body call_scheduling_framework is
 
       -- test the feasibility
       if output = xml_output then
+         result := result & To_Unbounded_String("<schedulable ");
          A_Scheduler := build_a_scheduler (a_processor);
 
          if get_preemptive (A_Scheduler.all) = "PREEMPTIVE" then
@@ -1652,11 +1630,14 @@ package body call_scheduling_framework is
             intermediate_task_wcrsts := intermediate_task_wcrsts & unbounded_lf;
          end if;
       end loop;
-      xml_encoder.wrap_wcrts(intermediate_task_wcrsts);
-      result := result & intermediate_task_wcrsts;
+      if output = xml_output then
+         xml_encoder.wrap_wcrts(intermediate_task_wcrsts);
+         result := result & intermediate_task_wcrsts;
+      end if;
+      
 
       if output = xml_output then
-         
+         result := result & Ada.Strings.Unbounded.To_Unbounded_String("<schedulable");
          a_scheduler := build_a_scheduler (a_processor);
          if get_preemptive (a_scheduler.all) = "PREEMPTIVE" then
             preemptive := To_Unbounded_String ("true");
@@ -1666,7 +1647,6 @@ package body call_scheduling_framework is
 
          result :=
            result &
-           Ada.Strings.Unbounded.To_Unbounded_String("<schedulable") &
            To_Unbounded_String (" scheduler=""") &
            get_name (a_scheduler.all) &
            To_Unbounded_String ("""") &

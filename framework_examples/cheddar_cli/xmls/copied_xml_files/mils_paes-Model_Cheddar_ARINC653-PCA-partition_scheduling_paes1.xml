@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE Cheddar_Event_Table SYSTEM "event_table.dtd">
+<?xml-stylesheet type="text/xsl" href="event_table.xsl"?>
+<event_table>
+      <time_unit>0</time_unit>
+      <time_unit_event>
+        <type_of_event>ADDRESS_SPACE_ACTIVATION</type_of_event>
+        <activation_address_space>addr1</activation_address_space>
+        <duration>3</duration>
+      </time_unit_event>
+
+      <time_unit>3</time_unit>
+      <time_unit_event>
+        <type_of_event>ADDRESS_SPACE_ACTIVATION</type_of_event>
+        <activation_address_space>addr2</activation_address_space>
+        <duration>1</duration>
+      </time_unit_event>
+
+
+     <time_unit>4</time_unit>
+      <time_unit_event>
+        <type_of_event>ADDRESS_SPACE_ACTIVATION</type_of_event>
+        <activation_address_space>addr3</activation_address_space>
+        <duration>1</duration>
+      </time_unit_event>
+
+     <time_unit>5</time_unit>
+      <time_unit_event>
+        <type_of_event>ADDRESS_SPACE_ACTIVATION</type_of_event>
+        <activation_address_space>addr1</activation_address_space>
+        <duration>3</duration>
+      </time_unit_event>
+
+   
+</event_table>

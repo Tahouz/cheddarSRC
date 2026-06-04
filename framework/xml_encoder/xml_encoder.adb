@@ -158,4 +158,83 @@ wcrts_wrapper.wrapContent(Content);
 end wrap_wcrts;
 
 
+procedure wrap_response_time
+  (Content   : in out Unbounded_String;
+   task_name : Unbounded_String)
+is
+begin
+   response_time_wrapper.wrapContent_withID(Content, task_name);
+end wrap_response_time;
+
+
+procedure wrap_best(Content : in out Unbounded_String)
+is
+begin
+   best_wrapper.wrapContent(Content);
+end wrap_best;
+
+
+procedure wrap_average(Content : in out Unbounded_String)
+is
+begin
+   average_wrapper.wrapContent(Content);
+end wrap_average;
+
+
+procedure wrap_worst(Content : in out Unbounded_String)
+is
+begin
+   worst_wrapper.wrapContent(Content);
+end wrap_worst;
+
+function response_time_xml
+  (task_name : Unbounded_String;
+   best      : Unbounded_String;
+   average   : Unbounded_String;
+   worst     : Unbounded_String)
+   return Unbounded_String
+is
+
+   result : Unbounded_String := empty_string;
+   tmp    : Unbounded_String;
+
+begin
+
+   --
+   -- Add <best>
+   --
+   if best /= empty_string then
+      tmp := best;
+      best_wrapper.wrapContent(tmp);
+      result := result & tmp;
+   end if;
+
+   --
+   -- Add <average>
+   --
+   if average /= empty_string then
+      tmp := average;
+      average_wrapper.wrapContent(tmp);
+      result := result & tmp;
+   end if;
+
+   --
+   -- Add <worst>
+   --
+   if worst /= empty_string then
+      tmp := worst;
+      worst_wrapper.wrapContent(tmp);
+      result := result & tmp;
+   end if;
+
+   --
+   -- Wrap everything inside:
+   -- <response_time task="...">
+   --
+   response_time_wrapper.wrapContent_withID(result, task_name);
+
+   return result;
+
+end response_time_xml;
 end xml_encoder;
+

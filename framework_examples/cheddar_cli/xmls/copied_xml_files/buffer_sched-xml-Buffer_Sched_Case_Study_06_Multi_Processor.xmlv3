@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cheddar>
+ <core_units>
+  <core_unit id="id_1">
+   <object_type>CORE_OBJECT_TYPE</object_type>
+   <name>Core_1</name>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>POSIX_1003_HIGHEST_PRIORITY_FIRST_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>1</capacity>
+     <period>1</period>
+     <priority>1</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+   <speed>1</speed>
+   <l1_cache_system_name>Cache_1</l1_cache_system_name>
+  </core_unit>
+  <core_unit id="id_3">
+   <object_type>CORE_OBJECT_TYPE</object_type>
+   <name>Core_2</name>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>POSIX_1003_HIGHEST_PRIORITY_FIRST_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>1</capacity>
+     <period>1</period>
+     <priority>1</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+   <speed>1</speed>
+   <l1_cache_system_name>Cache_2</l1_cache_system_name>
+  </core_unit>
+ </core_units>
+ <processors>
+  <mono_core_processor id="id_2">
+   <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+   <name>CPU_1</name>
+   <processor_type>MONOCORE_TYPE</processor_type>
+   <migration_type>NO_MIGRATION_TYPE</migration_type>
+   <core ref="id_1">
+   </core>
+  </mono_core_processor>
+  <mono_core_processor id="id_4">
+   <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+   <name>CPU_2</name>
+   <processor_type>MONOCORE_TYPE</processor_type>
+   <migration_type>NO_MIGRATION_TYPE</migration_type>
+   <core ref="id_3">
+   </core>
+  </mono_core_processor>
+ </processors>
+ <address_spaces>
+  <address_space id="id_5">
+   <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+   <name>Address_Space_1</name>
+   <cpu_name>CPU_1</cpu_name>
+   <text_memory_size>1024</text_memory_size>
+   <stack_memory_size>1024</stack_memory_size>
+   <data_memory_size>1024</data_memory_size>
+   <heap_memory_size>1024</heap_memory_size>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>NO_SCHEDULING_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+  </address_space>
+  <address_space id="id_6">
+   <object_type>ADDRESS_SPACE_OBJECT_TYPE</object_type>
+   <name>Address_Space_2</name>
+   <cpu_name>CPU_2</cpu_name>
+   <text_memory_size>1024</text_memory_size>
+   <stack_memory_size>1024</stack_memory_size>
+   <data_memory_size>1024</data_memory_size>
+   <heap_memory_size>1024</heap_memory_size>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>NO_SCHEDULING_PROTOCOL</scheduler_type>
+     <quantum>0</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>0</capacity>
+     <period>0</period>
+     <priority>0</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+  </address_space>
+ </address_spaces>
+ <tasks>
+  <periodic_task id="id_7">
+   <object_type>TASK_OBJECT_TYPE</object_type>
+   <name>Task_1</name>
+   <task_type>PERIODIC_TYPE</task_type>
+   <cpu_name>CPU_1</cpu_name>
+   <address_space_name>Address_Space_1</address_space_name>
+   <capacity>6</capacity>
+   <deadline>30</deadline>
+   <start_time>0</start_time>
+   <priority>6</priority>
+   <blocking_time>0</blocking_time>
+   <policy>SCHED_FIFO</policy>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <criticality>0</criticality>
+   <context_switch_overhead>0</context_switch_overhead>
+   <period>40</period>
+   <jitter>0</jitter>
+   <every>0</every>
+  </periodic_task>
+  <periodic_task id="id_8">
+   <object_type>TASK_OBJECT_TYPE</object_type>
+   <name>Task_2</name>
+   <task_type>PERIODIC_TYPE</task_type>
+   <cpu_name>CPU_2</cpu_name>
+   <address_space_name>Address_Space_2</address_space_name>
+   <capacity>6</capacity>
+   <deadline>30</deadline>
+   <start_time>0</start_time>
+   <priority>6</priority>
+   <blocking_time>0</blocking_time>
+   <policy>SCHED_FIFO</policy>
+   <text_memory_size>0</text_memory_size>
+   <stack_memory_size>0</stack_memory_size>
+   <criticality>0</criticality>
+   <context_switch_overhead>0</context_switch_overhead>
+   <period>40</period>
+   <jitter>0</jitter>
+   <every>0</every>
+  </periodic_task>
+ </tasks>
+ <buffers>
+  <buffer id="id_9">
+   <object_type>BUFFER_OBJECT_TYPE</object_type>
+   <name>Buffer_01</name>
+   <cpu_name>CPU_1</cpu_name>
+   <address_space_name>Address_Space_1</address_space_name>
+   <queueing_system_type>QS_PP1</queueing_system_type>
+   <buffer_size>10</buffer_size>
+   <buffer_initial_data_size>0</buffer_initial_data_size>
+   <roles>
+    <task_name>Task_1</task_name>
+    <buffer_role>
+     <the_role>QUEUING_PRODUCER</the_role>
+     <size>3</size>
+     <time>6</time>
+     <timeout>3</timeout>
+    </buffer_role>
+    <task_name>Task_2</task_name>
+    <buffer_role>
+     <the_role>QUEUING_CONSUMER</the_role>
+     <size>3</size>
+     <time>1</time>
+     <timeout>3</timeout>
+    </buffer_role>
+   </roles>
+  </buffer>
+ </buffers>
+ <dependencies>
+  <dependency>
+   <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+   <buffer_dependent_task ref="id_7">
+   </buffer_dependent_task>
+   <buffer_orientation>FROM_TASK_TO_OBJECT</buffer_orientation>
+   <buffer_dependency_object ref="id_9">
+   </buffer_dependency_object>
+  </dependency>
+  <dependency>
+   <type_of_dependency>QUEUEING_BUFFER_DEPENDENCY</type_of_dependency>
+   <buffer_dependent_task ref="id_8">
+   </buffer_dependent_task>
+   <buffer_orientation>FROM_OBJECT_TO_TASK</buffer_orientation>
+   <buffer_dependency_object ref="id_9">
+   </buffer_dependency_object>
+  </dependency>
+ </dependencies>
+</cheddar>
+

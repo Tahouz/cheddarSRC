@@ -1,0 +1,33 @@
+site_name: CHEDDAR_CLI DOCS
+
+nav:
+  - CHEDDARCLI : index.md
+  
+  - Scheduling Algorithms:
+      - Rate Monotonic Scheduling: rm.md
+      - Deadline Monotonic Scheduling: dm.md
+
+  - Partitioning Algorithms:
+      - Rate-Monotonic Next-Fit: next-fit.md
+      - Rate-Monotonic First-Fit: first-fit.md
+      - Rate-Monotonic Best-Fit: best-fit.md
+      - Rate-Monotonic Small-Tasks: small-tasks.md
+      - Rate-Monotonic General-Tasks: general-tasks.md
+
+  - Feasibility:
+      - Basic Feasibility: feasibility_basics.md
+theme:
+  name: readthedocs
+#   logo: images/logo.png
+#   favicon : null
+#   palette:
+#     primary: yellow
+#     accent: black
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js

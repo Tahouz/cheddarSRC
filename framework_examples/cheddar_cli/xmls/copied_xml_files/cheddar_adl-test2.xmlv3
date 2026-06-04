@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cheddar>
+ <core_units>
+  <core_unit id="id_1">
+   <object_type>CORE_OBJECT_TYPE</object_type>
+   <name>core1</name>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>POSIX_1003_HIGHEST_PRIORITY_FIRST_PROTOCOL</scheduler_type>
+     <quantum>100</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>101</capacity>
+     <period>102</period>
+     <priority>103</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+   <speed>1</speed>
+  </core_unit>
+  <core_unit id="id_2">
+   <object_type>CORE_OBJECT_TYPE</object_type>
+   <name>core2</name>
+   <scheduling>
+    <scheduling_parameters>
+     <scheduler_type>POSIX_1003_HIGHEST_PRIORITY_FIRST_PROTOCOL</scheduler_type>
+     <quantum>100</quantum>
+     <preemptive_type>PREEMPTIVE</preemptive_type>
+     <capacity>101</capacity>
+     <period>102</period>
+     <priority>103</priority>
+     <start_time>0</start_time>
+    </scheduling_parameters>
+   </scheduling>
+   <speed>1</speed>
+  </core_unit>
+ </core_units>
+</cheddar>
+

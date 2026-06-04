@@ -236,13 +236,8 @@ begin
   end if;
   
   begin
-     if Extension(To_String(Config.Input_File)) = "xml" then
+     if Extension(To_String(Config.Input_File)) = "xml" or Extension(To_String(Config.Input_File)) = "xmlv3" then
         Systems.read_from_xml_file(
-           Sys,
-           Project_File_Dir_List,
-           Config.Input_File);
-     elsif Extension(To_String(Config.Input_File)) = "xmlv3" then
-        Systems.read_from_v2_xml_file(
            Sys,
            Project_File_Dir_List,
            Config.Input_File);

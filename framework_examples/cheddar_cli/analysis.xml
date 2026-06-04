@@ -1,0 +1,75 @@
+<response statement="SCHEDULING_FEASIBILITY_BEST_FIT">
+    <placement task="T1">cpu1</placement>
+    <placement task="T2">cpu1</placement>
+    <placement task="T3">cpu2</placement>
+    <placement task="T4">cpu1</placement>
+    <placement task="T5">cpu2</placement>
+</response>
+<response statement="SCHEDULING_FEASIBILITY_INTERVAL">
+    <processor name="cpu1">
+        <scheduling_period> 60.0</scheduling_period>
+        <unused>18.00000</unused>
+    </processor>
+    <processor name="cpu2">
+        <scheduling_period> 30.0</scheduling_period>
+        <unused>14.00000</unused>
+    </processor>
+</response>
+<response statement="SCHEDULING_FEASIBILITY_CPU_UTILIZATION">
+    <processor name="cpu1">
+        <scheduling_period> 60.0</scheduling_period>
+        <unused>18.00000</unused>
+        <utilization_over_deadline>0.70000</utilization_over_deadline>
+        <utilization_over_period>0.70000</utilization_over_period>
+        <schedulable scheduler="RATE_MONOTONIC_PROTOCOL" preemptive="true" result="true" explanation="the task set is schedulable because the processor utilization factor 0.70000 is equal or less than 0.77976" biblio=" (see [1], page 16, theorem 8). "/>
+    </processor>
+    <processor name="cpu2">
+        <scheduling_period> 30.0</scheduling_period>
+        <unused>14.00000</unused>
+        <utilization_over_deadline>0.53333</utilization_over_deadline>
+        <utilization_over_period>0.53333</utilization_over_period>
+        <schedulable scheduler="RATE_MONOTONIC_PROTOCOL" preemptive="true" result="true" explanation="the task set is schedulable because the processor utilization factor 0.53333 is equal or less than 0.82843" biblio=" (see [1], page 16, theorem 8). "/>
+    </processor>
+</response>
+<response statement="SCHEDULING_FEASIBILITY_PERIODIC_TASK_WORST_CASE_RESPONSE_TIME">
+    <processor name="cpu1">
+        <wcrts>
+            <wcrt task="T1">1.00000</wcrt>
+            <wcrt task="T2">2.00000</wcrt>
+            <wcrt task="T4">7.00000</wcrt>
+        </wcrts>
+        <schedulable scheduler="RATE_MONOTONIC_PROTOCOL" preemptive="true" result="true" explanation="All task deadlines will be met : the task set is schedulable." biblio=""/>
+    </processor>
+    <processor name="cpu2">
+        <wcrts>
+            <wcrt task="T3">4.00000</wcrt>
+            <wcrt task="T5">6.00000</wcrt>
+        </wcrts>
+        <schedulable scheduler="RATE_MONOTONIC_PROTOCOL" preemptive="true" result="true" explanation="All task deadlines will be met : the task set is schedulable." biblio=""/>
+    </processor>
+</response>
+<response statement="SCHEDULING_SIMULATION_RESPONSE_TIME">
+    <processor name="cpu1">
+        <response_time task="T1">
+            <average>1.00000</average>
+        </response_time>
+        <response_time task="T2">
+            <average>1.25000</average>
+        </response_time>
+        <response_time task="T4">
+            <average>5.80000</average>
+        </response_time>
+        <schedulable scheduler="RATE_MONOTONIC_PROTOCOL" preemptive="true" result="true" explanation="No deadline missed in the computed scheduling : the task set is schedulable if you computed the scheduling on the feasibility interval.
+" biblio=""/>
+    </processor>
+    <processor name="cpu2">
+        <response_time task="T3">
+            <average>4.00000</average>
+        </response_time>
+        <response_time task="T5">
+            <average>4.00000</average>
+        </response_time>
+        <schedulable scheduler="RATE_MONOTONIC_PROTOCOL" preemptive="true" result="true" explanation="No deadline missed in the computed scheduling : the task set is schedulable if you computed the scheduling on the feasibility interval.
+" biblio=""/>
+    </processor>
+</response>

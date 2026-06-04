@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<event_table>
+ <mono_core_processor id="id_2">
+  <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+  <name>CPU_1</name>
+  <processor_type>MONOCORE_TYPE</processor_type>
+  <migration_type>NO_MIGRATION_TYPE</migration_type>
+  <core ref="id_1">
+  </core>
+ </mono_core_processor>
+ <scheduling_result>
+  <has_error>FALSE</has_error>
+  <result>
+   <time_unit>0 </time_unit>
+   <time_unit_event>
+    <type_of_event>TASK_ACTIVATION</type_of_event>
+    <activation_task ref="id_7">
+    </activation_task>
+   </time_unit_event>
+   <time_unit>0 </time_unit>
+   <time_unit_event>
+    <type_of_event>START_OF_TASK_CAPACITY</type_of_event>
+    <start_task ref="id_7">
+    </start_task>
+   </time_unit_event>
+   <time_unit>5 </time_unit>
+   <time_unit_event>
+    <type_of_event>WRITE_TO_BUFFER</type_of_event>
+    <write_buffer ref="id_9">
+    </write_buffer>
+    <write_task ref="id_7">
+    </write_task>
+    <write_size>3</write_size>
+    <write_buffer_current_data_size>0</write_buffer_current_data_size>
+   </time_unit_event>
+   <time_unit>6 </time_unit>
+   <time_unit_event>
+    <type_of_event>END_OF_TASK_CAPACITY</type_of_event>
+    <end_task ref="id_7">
+    </end_task>
+   </time_unit_event>
+   <time_unit>40</time_unit>
+   <time_unit_event>
+    <type_of_event>TASK_ACTIVATION</type_of_event>
+    <activation_task ref="id_7">
+    </activation_task>
+   </time_unit_event>
+  </result>
+ </scheduling_result>
+ <mono_core_processor id="id_4">
+  <object_type>PROCESSOR_OBJECT_TYPE</object_type>
+  <name>CPU_2</name>
+  <processor_type>MONOCORE_TYPE</processor_type>
+  <migration_type>NO_MIGRATION_TYPE</migration_type>
+  <core ref="id_3">
+  </core>
+ </mono_core_processor>
+ <scheduling_result>
+  <has_error>FALSE</has_error>
+  <result>
+   <time_unit>0 </time_unit>
+   <time_unit_event>
+    <type_of_event>TASK_ACTIVATION</type_of_event>
+    <activation_task ref="id_8">
+    </activation_task>
+   </time_unit_event>
+   <time_unit>0 </time_unit>
+   <time_unit_event>
+    <type_of_event>BUFFER_UNDERFLOW</type_of_event>
+    <underflow_buffer ref="id_9">
+    </underflow_buffer>
+    <underflow_task ref="id_8">
+    </underflow_task>
+    <underflow_read_size>3</underflow_read_size>
+    <underflow_buffer_current_data_size>0</underflow_buffer_current_data_size>
+   </time_unit_event>
+   <time_unit>0 </time_unit>
+   <time_unit_event>
+    <type_of_event>START_OF_TASK_CAPACITY</type_of_event>
+    <start_task ref="id_8">
+    </start_task>
+   </time_unit_event>
+   <time_unit>6 </time_unit>
+   <time_unit_event>
+    <type_of_event>END_OF_TASK_CAPACITY</type_of_event>
+    <end_task ref="id_8">
+    </end_task>
+   </time_unit_event>
+   <time_unit>40</time_unit>
+   <time_unit_event>
+    <type_of_event>TASK_ACTIVATION</type_of_event>
+    <activation_task ref="id_8">
+    </activation_task>
+   </time_unit_event>
+  </result>
+ </scheduling_result>
+</event_table>
+

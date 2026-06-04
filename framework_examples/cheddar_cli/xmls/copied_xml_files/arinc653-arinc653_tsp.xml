@@ -1,0 +1,394 @@
+<?xml version="1.0"?>
+<arinc_653_module id=" 8">
+  <partition>
+    <partitiontype id=" 13">
+      <process>
+        <processtype id=" 16">
+          <name>T3</name>
+        </processtype>
+        <processtype id=" 15">
+          <name>T2</name>
+        </processtype>
+        <processtype id=" 14">
+          <name>T1</name>
+        </processtype>
+      </process>
+      <partitionname>partition2</partitionname>
+      <criticality>LEVEL_A</criticality>
+      <systempartition>FALSE</systempartition>
+    </partitiontype>
+    <partitiontype id=" 9">
+      <process>
+        <processtype id=" 12">
+          <name>T3</name>
+        </processtype>
+        <processtype id=" 11">
+          <name>T2</name>
+        </processtype>
+        <processtype id=" 10">
+          <name>T1</name>
+        </processtype>
+      </process>
+      <partitionname>partition1</partitionname>
+      <criticality>LEVEL_A</criticality>
+      <systempartition>FALSE</systempartition>
+    </partitiontype>
+  </partition>
+  <module_schedule>
+    <module_schedule_type id=" 17">
+      <partition_schedule>
+        <partition_schedule_element id=" 19">
+          <window_schedule>
+            <window_schedule_element id=" 86">
+              <windowstartseconds>99.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 85">
+              <windowstartseconds>97.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 84">
+              <windowstartseconds>96.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 83">
+              <windowstartseconds>94.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 82">
+              <windowstartseconds>93.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 81">
+              <windowstartseconds>91.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 80">
+              <windowstartseconds>90.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 79">
+              <windowstartseconds>88.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 78">
+              <windowstartseconds>87.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 77">
+              <windowstartseconds>85.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 76">
+              <windowstartseconds>84.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 75">
+              <windowstartseconds>82.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 74">
+              <windowstartseconds>81.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 73">
+              <windowstartseconds>79.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 72">
+              <windowstartseconds>78.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 71">
+              <windowstartseconds>76.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 70">
+              <windowstartseconds>75.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 69">
+              <windowstartseconds>73.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 68">
+              <windowstartseconds>72.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 67">
+              <windowstartseconds>70.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 66">
+              <windowstartseconds>69.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 65">
+              <windowstartseconds>67.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 64">
+              <windowstartseconds>66.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 63">
+              <windowstartseconds>64.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 62">
+              <windowstartseconds>63.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 61">
+              <windowstartseconds>61.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 60">
+              <windowstartseconds>60.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 59">
+              <windowstartseconds>58.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 58">
+              <windowstartseconds>57.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 57">
+              <windowstartseconds>55.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 56">
+              <windowstartseconds>54.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 55">
+              <windowstartseconds>52.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 54">
+              <windowstartseconds>51.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 53">
+              <windowstartseconds>49.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 52">
+              <windowstartseconds>48.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 51">
+              <windowstartseconds>46.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 50">
+              <windowstartseconds>45.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 49">
+              <windowstartseconds>43.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 48">
+              <windowstartseconds>42.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 47">
+              <windowstartseconds>40.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 46">
+              <windowstartseconds>39.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 45">
+              <windowstartseconds>37.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 44">
+              <windowstartseconds>36.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 43">
+              <windowstartseconds>34.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 42">
+              <windowstartseconds>33.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 41">
+              <windowstartseconds>31.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 40">
+              <windowstartseconds>30.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 39">
+              <windowstartseconds>28.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 38">
+              <windowstartseconds>27.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 37">
+              <windowstartseconds>25.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 36">
+              <windowstartseconds>24.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 35">
+              <windowstartseconds>22.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 34">
+              <windowstartseconds>21.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 33">
+              <windowstartseconds>19.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 32">
+              <windowstartseconds>18.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 31">
+              <windowstartseconds>16.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 30">
+              <windowstartseconds>15.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 29">
+              <windowstartseconds>13.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 28">
+              <windowstartseconds>12.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 27">
+              <windowstartseconds>10.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 26">
+              <windowstartseconds>9.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 25">
+              <windowstartseconds>7.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+          </window_schedule>
+          <partitionname>partition2</partitionname>
+          <periodseconds>0.00000</periodseconds>
+          <perioddurationseconds>0.00000</perioddurationseconds>
+        </partition_schedule_element>
+        <partition_schedule_element id=" 18">
+          <window_schedule>
+            <window_schedule_element id=" 24">
+              <windowstartseconds>6.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 23">
+              <windowstartseconds>4.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 22">
+              <windowstartseconds>3.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 21">
+              <windowstartseconds>1.00000</windowstartseconds>
+              <windowdurationseconds>1.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+            <window_schedule_element id=" 20">
+              <windowstartseconds>0.00000</windowstartseconds>
+              <windowdurationseconds>0.00000</windowdurationseconds>
+              <partitionperiodstart>FALSE</partitionperiodstart>
+            </window_schedule_element>
+          </window_schedule>
+          <partitionname>partition1</partitionname>
+          <periodseconds>0.00000</periodseconds>
+          <perioddurationseconds>0.00000</perioddurationseconds>
+        </partition_schedule_element>
+      </partition_schedule>
+      <majorframeseconds>100.00000</majorframeseconds>
+    </module_schedule_type>
+  </module_schedule>
+  <modulename>cheddar</modulename>
+</arinc_653_module>

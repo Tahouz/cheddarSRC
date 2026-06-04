@@ -1,0 +1,88 @@
+<?xml version="1.0" standalone="no"?>  
+
+<event_table>
+<time_unit>0</time_unit>
+<time_unit_event>
+<type_of_event>START_OF_TASK_CAPACITY</type_of_event>
+<start_task ref="id_5" />
+</time_unit_event>
+<time_unit>1</time_unit>
+<time_unit_event>
+<type_of_event>END_OF_TASK_CAPACITY</type_of_event>
+<end_task ref="id_5" />
+</time_unit_event>
+<time_unit>1</time_unit>
+<time_unit_event>
+<type_of_event>START_OF_TASK_CAPACITY</type_of_event>
+<start_task ref="id_6" />
+</time_unit_event>
+<time_unit>3</time_unit>
+<time_unit_event>
+<type_of_event>END_OF_TASK_CAPACITY</type_of_event>
+<end_task ref="id_6" />
+</time_unit_event>
+<time_unit>3</time_unit>
+<time_unit_event>
+<type_of_event>START_OF_TASK_CAPACITY</type_of_event>
+<start_task ref="id_4" />
+</time_unit_event>
+<time_unit>5</time_unit>
+<time_unit_event>
+<type_of_event>START_OF_TASK_CAPACITY</type_of_event>
+<start_task ref="id_5" />
+</time_unit_event>
+<time_unit>6</time_unit>
+<time_unit_event>
+<type_of_event>END_OF_TASK_CAPACITY</type_of_event>
+<end_task ref="id_5" />
+</time_unit_event>
+<time_unit>5</time_unit>
+<time_unit_event>
+<type_of_event>PREEMPTION</type_of_event>
+<preempted_task ref="id_4" />
+<preempting_task ref="id_5" />
+<evicted_ucbs>0</evicted_ucbs>
+</time_unit_event>
+<time_unit>10</time_unit>
+<time_unit_event>
+<type_of_event>START_OF_TASK_CAPACITY</type_of_event>
+<start_task ref="id_5" />
+</time_unit_event>
+<time_unit>11</time_unit>
+<time_unit_event>
+<type_of_event>END_OF_TASK_CAPACITY</type_of_event>
+<end_task ref="id_5" />
+</time_unit_event>
+<time_unit>10</time_unit>
+<time_unit_event>
+<type_of_event>PREEMPTION</type_of_event>
+<preempted_task ref="id_4" />
+<preempting_task ref="id_5" />
+<evicted_ucbs>0</evicted_ucbs>
+</time_unit_event>
+<time_unit>11</time_unit>
+<time_unit_event>
+<type_of_event>START_OF_TASK_CAPACITY</type_of_event>
+<start_task ref="id_6" />
+</time_unit_event>
+<time_unit>11</time_unit>
+<time_unit_event>
+<type_of_event>PREEMPTION</type_of_event>
+<preempted_task ref="id_4" />
+<preempting_task ref="id_6" />
+<evicted_ucbs>0</evicted_ucbs>
+</time_unit_event>
+<time_unit>13</time_unit>
+<time_unit_event>
+<type_of_event>END_OF_TASK_CAPACITY</type_of_event>
+<end_task ref="id_6" />
+</time_unit_event>
+<time_unit>14</time_unit>
+<time_unit_event>
+<type_of_event>END_OF_TASK_CAPACITY</type_of_event>
+<end_task ref="id_4" />
+</time_unit_event>
+</event_table>
+
+
+

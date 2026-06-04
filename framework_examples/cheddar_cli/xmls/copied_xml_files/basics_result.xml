@@ -1,0 +1,74 @@
+<?xml version="1.0" standalone="yes"?>
+<!DOCTYPE results [
+<!ELEMENT results (scheduling_feasibility | scheduling_simulation | set_priorities | blocking_time | end_to_end_response_time | buffer_bound)>
+<!ELEMENT scheduling_feasibility(title, line+)>
+<!ELEMENT scheduling_simulation(title, line+)>
+<!ELEMENT set_priorities(title, line+)>
+<!ELEMENT blocking_time(title, line+)>
+<!ELEMENT end_to_end_response_time(title, line+)>
+<!ELEMENT buffer_bound(title, line+)>
+<!ELEMENT title(#PCDATA, processor, #PCDATA)>
+<!ELEMENT line(#PCDATA | base_period | reference | deadl_factor | period_factor | task | jitter | factor_bound | number_of_preemption)>
+<!ELEMENT processor(#PCDATA)>
+<!ELEMENT base_period(#PCDATA)>
+<!ELEMENT reference(#PCDATA)>
+<!ELEMENT deadl_factor(#PCDATA)>
+<!ELEMENT period_factor(#PCDATA)>
+<!ELEMENT task(#PCDATA)>
+<!ELEMENT jitter(#PCDATA)>
+<!ELEMENT factor_bound(#PCDATA)>
+<!ELEMENT number_of_preemption(#PCDATA)>
+]>
+
+<results>
+<framework_response>
+
+<title>
+<scheduling_feasibility>
+<title>Scheduling feasibility, Processor <processor>processor1</processor> : 
+</title></title>
+
+<text>1) Feasibility test based on the processor utilization factor : 
+
+<line>- The base period is<base_period> 10</base_period><reference> (see [18], page 5). </reference></line>
+<line>-<unit> 5</unit> units of time are unused in the base period.</line>
+<line>- Processor utilization factor with deadline is <deadline_factor>0.50000</deadline_factor><reference> (see [1], page 6). </reference></line>
+<line>- Processor utilization factor with period is <period_factor>0.50000</period_factor><reference> (see [1], page 6). </reference>
+<line>- In the preemptive case, with RM, the task set is schedulable because the processor utilization factor <factor_bound>0.50000</factor_bound> is equal or less than <factor_bound>1.00000</factor_bound><reference> (see [19], page 13).
+</reference>
+
+2) Feasibility  test based on worst case task response time : 
+
+<line>- Bound on task response time : <reference> (see [2], page 3, equation 4). </reference>
+<task>    T1 => 5</task>
+<task>    T2 => 4</task>
+<task>    T3 => 2</task>
+- All task deadlines will be met : the task set is schedulable.</line>
+</scheduling_feasibility>
+</text>
+</framework_response>
+<framework_response>
+
+<title>
+<scheduling_feasibility>
+<title>Scheduling feasibility, Processor <processor>processor2</processor> : 
+</title></title>
+
+<text>1) Feasibility test based on the processor utilization factor : 
+
+<line>- The base period is<base_period> 10</base_period><reference> (see [18], page 5). </reference></line>
+<line>-<unit> 6</unit> units of time are unused in the base period.</line>
+<line>- Processor utilization factor with deadline is <deadline_factor>0.40000</deadline_factor><reference> (see [1], page 6). </reference></line>
+<line>- Processor utilization factor with period is <period_factor>0.40000</period_factor><reference> (see [1], page 6). </reference>
+<line>- In the preemptive case, with RM, the task set is schedulable because the processor utilization factor <factor_bound>0.40000</factor_bound> is equal or less than <factor_bound>1.00000</factor_bound><reference> (see [19], page 13).
+</reference>
+
+2) Feasibility  test based on worst case task response time : 
+
+<line>- Bound on task response time : <reference> (see [2], page 3, equation 4). </reference>
+<task>    T4 => 4</task>
+- All task deadlines will be met : the task set is schedulable.</line>
+</scheduling_feasibility>
+</text>
+</framework_response>
+</results>
